@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../theme/colors.dart';
+import '../faq_page.dart';
+import '../privacy&terms.dart';
 import '../registration/login_page.dart';
 import '../profile_page/profile_page.dart';
 
@@ -19,6 +21,8 @@ class _MyOrdersState extends State<MyOrders> {
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
+      initialIndex: 0,
+      animationDuration: Duration(milliseconds: 300),
       child: Scaffold(
         appBar: AppBar(
           title: Text("My Orders"),
@@ -90,6 +94,10 @@ class _MyOrdersState extends State<MyOrders> {
                 title: Text("Offers and Discounts"),
               ),
               ListTile(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FAQPage()));
+                },
                 leading: Icon(
                   Iconsax.info_circle,
                   color: Colors.black,
@@ -97,6 +105,12 @@ class _MyOrdersState extends State<MyOrders> {
                 title: Text("FAQ's and Help"),
               ),
               ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PrivacyAndTermsPage()));
+                },
                 leading: Icon(
                   Iconsax.information,
                   color: Colors.black,

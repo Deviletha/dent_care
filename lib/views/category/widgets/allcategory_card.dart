@@ -6,7 +6,10 @@ class AllCategoryTile extends StatelessWidget {
   final void Function()? onTap;
 
   const AllCategoryTile(
-      {super.key, required this.categoryName, required this.imagePath, this.onTap});
+      {super.key,
+      required this.categoryName,
+      required this.imagePath,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {

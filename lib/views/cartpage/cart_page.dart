@@ -1,9 +1,12 @@
 import 'package:danthal/views/cartpage/widgets/cartcard.dart';
+import 'package:danthal/views/myorders/orders.dart';
 import 'package:danthal/views/profile_page/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../theme/colors.dart';
+import '../faq_page.dart';
+import '../privacy&terms.dart';
 import '../registration/login_page.dart';
 
 class CartPage extends StatefulWidget {
@@ -63,6 +66,12 @@ class _CartPageState extends State<CartPage> {
                 title: Text("Shop By Medicine"),
               ),
               ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => MyOrders()));
+                },
                 leading: Icon(
                   Iconsax.shopping_bag,
                   color: Colors.black,
@@ -88,6 +97,10 @@ class _CartPageState extends State<CartPage> {
                 title: Text("Offers and Discounts"),
               ),
               ListTile(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => FAQPage()));
+                },
                 leading: Icon(
                   Iconsax.info_circle,
                   color: Colors.black,
@@ -95,6 +108,12 @@ class _CartPageState extends State<CartPage> {
                 title: Text("FAQ's and Help"),
               ),
               ListTile(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PrivacyAndTermsPage()));
+                },
                 leading: Icon(
                   Iconsax.information,
                   color: Colors.black,

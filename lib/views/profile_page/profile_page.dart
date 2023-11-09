@@ -8,6 +8,9 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../Components/custom_row.dart';
 import '../../theme/colors.dart';
+import '../faq_page.dart';
+import '../myorders/orders.dart';
+import '../privacy&terms.dart';
 import '../registration/login_page.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -51,6 +54,12 @@ class _ProfilePageState extends State<ProfilePage> {
               title: Text("Shop By Medicine"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyOrders()));
+              },
               leading: Icon(
                 Iconsax.shopping_bag,
                 color: Colors.black,
@@ -65,6 +74,10 @@ class _ProfilePageState extends State<ProfilePage> {
               title: Text("Offers and Discounts"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FAQPage()));
+              },
               leading: Icon(
                 Iconsax.info_circle,
                 color: Colors.black,
@@ -72,6 +85,12 @@ class _ProfilePageState extends State<ProfilePage> {
               title: Text("FAQ's and Help"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PrivacyAndTermsPage()));
+              },
               leading: Icon(
                 Iconsax.information,
                 color: Colors.black,

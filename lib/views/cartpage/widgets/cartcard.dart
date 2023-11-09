@@ -44,8 +44,8 @@ class CartTile extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   clipBehavior: Clip.antiAlias,
-                  width: 90,
-                  height: 70,
+                  width: 110,
+                  height: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),

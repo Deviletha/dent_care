@@ -4,6 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../theme/colors.dart';
+import '../faq_page.dart';
+import '../myorders/orders.dart';
+import '../privacy&terms.dart';
 import '../registration/login_page.dart';
 import 'category_view.dart';
 
@@ -84,6 +87,12 @@ class _CategoryPageState extends State<CategoryPage> {
               title: Text("Shop By Medicine"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => MyOrders()));
+              },
               leading: Icon(
                 Iconsax.shopping_bag,
                 color: Colors.black,
@@ -109,6 +118,10 @@ class _CategoryPageState extends State<CategoryPage> {
               title: Text("Offers and Discounts"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => FAQPage()));
+              },
               leading: Icon(
                 Iconsax.info_circle,
                 color: Colors.black,
@@ -116,6 +129,12 @@ class _CategoryPageState extends State<CategoryPage> {
               title: Text("FAQ's and Help"),
             ),
             ListTile(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PrivacyAndTermsPage()));
+              },
               leading: Icon(
                 Iconsax.information,
                 color: Colors.black,

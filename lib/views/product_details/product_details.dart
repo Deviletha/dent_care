@@ -23,8 +23,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ProductDetailCard(imagePath: "assets/dentall product.jpeg",
-                itemName: "Item Name",
-                description: "Description",
+                itemName: "PRODUCT ITEM NAME",
+                description: "Dummy Description for product card",
                 actualPrice: "180",
                 offerPrice: "160",
                 discount: "20",

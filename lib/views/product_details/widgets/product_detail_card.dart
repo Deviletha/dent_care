@@ -56,7 +56,7 @@ class ProductDetailCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text("Rs.$offerPrice",
+                      Text("₹ $offerPrice",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 15,

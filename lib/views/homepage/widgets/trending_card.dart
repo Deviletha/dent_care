@@ -66,16 +66,19 @@ class TrendingTile extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        price,
-                        style: TextStyle(fontSize: 15, color: Colors.black),
+                        mrp,
+                        style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontSize: 13, color: Colors.grey),
                       ),
                       SizedBox(
                         height: 5,
                       ),
                       Text(
-                        mrp,
-                        style: TextStyle(fontSize: 13, color: Colors.grey),
+                        price,
+                        style: TextStyle(fontSize: 15, color: Colors.black),
                       ),
+
                     ],
                   )
                 ],
@@ -92,16 +95,17 @@ class TrendingTile extends StatelessWidget {
                       Text(
                         itemName,
                         style: TextStyle(
+
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
-                          color: Color(ColorT.themeColor),
+                          color: Color(ColorT.textColor),
                         ),
                       ),
                       Text(
                         description,
                         style: TextStyle(
                           fontSize: 12,
-                          color: Color(ColorT.themeColor),
+                          color: Colors.grey..shade700,
                         ),
                       ),
                     ],
@@ -110,7 +114,7 @@ class TrendingTile extends StatelessWidget {
                       onPressed: onPressed,
                       child: Text(
                         "Details",
-                        style: TextStyle(fontSize: 10),
+                        style: TextStyle(fontSize: 10,color: Color(ColorT.textColor)),
                       ))
                 ],
               ),

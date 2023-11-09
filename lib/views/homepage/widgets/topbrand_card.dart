@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TopBrandTile extends StatelessWidget {
-  final String itemName;
   final String imagePath;
   final void Function()? onTap;
-  const TopBrandTile({super.key, required this.itemName, required this.imagePath, this.onTap});
+  const TopBrandTile({super.key, required this.imagePath, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -17,16 +15,18 @@ class TopBrandTile extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              height: 50,
-              width: 50,
+              height: 100,
+              width: 100,
               decoration: BoxDecoration(
                 boxShadow: [
                   BoxShadow(
+                    blurStyle: BlurStyle.outer,
+                    spreadRadius: 3,
                     color: Colors.grey.shade500,
-                    blurRadius: 3,
+                    blurRadius: 10,
                   ),
                 ],
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderRadius: BorderRadius.all(Radius.circular(360)),
               ),
               clipBehavior: Clip.antiAlias,
               child: Image.asset(
@@ -34,13 +34,6 @@ class TopBrandTile extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(
-              height: 5,
-            ),
-            Text(
-              itemName,
-              style: TextStyle(fontSize: 12),
-            )
           ],
         ),
       ),

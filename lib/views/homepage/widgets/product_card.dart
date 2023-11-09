@@ -13,6 +13,7 @@ class ProductTile extends StatelessWidget {
   final String discount;
   final void Function()? onPressed;
   final void Function()? onTap;
+  final void Function()? addCart;
 
   const ProductTile(
       {super.key,
@@ -23,12 +24,13 @@ class ProductTile extends StatelessWidget {
       required this.actualPrice,
       this.onPressed,
       this.onTap,
-      required this.discount});
+      required this.discount,
+      this.addCart});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(left: 5, right: 5, bottom: 10, top: 5),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -60,85 +62,88 @@ class ProductTile extends StatelessWidget {
                       ),
                       fit: BoxFit.cover),
                 ),
-                // Image border// Image radius
+                child: IconButton(
+                  alignment: Alignment.topLeft,
+                  onPressed: onPressed,
+                  icon: Icon(
+                    Iconsax.heart,
+                    size: 30,
+                    color: Colors.black,
+                  ),
+                ),
               ),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(itemName),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                description,
-                                style: TextStyle(fontSize: 12),
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                            ],
+                          Text(itemName),
+                          SizedBox(
+                            height: 5,
                           ),
-                          IconButton(
-                            alignment: Alignment.topRight,
-                            onPressed: onPressed,
-                            icon: Icon(
-                              Iconsax.heart,
-                              color: Colors.black,
-                            ),
-                          )
+                          Text(
+                            description,
+                            maxLines: 2,
+                            style: TextStyle(
+                                fontSize: 12, color: Colors.grey.shade600),
+                          ),
+                          SizedBox(
+                            height: 5,
+                          ),
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                actualPrice,
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Color(ColorT.themeColor),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
                                 totalPrice,
                                 style: TextStyle(
-                                  fontSize: 13,
-                                  color: Color(ColorT.themeColor),
+                                  decoration: TextDecoration.lineThrough,
+                                  fontSize: 14,
+                                  color: Colors.grey,
                                 ),
                               ),
                               SizedBox(
                                 height: 5,
                               ),
                               Text(
-                                discount,
+                                actualPrice,
                                 style: TextStyle(
-                                  fontSize: 13,
-                                  color: Color(ColorT.themeColor),
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Color(ColorT.textColor),
                                 ),
                               ),
                             ],
-                          )
+                          ),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              Text(
+                                discount,
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  color: Color(ColorT.textColor),
+                                ),
+                              ),
+                              IconButton(
+                                  alignment: Alignment.bottomLeft,
+                                  onPressed: addCart,
+                                  icon: Icon(
+                                    Icons.add_shopping_cart,
+                                    color: Color(ColorT.textColor),
+                                  )),
+                            ],
+                          ),
                         ],
                       ),
                     ],
