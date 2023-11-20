@@ -20,6 +20,6 @@ class BannerTile extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage(imagePath), fit: BoxFit.cover)),
       ),
-    );;
+    );
   }
 }

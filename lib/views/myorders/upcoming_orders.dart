@@ -41,7 +41,7 @@ class _UpcomingState extends State<Upcoming> {
         onPressed: () {},
         date: "30 Dec 2022",
         itemName: "Item Name",
-        description: "Description",
+        description: "Demo description for cart page items ",
         orderId: "12345",
         price: "200",
         deliveryStatus: "Package on the way",

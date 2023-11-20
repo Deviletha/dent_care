@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../theme/colors.dart';
-
 class CategoryTile extends StatelessWidget {
   final String itemName;
   final String imagePath;

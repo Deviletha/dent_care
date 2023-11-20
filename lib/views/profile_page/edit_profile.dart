@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -22,7 +23,9 @@ class _EditProfileState extends State<EditProfile> {
     final pickedImage =
     await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
-      print('Image picked: ${pickedImage.path}');
+      if (kDebugMode) {
+        print('Image picked: ${pickedImage.path}');
+      }
       setState(() {
         _pickedImage = File(pickedImage.path);
       });
@@ -34,10 +37,14 @@ class _EditProfileState extends State<EditProfile> {
     if (_pickedImage != null) {
       final bytes = await _pickedImage!.readAsBytes();
       final String base64Image = "data:image/;base64,${base64Encode(bytes)}";
-      print('Base64 Image: $base64Image');
+      if (kDebugMode) {
+        print('Base64 Image: $base64Image');
+      }
       setState(() {
         base64Images.add(base64Image);
-        print(base64Images);
+        if (kDebugMode) {
+          print(base64Images);
+        }
       });
     }
   }

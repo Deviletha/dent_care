@@ -122,6 +122,5 @@ class TrendingTile extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

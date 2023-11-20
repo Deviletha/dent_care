@@ -1,5 +1,4 @@
 import 'package:danthal/views/bottom_nav_bar.dart';
-import 'package:danthal/views/homepage/homepage.dart';
 import 'package:danthal/views/registration/signup_page.dart';
 import 'package:flutter/material.dart';
 import '../../theme/colors.dart';
