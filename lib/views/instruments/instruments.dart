@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
-import '../../theme/colors.dart';
 import '../top_selling/widgets/all_product_card.dart';
 
 class AllInstruments extends StatefulWidget {

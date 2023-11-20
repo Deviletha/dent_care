@@ -2,8 +2,7 @@ import 'package:danthal/views/cartpage/widgets/cartcard.dart';
 import 'package:danthal/views/myorders/orders.dart';
 import 'package:danthal/views/profile_page/profile_page.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
+import 'package:ionicons/ionicons.dart';
 import '../../theme/colors.dart';
 import '../faq_page.dart';
 import '../privacy&terms.dart';
@@ -18,7 +17,6 @@ class CartPage extends StatefulWidget {
 
 class _CartPageState extends State<CartPage> {
   List<String> images = [
-    "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/images.png",
@@ -31,6 +29,8 @@ class _CartPageState extends State<CartPage> {
     "assets/bond_370x287_bf4.jpg",
     "assets/images.png"
   ];
+
+  int _selectedQuantity = 1; // Initial value for the dropdown
 
   @override
   Widget build(BuildContext context) {
@@ -60,20 +60,18 @@ class _CartPageState extends State<CartPage> {
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.home,
+                  Ionicons.home_outline,
                   color: Colors.black,
                 ),
                 title: Text("Shop By Medicine"),
               ),
               ListTile(
                 onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MyOrders()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyOrders()));
                 },
                 leading: Icon(
-                  Iconsax.shopping_bag,
+                  Ionicons.bag_outline,
                   color: Colors.black,
                 ),
                 title: Text("My Order"),
@@ -84,14 +82,14 @@ class _CartPageState extends State<CartPage> {
                       MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
                 leading: Icon(
-                  Iconsax.profile_circle,
+                  Ionicons.person_outline,
                   color: Colors.black,
                 ),
                 title: Text("My Profile"),
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.discount_circle,
+                  Ionicons.pricetag_outline,
                   color: Colors.black,
                 ),
                 title: Text("Offers and Discounts"),
@@ -102,7 +100,7 @@ class _CartPageState extends State<CartPage> {
                       MaterialPageRoute(builder: (context) => FAQPage()));
                 },
                 leading: Icon(
-                  Iconsax.info_circle,
+                  Ionicons.help_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("FAQ's and Help"),
@@ -115,14 +113,14 @@ class _CartPageState extends State<CartPage> {
                           builder: (context) => PrivacyAndTermsPage()));
                 },
                 leading: Icon(
-                  Iconsax.information,
+                  Ionicons.alert_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("Privacy and Terms"),
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.info_circle5,
+                  Ionicons.information_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("About Us"),
@@ -133,7 +131,7 @@ class _CartPageState extends State<CartPage> {
                       MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 leading: Icon(
-                  Iconsax.logout,
+                  Ionicons.log_out_outline,
                   color: Colors.black,
                 ),
                 title: Text("Log Out"),
@@ -141,23 +139,100 @@ class _CartPageState extends State<CartPage> {
             ],
           ),
         ),
-        body: ListView.builder(
-          itemCount: images.length,
-          itemBuilder: (context, index) => getCart(index),
-        ));
+        body: ListView(
+          children: [
+            ListView.builder(
+              itemCount: 3,
+              shrinkWrap: true,
+physics: ScrollPhysics(),
+              itemBuilder: (context, index) => getCart(index),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey.shade300 ),
+                  borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: const [
+                      Text("Price Details", style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),),
+                      Divider(
+                        thickness: 2,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Total Quantity",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                          Text("3",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold))
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Price",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                          Text("₹ 8000",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold))
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Discounts",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                          Text("₹ 890",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold))
+                        ],
+                      ),
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //   children: [
+                      //     Text("Total Savings",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
+                      //     Text("₹ 300",style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold))
+                      //   ],
+                      // ),
+                      Divider(
+                        thickness: 2,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Grand Total",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                          Text("₹ 7110",style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold))
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
+      bottomNavigationBar:
+      ElevatedButton(
+        child: Text("Checkout"),
+        onPressed: (){},
+      ),
+    );
   }
 
   Widget getCart(int index) {
     return CartTile(
       imagePath: images[index],
-      itemName: "Item Name",
-      description: "Description",
-      price: "Rs. 200",
-       quantity: "1",
+      itemName: "ITEM NAME",
+      description: "Demo Description for cart page items ",
+      price: "₹ 2000",
+      quantity: _selectedQuantity.toString(),
       onPressed: () {},
-      onPressedAdd: (){},
-      onPressedLess: (){},
-
     );
   }
 }

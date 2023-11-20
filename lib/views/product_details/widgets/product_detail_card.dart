@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:ionicons/ionicons.dart';
 
 class ProductDetailCard extends StatelessWidget {
   final String imagePath;
@@ -87,8 +87,8 @@ class ProductDetailCard extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  IconButton(onPressed: onPressed, icon: Icon(Iconsax.heart)),
-                  IconButton(onPressed: onPressedCart, icon: Icon(Iconsax.shopping_bag))
+                  IconButton(onPressed: onPressed, icon: Icon(Ionicons.heart_outline,)),
+                  IconButton(onPressed: onPressedCart, icon: Icon(Ionicons.bag_add_outline))
                 ],
               )
 

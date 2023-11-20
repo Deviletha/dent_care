@@ -14,23 +14,40 @@ class AllCategoryTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(5),
       child: InkWell(
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.shade500,
-                blurRadius: 3,
+                color: Colors.red.shade50,
+                blurRadius: 1,
               ),
             ],
             color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: ListTile(
-            leading: CircleAvatar(
-              backgroundImage: AssetImage(imagePath),
+            leading:
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Container(
+                clipBehavior: Clip.antiAlias,
+                width: 70,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                  image: DecorationImage(
+                      image: AssetImage(
+                        imagePath,
+                      ),
+                      fit: BoxFit.cover),
+                ),
+                // Image border// Image radius
+              ),
             ),
             title: Text(
               categoryName,

@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:danthal/views/brands/all_brands.dart';
 import 'package:danthal/views/brands/brand_view.dart';
+import 'package:danthal/views/cartpage/cart_page.dart';
 import 'package:danthal/views/category/category_page.dart';
 import 'package:danthal/views/category/category_view.dart';
 import 'package:danthal/views/faq_page.dart';
@@ -8,6 +9,7 @@ import 'package:danthal/views/homepage/widgets/banner.dart';
 import 'package:danthal/views/homepage/widgets/category_card.dart';
 import 'package:danthal/views/homepage/widgets/headings.dart';
 import 'package:danthal/views/homepage/widgets/product_card.dart';
+import 'package:danthal/views/homepage/widgets/productcardcopy.dart';
 import 'package:danthal/views/homepage/widgets/topbrand_card.dart';
 import 'package:danthal/views/homepage/widgets/trending_card.dart';
 import 'package:danthal/views/instruments/instruments.dart';
@@ -17,7 +19,7 @@ import 'package:danthal/views/profile_page/profile_page.dart';
 import 'package:danthal/views/top_selling/top_selling.dart';
 import 'package:danthal/views/product_details/product_details.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:ionicons/ionicons.dart';
 import '../../theme/colors.dart';
 import '../myorders/orders.dart';
 
@@ -103,6 +105,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         endDrawer: Drawer(
           child: Column(
             children: [
@@ -124,7 +127,7 @@ class _HomepageState extends State<Homepage> {
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.home,
+                  Ionicons.home_outline,
                   color: Colors.black,
                 ),
                 title: Text("Shop By Medicine"),
@@ -135,7 +138,7 @@ class _HomepageState extends State<Homepage> {
                       MaterialPageRoute(builder: (context) => MyOrders()));
                 },
                 leading: Icon(
-                  Iconsax.shopping_bag,
+                  Ionicons.bag_outline,
                   color: Colors.black,
                 ),
                 title: Text("My Order"),
@@ -146,14 +149,14 @@ class _HomepageState extends State<Homepage> {
                       MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
                 leading: Icon(
-                  Iconsax.profile_circle,
+                  Ionicons.person_outline,
                   color: Colors.black,
                 ),
                 title: Text("My Profile"),
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.discount_circle,
+                  Ionicons.pricetag_outline,
                   color: Colors.black,
                 ),
                 title: Text("Offers and Discounts"),
@@ -164,7 +167,7 @@ class _HomepageState extends State<Homepage> {
                       MaterialPageRoute(builder: (context) => FAQPage()));
                 },
                 leading: Icon(
-                  Iconsax.info_circle,
+                  Ionicons.help_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("FAQ's and Help"),
@@ -177,14 +180,14 @@ class _HomepageState extends State<Homepage> {
                           builder: (context) => PrivacyAndTermsPage()));
                 },
                 leading: Icon(
-                  Iconsax.information,
+                  Ionicons.alert_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("Privacy and Terms"),
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.info_circle5,
+                  Ionicons.information_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("About Us"),
@@ -195,7 +198,7 @@ class _HomepageState extends State<Homepage> {
                       MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 leading: Icon(
-                  Iconsax.logout,
+                  Ionicons.log_out_outline,
                   color: Colors.black,
                 ),
                 title: Text("Log Out"),
@@ -206,10 +209,17 @@ class _HomepageState extends State<Homepage> {
         body: CustomScrollView(
           slivers: [
             SliverAppBar(
+              backgroundColor: Colors.transparent,
               leading: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  child: Image.asset("assets/profile_avatar.png"),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => ProfilePage()));
+                  },
+                  child: CircleAvatar(
+                    child: Image.asset("assets/profile_avatar.png"),
+                  ),
                 ),
               ),
               actions: [
@@ -218,20 +228,51 @@ class _HomepageState extends State<Homepage> {
                       // Navigator.push(context,
                       //     MaterialPageRoute(builder: (context) => LoginPage()));
                     },
-                    icon: Icon(
-                      Iconsax.notification,
-                      color: Colors.white,
-                    )),
+                    icon: Icon(Ionicons.notifications_outline,
+                        color: Color(ColorT.themeColor))),
                 IconButton(
                     onPressed: () {
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) => LoginPage()));
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => CartPage()));
                     },
-                    icon: Icon(
-                      Iconsax.bag_2,
-                      color: Colors.white,
-                    )),
+                    icon: Icon(Ionicons.bag_outline,
+                        color: Color(ColorT.themeColor))),
               ],
+              //  bottom: AppBar(
+              //   backgroundColor: Colors.transparent,
+              //   leading: Padding(
+              //     padding: const EdgeInsets.all(8.0),
+              //     child: InkWell(
+              //       onTap: (){
+              //         Navigator.push(context,
+              //             MaterialPageRoute(builder: (context) => ProfilePage()));
+              //       },
+              //       child: CircleAvatar(
+              //         child: Image.asset("assets/profile_avatar.png"),
+              //       ),
+              //     ),
+              //   ),
+              //   actions: [
+              //     IconButton(
+              //         onPressed: () {
+              //           // Navigator.push(context,
+              //           //     MaterialPageRoute(builder: (context) => LoginPage()));
+              //         },
+              //         icon: Icon(
+              //           Iconsax.notification,
+              //           color: Color(ColorT.themeColor)
+              //         )),
+              //     IconButton(
+              //         onPressed: () {
+              //           Navigator.push(context,
+              //               MaterialPageRoute(builder: (context) => CartPage()));
+              //         },
+              //         icon: Icon(
+              //           Iconsax.bag_2,
+              //           color: Color(ColorT.themeColor)
+              //         )),
+              //   ],
+              // ),
               // bottom:
               // AppBar(
               //   toolbarHeight: 65,
@@ -261,307 +302,302 @@ class _HomepageState extends State<Homepage> {
             SliverList(
                 delegate: SliverChildListDelegate(
               [
-                Column(
-                  children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(children: [
+                    SizedBox(
+                      height: 10,
+                    ),
                     Container(
-                      height: 130,
-                      width: double.infinity,
+                      height: 60,
                       decoration: BoxDecoration(
-                          color: Color(ColorT.themeColor),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.elliptical(300, 200),
-                            bottomRight: Radius.elliptical(300, 200),
-                          )),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                          color: Colors.blue.shade50,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: Row(
                         children: [
-                          SizedBox(
-                            height: 10,
-                          ),
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            child: Padding(
-                              padding: const EdgeInsets.all(4),
-                              child: Image.asset(
-                                "assets/Logo.png",
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                          IconButton(
+                              onPressed: () {
+                                // Navigator.push(context,
+                                //     MaterialPageRoute(builder: (context) => LoginPage()));
+                              },
+                              icon: Icon(
+                                Icons.search,
+                                color: Colors.blue,
+                              )),
                           Text(
-                            "DENT CARE",
-                            style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
+                            "Search your product",
+                            style: TextStyle(color: Colors.black),
+                          )
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(children: [
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          height: 60,
-                          decoration: BoxDecoration(
-                              color: Colors.indigo.shade50,
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          child: Row(
-                            children: [
-                              IconButton(
-                                  onPressed: () {
-                                    // Navigator.push(context,
-                                    //     MaterialPageRoute(builder: (context) => LoginPage()));
-                                  },
-                                  icon: Icon(
-                                    Iconsax.search_normal,
-                                    color: Colors.blue,
-                                  )),
-                              Text(
-                                "Search your product",
-                                style: TextStyle(color: Colors.black),
-                              )
-                            ],
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        CarouselSlider.builder(
-                          itemCount: 4,
-                          itemBuilder: (context, index, realIndex) {
-                            return getBanner(index);
-                          },
-                          options: CarouselOptions(
-                            height: MediaQuery.of(context).size.height / 4,
-                            aspectRatio: 15 / 6,
-                            viewportFraction: 1,
-                            initialPage: 0,
-                            enableInfiniteScroll: true,
-                            reverse: false,
-                            autoPlay: true,
-                            enlargeCenterPage: false,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                        TitleText(
-                          heading: "Categories",
-                          buttonText: "View all",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => CategoryPage()));
-                          },
-                        ),
-                        CarouselSlider.builder(
-                          itemCount: categoryIcons.length,
-                          itemBuilder: (context, index, realIndex) {
-                            return getCategory(index);
-                          },
-                          options: CarouselOptions(
-                            height: 100,
-                            aspectRatio: 15 / 6,
-                            viewportFraction: .30,
-                            initialPage: 0,
-                            enableInfiniteScroll: true,
-                            reverse: false,
-                            autoPlay: false,
-                            enlargeCenterPage: false,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                        SizedBox(
-                          height: 15,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: const [
-                            Icon(Iconsax.bag_2),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              "Recommended For You",
-                              style:
-                                  TextStyle(color: Colors.grey, fontSize: 17),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        GridView.builder(
-                          physics: ScrollPhysics(),
-                          shrinkWrap: true,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: .65,
-                          ),
-                          itemCount: 4,
-                          padding: EdgeInsets.zero,
-                          itemBuilder: (context, index) =>
-                              getInstruments(index),
-                        ),
-                        TitleText(
-                          heading: "Top Brands",
-                          buttonText: "View all",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AllBrands()));
-                          },
-                        ),
-                        CarouselSlider.builder(
-                          itemCount: topImages.length,
-                          itemBuilder: (context, index, realIndex) {
-                            return getTopBrand(index);
-                          },
-                          options: CarouselOptions(
-                            height: 150,
-                            aspectRatio: 15 / 6,
-                            viewportFraction: .30,
-                            initialPage: 0,
-                            enableInfiniteScroll: true,
-                            reverse: false,
-                            autoPlay: false,
-                            enlargeCenterPage: false,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                        CarouselSlider.builder(
-                          itemCount: 3,
-                          itemBuilder: (context, index, realIndex) {
-                            return getBanner1(index);
-                          },
-                          options: CarouselOptions(
-                            height: MediaQuery.of(context).size.height / 3.5,
-                            aspectRatio: 15 / 6,
-                            viewportFraction: 1,
-                            initialPage: 0,
-                            enableInfiniteScroll: true,
-                            reverse: false,
-                            autoPlay: true,
-                            enlargeCenterPage: false,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                        Column(
-                          children: [
-                            TitleText(
-                              heading: "Top Selling",
-                              buttonText: "View all",
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => TopSelling()));
-                              },
-                            ),
-                            GridView.builder(
-                              physics: ScrollPhysics(),
-                              shrinkWrap: true,
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                childAspectRatio: .65,
-                              ),
-                              itemCount: 2,
-                              padding: EdgeInsets.zero,
-                              itemBuilder: (context, index) =>
-                                  getInstruments(index),
-                            ),
-                          ],
-                        ),
-                        TitleText(
-                          heading: "Trending Products",
-                          buttonText: "View all",
-                          onPressed: () {},
-                        ),
-                        CarouselSlider.builder(
-                          itemCount: 3,
-                          itemBuilder: (context, index, realIndex) {
-                            return getTrending(index);
-                          },
-                          options: CarouselOptions(
-                            height: 200,
-                            aspectRatio: 9,
-                            viewportFraction: .9,
-                            initialPage: 0,
-                            // enableInfiniteScroll: true,
-                            reverse: false,
-                            // autoPlay: true,
-                            enlargeCenterPage: false,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                        TitleText(
-                          heading: "Instruments",
-                          buttonText: "View All",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AllInstruments()));
-                          },
-                        ),
-                        GridView.builder(
-                          physics: ScrollPhysics(),
-                          shrinkWrap: true,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: .65,
-                          ),
-                          itemCount: 4,
-                          itemBuilder: (context, index) => getProducts(index),
-                        ),
-                      ]),
+                    SizedBox(
+                      height: 10,
                     ),
-                  ],
-                )
+                    CarouselSlider.builder(
+                      itemCount: 4,
+                      itemBuilder: (context, index, realIndex) {
+                        return getBanner(index);
+                      },
+                      options: CarouselOptions(
+                        height: MediaQuery.of(context).size.height / 4,
+                        aspectRatio: 15 / 6,
+                        viewportFraction: 1,
+                        initialPage: 0,
+                        enableInfiniteScroll: true,
+                        reverse: false,
+                        autoPlay: true,
+                        enlargeCenterPage: false,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        onPageChanged: (index, reason) {},
+                        scrollDirection: Axis.horizontal,
+                      ),
+                    ),
+                    TitleText(
+                      heading: "Categories",
+                      buttonText: "View all",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CategoryPage()));
+                      },
+                    ),
+                    CarouselSlider.builder(
+                      itemCount: categoryIcons.length,
+                      itemBuilder: (context, index, realIndex) {
+                        return getCategory(index);
+                      },
+                      options: CarouselOptions(
+                        height: 100,
+                        aspectRatio: 15 / 6,
+                        viewportFraction: .30,
+                        initialPage: 0,
+                        enableInfiniteScroll: true,
+                        reverse: false,
+                        autoPlay: false,
+                        enlargeCenterPage: false,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        onPageChanged: (index, reason) {},
+                        scrollDirection: Axis.horizontal,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: const [
+                        Icon(Ionicons.bag_outline, size: 20,),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text(
+                          "Recommended For You",
+                          style: TextStyle(color: Colors.grey, fontSize: 17),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    GridView.builder(
+                      physics: ScrollPhysics(),
+                      shrinkWrap: true,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: .55,
+                      ),
+                      itemCount: 4,
+                      padding: EdgeInsets.zero,
+                      itemBuilder: (context, index) => getInstruments(index),
+                    ),
+                    TitleText(
+                      heading: "Top Brands",
+                      buttonText: "View all",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllBrands()));
+                      },
+                    ),
+                    // GridView.builder(
+                    //   physics: ScrollPhysics(),
+                    //   shrinkWrap: true,
+                    //   gridDelegate:
+                    //       const SliverGridDelegateWithFixedCrossAxisCount(
+                    //     crossAxisCount: 4,
+                    //     childAspectRatio: 1.20,
+                    //   ),
+                    //   itemCount: 8,
+                    //   padding: EdgeInsets.zero,
+                    //   itemBuilder: (context, index) => getTopBrand(index),
+                    // ),
+
+                    CarouselSlider.builder(
+                      itemCount: topImages.length,
+                      itemBuilder: (context, index, realIndex) {
+                        return getTopBrand(index);
+                      },
+                      options: CarouselOptions(
+                        height: 65,
+                        aspectRatio: 15 / 6,
+                        viewportFraction: .20,
+                        initialPage: 0,
+                        enableInfiniteScroll: true,
+                        reverse: false,
+                        autoPlay: false,
+                        enlargeCenterPage: false,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        onPageChanged: (index, reason) {},
+                        scrollDirection: Axis.horizontal,
+                      ),
+                    ),
+                    CarouselSlider.builder(
+                      itemCount: 3,
+                      itemBuilder: (context, index, realIndex) {
+                        return getBanner1(index);
+                      },
+                      options: CarouselOptions(
+                        height: MediaQuery.of(context).size.height / 3.5,
+                        aspectRatio: 15 / 6,
+                        viewportFraction: 1,
+                        initialPage: 0,
+                        enableInfiniteScroll: true,
+                        reverse: false,
+                        autoPlay: true,
+                        enlargeCenterPage: false,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        onPageChanged: (index, reason) {},
+                        scrollDirection: Axis.horizontal,
+                      ),
+                    ),
+                    TitleText(
+                      heading: "Top Selling",
+                      buttonText: "View all",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => TopSelling()));
+                      },
+                    ),
+                    CarouselSlider.builder(
+                      itemCount: 4,
+                      itemBuilder: (context, index, realIndex) {
+                        return getInstrumentsCopy(index);
+                      },
+                      options: CarouselOptions(
+                        height: 420,
+                        aspectRatio: 15/9,
+                        viewportFraction: .7,
+                        initialPage: 0,
+                        reverse: false,
+                        enlargeCenterPage: false,
+                        onPageChanged: (index, reason) {},
+                        scrollDirection: Axis.horizontal,
+                      ),
+                    ),
+                    // ListView.builder(
+                    //   physics: ScrollPhysics(),
+                    //   shrinkWrap: true,
+                    //   addSemanticIndexes: true,
+                    //   itemCount: 2,
+                    //   scrollDirection: Axis.horizontal,
+                    //   itemBuilder: (context, index) => getInstruments(index),
+                    // ),
+                    // GridView.builder(
+                    //   physics: ScrollPhysics(),
+                    //   shrinkWrap: true,
+                    //   gridDelegate:
+                    //       const SliverGridDelegateWithFixedCrossAxisCount(
+                    //     crossAxisCount: 2,
+                    //     childAspectRatio: .50,
+                    //   ),
+                    //   itemCount: 2,
+                    //   padding: EdgeInsets.zero,
+                    //   itemBuilder: (context, index) => getInstrumentsCopy(index),
+                    // ),
+                    TitleText(
+                      heading: "Trending Products",
+                      buttonText: "View all",
+                      onPressed: () {},
+                    ),
+                    CarouselSlider.builder(
+                      itemCount: 3,
+                      itemBuilder: (context, index, realIndex) {
+                        return getTrending(index);
+                      },
+                      options: CarouselOptions(
+                        height: 200,
+                        aspectRatio: 9,
+                        viewportFraction: .9,
+                        initialPage: 0,
+                        // enableInfiniteScroll: true,
+                        reverse: false,
+                        // autoPlay: true,
+                        enlargeCenterPage: false,
+                        autoPlayInterval: Duration(seconds: 3),
+                        autoPlayAnimationDuration: Duration(milliseconds: 800),
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        onPageChanged: (index, reason) {},
+                        scrollDirection: Axis.horizontal,
+                      ),
+                    ),
+                    TitleText(
+                      heading: "Instruments",
+                      buttonText: "View All",
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllInstruments()));
+                      },
+                    ),
+                    GridView.builder(
+                      physics: ScrollPhysics(),
+                      shrinkWrap: true,
+                      padding: EdgeInsets.zero,
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        childAspectRatio: .55,
+                      ),
+                      itemCount: 4,
+                      itemBuilder: (context, index) => getProducts(index),
+                    ),
+                  ]),
+                ),
               ],
             )),
           ],
         ));
+  }
+
+  Widget getInstrumentsCopy(int index1) {
+    return ProductTileCopy(
+      itemName: "PRODUCT ITEM NAME",
+      imagePath: images1[index1],
+      description: "Dummy Description for product card",
+      actualPrice: "₹ 20000",
+      discount: "20% Off",
+      totalPrice: "₹ 25000",
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ProductDetailsPage()));
+      },
+      onPressed: () {},
+    );
   }
 
   Widget getInstruments(int index1) {
@@ -586,7 +622,7 @@ class _HomepageState extends State<Homepage> {
       imagePath: images[index1],
       description: "Dummy Description for product card",
       actualPrice: "₹ 20000 ",
-      discount: "20% Discount",
+      discount: "20% Off",
       totalPrice: "₹ 25000",
       onTap: () {
         Navigator.push(context,
@@ -632,7 +668,7 @@ class _HomepageState extends State<Homepage> {
   Widget getTrending(int index) {
     return TrendingTile(
       itemName: "PRODUCT ITEM NAME",
-      discount: "15% Discount",
+      discount: "15% Off",
       description: "Dummy Description for product card",
       mrp: "₹ 25000",
       price: "₹ 20000",

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
-class CustomRow extends StatelessWidget {
-  const CustomRow({
-    required this.text,
-    this.icon,
-    super.key,
-    required this.onTap,
-  });
-
-  final String text;
-  final Icon? icon;
-
+class AccountCustomTile extends StatelessWidget {
+  final String title;
+  final IconData icon;
+  final Color? color; // Nullable Color
   final void Function()? onTap;
+
+  const AccountCustomTile({
+    Key? key,
+    required this.title,
+    required this.icon,
+    this.color,
+    required this.onTap,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,8 +20,8 @@ class CustomRow extends StatelessWidget {
       onTap: onTap,
       child: Padding(
         padding: const EdgeInsets.only(
-          left: 20,
-          right: 20,
+          left: 10,
+          right: 10,
         ),
         child: SizedBox(
           child: Padding(
@@ -28,10 +29,11 @@ class CustomRow extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(text),
-                Container(
-                  child: icon,
-                ),
+                Text(title),
+SizedBox(
+  width: 25,
+),
+                Icon(icon,color: Colors.grey..shade300,),
               ],
             ),
           ),

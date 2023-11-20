@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
+import 'package:ionicons/ionicons.dart';
 import '../../../theme/colors.dart';
 
-class CartTile extends StatelessWidget {
+class CartTile extends StatefulWidget {
   final String imagePath;
   final String itemName;
   final String description;
@@ -25,6 +24,19 @@ class CartTile extends StatelessWidget {
       required this.quantity});
 
   @override
+  State<CartTile> createState() => _CartTileState();
+}
+
+class _CartTileState extends State<CartTile> {
+
+  late int _selectedQuantity;
+
+  @override
+  void initState() {
+    super.initState();
+    _selectedQuantity = int.parse(widget.quantity);
+  }
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -33,8 +45,8 @@ class CartTile extends StatelessWidget {
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.shade500,
-                  blurRadius: 3,
+                  color: Colors.red.shade100,
+                  blurRadius: 1,
                 ),
               ],
               borderRadius: BorderRadius.all(Radius.circular(12))),
@@ -44,15 +56,15 @@ class CartTile extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   clipBehavior: Clip.antiAlias,
-                  width: 110,
-                  height: 80,
+                  width: 150,
+                  height: 110,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
                       Radius.circular(10),
                     ),
                     image: DecorationImage(
                         image: AssetImage(
-                          imagePath,
+                          widget.imagePath,
                         ),
                         fit: BoxFit.cover),
                   ),
@@ -64,79 +76,76 @@ class CartTile extends StatelessWidget {
               ),
               Expanded(
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:  [
-                      Text(itemName),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        description,
-                        style: TextStyle(fontSize: 12),
-                      ),
-                      Text(
-                        price,
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                          color: Color(ColorT.themeColor),
-                        ),
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(widget.itemName),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text(
+                    widget.description,
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                  Text(
+                    widget.price,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Color(ColorT.textColor),
+                    ),
+                  ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 30,
+                      decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
+                      child: Row(
                         children: [
-                          Container(
-                            height: 30,
-                            decoration:
-                            BoxDecoration(border: Border.all(color: Colors.grey)),
-                            child: Row(
-                              children: [
-                                Container(
-                                  color: Colors.grey,
-                                  child: IconButton(
-                                      onPressed: onPressedLess,
-                                      icon: Icon(
-                                        Iconsax.minus,
-                                        size: 15,
-                                      )),
-                                ),
-                                SizedBox(
-                                  width: 50,
-                                  child: Text(
-                                    quantity,
-                                    style:
-                                    TextStyle(fontSize: 13, color: Colors.black),
-                                    textAlign: TextAlign.center,
+                          Text(" Qty "),
+                          SizedBox(
+                            width: 50,
+                            child: Center(
+                              child: DropdownButton<int>(
+                                value: _selectedQuantity,
+                                items: List.generate(10, (index) => index + 1)
+                                    .map<DropdownMenuItem<int>>(
+                                      (value) => DropdownMenuItem<int>(
+                                    value: value,
+                                    child: Text(
+                                      value.toString(),
+                                      style: TextStyle(fontSize: 13),
+                                    ),
                                   ),
-                                ),
-                                Container(
-                                  color: Colors.grey,
-                                  child: IconButton(
-                                      onPressed: onPressedAdd,
-                                      icon: Icon(
-                                        Iconsax.add,
-                                        size: 15,
-                                      )),
                                 )
-                              ],
+                                    .toList(),
+                                onChanged: (value) {
+                                  setState(() {
+                                    _selectedQuantity = value!;
+                                  });
+                                },
+                              ),
                             ),
                           ),
-                          IconButton(
-                            onPressed: onPressed,
-                            icon: Icon(
-                              Iconsax.trash,
-                              size: 25,
-                              color: Colors.red,
-                            ),
-                          )
                         ],
                       ),
-                    ],
-                  )
+                    ),
+                    IconButton(
+                      alignment: Alignment.center,
+                      onPressed: widget.onPressed,
+                      icon: Icon(
+                        Ionicons.trash_outline,
+                        size: 18,
+                        color: Colors.red,
+                      ),
+                    )
+                ],
               )
-            ],
+  ]
+              )
+              ) ],
           )),
     );
   }

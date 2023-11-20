@@ -1,4 +1,5 @@
 import 'package:danthal/views/myorders/widgets/ordercard.dart';
+import 'package:danthal/views/myorders/widgets/ordercard_delivered.dart';
 import 'package:flutter/material.dart';
 
 class PsstOrders extends StatefulWidget {
@@ -34,7 +35,7 @@ class _PsstOrdersState extends State<PsstOrders> {
   }
 
   Widget getOrders(int index) {
-    return OrderCard(
+    return PastOrderCard(
         imagePath: images[index],
         onPressed: () {},
         date: "30 Dec 2022",

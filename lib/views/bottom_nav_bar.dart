@@ -1,8 +1,7 @@
-import 'package:circular_bottom_navigation/circular_bottom_navigation.dart';
-import 'package:circular_bottom_navigation/tab_item.dart';
+import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:danthal/views/profile_page/profile_page.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:ionicons/ionicons.dart';
 import '../theme/colors.dart';
 import 'cartpage/cart_page.dart';
 import 'category/category_page.dart';
@@ -48,94 +47,55 @@ class _BottomNavState extends State<BottomNav> {
         false;
   }
 
-  List<TabItem> tabItems = List.of([
-    TabItem(
-      Iconsax.home,
-      "Home",
-      Colors.indigo.shade50,
-      circleStrokeColor: Colors.white,
-      labelStyle: TextStyle(color: Color(ColorT.textColor,),
-      fontWeight: FontWeight.bold, letterSpacing: 1)
-    ),
-    TabItem(
-      Iconsax.category,
-      "Category",
-        Colors.indigo.shade50,
-        circleStrokeColor: Colors.white,
-        labelStyle: TextStyle(color: Color(ColorT.textColor,),
-            fontWeight: FontWeight.bold, letterSpacing: 1)
-    ),
-    TabItem(
-      Iconsax.note_2,
-      "My Orders",
-        Colors.indigo.shade50,
-        circleStrokeColor: Colors.white,
-        labelStyle: TextStyle(color: Color(ColorT.textColor,),
-            fontWeight: FontWeight.bold, letterSpacing: 1)
-    ),
-    TabItem(
-      Iconsax.profile_tick,
-      "Profile",
-        Colors.indigo.shade50,
-        circleStrokeColor: Colors.white,
-        labelStyle: TextStyle(color: Color(ColorT.textColor,),
-            fontWeight: FontWeight.bold, letterSpacing: 1)
-    ),
-    TabItem(
-      Iconsax.bag_24,
-      "My Cart",
-        Colors.indigo.shade50,
-        circleStrokeColor: Colors.white,
-        labelStyle: TextStyle(color: Color(ColorT.textColor,),
-            fontWeight: FontWeight.bold, letterSpacing: 1)
-    ),
-  ]);
+  final iconList = <IconData>[
+    Ionicons.home_outline,
+    Ionicons.grid_outline,
+    Ionicons.newspaper_outline,
+    Ionicons.person_outline,
+    Ionicons.bag_handle_outline,
+  ];
 
-  // final iconList = <IconData>[
-  //   Iconsax.home_15,
-  //   Iconsax.category,
-  //   Iconsax.note_2,
-  //   Iconsax.profile_tick5,
-  //   Iconsax.bag_24,
-  // ];
-  //
-  // List bottomLabels = ["Home","Category","My Orders","Profile","My Cart"];
-
-  late CircularBottomNavigationController _navigationController;
-
-  @override
-  void initState() {
-    super.initState();
-    _navigationController = CircularBottomNavigationController(selectIndex);
-  }
+  List bottomLabels = ["Home", "Category", "My Orders", "Profile", "My Cart"];
 
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: _onWillPop,
       child: Scaffold(
-        extendBody: true,
-        bottomNavigationBar: CircularBottomNavigation(
-          tabItems,
-          controller: _navigationController,
-          selectedPos: selectIndex,
-          animationDuration: Duration(milliseconds: 300),
-          barBackgroundColor: Colors.indigo.shade50,
-          barHeight: 65,
-          circleStrokeWidth: 3,
-          normalIconColor: Color(ColorT.textColor),
-          // iconsSize: 35,
-          selectedIconColor: Color(ColorT.textColor),
-          circleSize: 65,
-          // backgroundBoxShadow: <BoxShadow>[
-          //   BoxShadow(color: Colors.indigo.shade100, blurRadius: 3.0),
-          // ],
-          selectedCallback: (int? selectedPos) {
-            setState(() {
-              selectIndex = selectedPos ?? 0;
-              print(_navigationController.value);
-            });
+        extendBody: false,
+        bottomNavigationBar: AnimatedBottomNavigationBar.builder(
+          height: 60,
+          itemCount: iconList.length,
+          tabBuilder: (int index, bool isActive) {
+            final color =
+                isActive ? Color(ColorT.textColor) : Colors.grey.shade500;
+            final color1 =
+                isActive ? Color(ColorT.textColor) : Colors.grey.shade500;
+
+            // final color = isActive ? colors.activeNavigationBarColor : colors.notActiveNavigationBarColor;
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  iconList[index],
+                  size: 25,
+                  color: color,
+                ),
+                const SizedBox(height: 4),
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Text(
+                      bottomLabels[index],
+                      style: TextStyle(fontSize: 10, color: color1),
+                    ))
+              ],
+            );
           },
+          gapWidth: 0,
+          activeIndex: selectIndex,
+          splashSpeedInMilliseconds: 300,
+          onTap: (index) => setState(() => selectIndex = index),
         ),
         body: body.elementAt(selectIndex),
       ),

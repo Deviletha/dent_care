@@ -27,92 +27,100 @@ class OrderCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-          decoration: BoxDecoration(
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.shade500,
-                  blurRadius: 3,
-                ),
-              ],
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(12))),
-          child: ListTile(
-            leading: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                CircleAvatar(
-                    backgroundImage: AssetImage(
-                  imagePath,
-                )),
-                Text(
-                  date,
-                  style: TextStyle(fontSize: 12),
-                )
-              ],
-            ),
-            title: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      itemName,
-                      style: TextStyle(fontSize: 15),
-                    ),
-                    Text(
-                      description,
-                      style: TextStyle(fontSize: 12, color: Colors.grey),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    )
-                  ],
-                ),
-                IconButton(onPressed: onPressed, icon: Icon(Icons.menu))
-              ],
-            ),
-            subtitle: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text("OrderId: $orderId"), Text("Rs.$price")],
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      deliveryStatus,
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 30,
-                      child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: color,
-                            shadowColor: Colors.teal[300],
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+              // decoration: BoxDecoration(
+              //     boxShadow: [
+              //       BoxShadow(
+              //         color: Colors.grey.shade400,
+              //         blurRadius: 2,
+              //       ),
+              //     ],
+              //     color: Colors.white,
+              //     borderRadius: BorderRadius.all(Radius.circular(10))),
+              child:
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      clipBehavior: Clip.antiAlias,
+                      width: 120,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        image: DecorationImage(
+                            image: AssetImage(
+                              imagePath,
                             ),
-                          ),
-                          child: Text(buttonText)),
-                    )
-                  ],
-                )
-              ],
-            ),
-          )),
+                            fit: BoxFit.cover),
+                      ),
+                      // Image border// Image radius
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "OrderId: $orderId",
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 12, color: Colors.red),
+                        ),
+                        Text(
+                          itemName,
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          description,
+                          style: TextStyle(fontSize: 12, color: Colors.grey),
+                        ),
+                        Divider(),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              deliveryStatus,
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 30,
+                              child: ElevatedButton(
+                                  onPressed: () {},
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: color,
+                                    shadowColor: Colors.teal[300],
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                  ),
+                                  child: Text(buttonText)),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              )
+        ),
+        ),
+        Divider(
+          thickness: 2,
+        )
+      ],
     );
   }
 }

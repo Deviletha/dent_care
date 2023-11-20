@@ -1,8 +1,7 @@
 import 'package:danthal/views/myorders/past_orders.dart';
 import 'package:danthal/views/myorders/upcoming_orders.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
+import 'package:ionicons/ionicons.dart';
 import '../../theme/colors.dart';
 import '../faq_page.dart';
 import '../privacy&terms.dart';
@@ -70,7 +69,7 @@ class _MyOrdersState extends State<MyOrders> {
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.home,
+                  Ionicons.home_outline,
                   color: Colors.black,
                 ),
                 title: Text("Shop By Medicine"),
@@ -81,14 +80,14 @@ class _MyOrdersState extends State<MyOrders> {
                       MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
                 leading: Icon(
-                  Iconsax.profile_circle,
+                  Ionicons.person_outline,
                   color: Colors.black,
                 ),
                 title: Text("My Profile"),
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.discount_circle,
+                  Ionicons.pricetag_outline,
                   color: Colors.black,
                 ),
                 title: Text("Offers and Discounts"),
@@ -99,7 +98,7 @@ class _MyOrdersState extends State<MyOrders> {
                       MaterialPageRoute(builder: (context) => FAQPage()));
                 },
                 leading: Icon(
-                  Iconsax.info_circle,
+                  Ionicons.help_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("FAQ's and Help"),
@@ -112,14 +111,14 @@ class _MyOrdersState extends State<MyOrders> {
                           builder: (context) => PrivacyAndTermsPage()));
                 },
                 leading: Icon(
-                  Iconsax.information,
+                  Ionicons.alert_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("Privacy and Terms"),
               ),
               ListTile(
                 leading: Icon(
-                  Iconsax.info_circle5,
+                  Ionicons.information_circle_outline,
                   color: Colors.black,
                 ),
                 title: Text("About Us"),
@@ -130,7 +129,7 @@ class _MyOrdersState extends State<MyOrders> {
                       MaterialPageRoute(builder: (context) => LoginPage()));
                 },
                 leading: Icon(
-                  Iconsax.logout,
+                  Ionicons.log_out_outline,
                   color: Colors.black,
                 ),
                 title: Text("Log Out"),

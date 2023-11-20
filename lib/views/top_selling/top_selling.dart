@@ -1,8 +1,5 @@
 import 'package:danthal/views/top_selling/widgets/all_product_card.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
-import '../../theme/colors.dart';
 
 class TopSelling extends StatefulWidget {
   const TopSelling({super.key});

@@ -30,11 +30,10 @@ class TrendingTile extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               color: Colors.grey.shade500,
-              blurRadius: 3,
+              blurRadius: 1,
             ),
           ],
           color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
         ),
         height: 200,
         width: 500,

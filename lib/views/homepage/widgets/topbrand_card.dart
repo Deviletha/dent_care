@@ -11,30 +11,25 @@ class TopBrandTile extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: InkWell(
         onTap: onTap,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Container(
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    blurStyle: BlurStyle.outer,
-                    spreadRadius: 3,
-                    color: Colors.grey.shade500,
-                    blurRadius: 10,
-                  ),
-                ],
-                borderRadius: BorderRadius.all(Radius.circular(360)),
+        child: Container(
+          height: 50,
+          width: 50,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                blurStyle: BlurStyle.outer,
+                spreadRadius: 2,
+                color: Colors.grey.shade300,
+                blurRadius: 10,
               ),
-              clipBehavior: Clip.antiAlias,
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ],
+            ],
+            borderRadius: BorderRadius.all(Radius.circular(360)),
+          ),
+          clipBehavior: Clip.antiAlias,
+          child: Image.asset(
+            imagePath,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

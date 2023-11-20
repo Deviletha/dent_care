@@ -2,10 +2,10 @@ import 'package:danthal/views/profile_page/address_page.dart';
 import 'package:danthal/views/profile_page/edit_profile.dart';
 import 'package:danthal/views/profile_page/rewards_page.dart';
 import 'package:danthal/views/profile_page/setting.dart';
+import 'package:danthal/views/profile_page/widgets/accounts_custom_card.dart';
 import 'package:danthal/views/profile_page/wishlist_page.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
+import 'package:ionicons/ionicons.dart';
 import '../../Components/custom_row.dart';
 import '../../theme/colors.dart';
 import '../faq_page.dart';
@@ -48,27 +48,25 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             ListTile(
               leading: Icon(
-                Iconsax.home,
+                Ionicons.home_outline,
                 color: Colors.black,
               ),
               title: Text("Shop By Medicine"),
             ),
             ListTile(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MyOrders()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyOrders()));
               },
               leading: Icon(
-                Iconsax.shopping_bag,
+                Ionicons.bag_outline,
                 color: Colors.black,
               ),
               title: Text("My Order"),
             ),
             ListTile(
               leading: Icon(
-                Iconsax.discount_circle,
+                Ionicons.pricetag_outline,
                 color: Colors.black,
               ),
               title: Text("Offers and Discounts"),
@@ -79,7 +77,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     MaterialPageRoute(builder: (context) => FAQPage()));
               },
               leading: Icon(
-                Iconsax.info_circle,
+                Ionicons.help_circle_outline,
                 color: Colors.black,
               ),
               title: Text("FAQ's and Help"),
@@ -92,14 +90,14 @@ class _ProfilePageState extends State<ProfilePage> {
                         builder: (context) => PrivacyAndTermsPage()));
               },
               leading: Icon(
-                Iconsax.information,
+                Ionicons.alert_circle_outline,
                 color: Colors.black,
               ),
               title: Text("Privacy and Terms"),
             ),
             ListTile(
               leading: Icon(
-                Iconsax.info_circle5,
+                Ionicons.information_circle_outline,
                 color: Colors.black,
               ),
               title: Text("About Us"),
@@ -110,7 +108,7 @@ class _ProfilePageState extends State<ProfilePage> {
                     MaterialPageRoute(builder: (context) => LoginPage()));
               },
               leading: Icon(
-                Iconsax.logout,
+                Ionicons.log_out_outline,
                 color: Colors.black,
               ),
               title: Text("Log Out"),
@@ -119,126 +117,204 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
       endDrawerEnableOpenDragGesture: true,
-      body: Container(
-        decoration: BoxDecoration(color: Colors.grey.shade300),
-        child: ListView(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(10),
-              child: ListTile(
-                leading: CircleAvatar(
-                  radius: 50,
-                  child: Image.asset("assets/profile_avatar.png"),
-                ),
-                title: Text(
-                  "User Name",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                ),
-                subtitle: Text("e mail id"),
+      body: ListView(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: ListTile(
+              leading: CircleAvatar(
+                radius: 50,
+                child: Image.asset("assets/profile_avatar.png"),
               ),
+              title: Text(
+                "User Name",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              subtitle: Text("e mail id"),
             ),
-            Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30)),
-                  color: Colors.white),
-              child: Column(
-                children: [
-                  CustomRow(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => EditProfile()));
-                    },
-
-                    icon: Icon(Iconsax.edit),
-                    text: "My Profile",
-                  ),
-                  CustomRow(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AddressPage()));
-                    },
-
-                    icon: Icon(Iconsax.location),
-                    text: "Manage Address",
-                  ),
-                  CustomRow(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => WishlistPage()));
-                    },
-
-                    icon: Icon(Iconsax.save_2),
-                    text: "My Wishlist",
-                  ),
-                  CustomRow(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => RewardPage()));
-                    },
-
-                    icon: Icon(Iconsax.money),
-                    text: "My Rewards",
-                  ),
-                  CustomRow(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => SettingPage()));
-                    },
-
-                    icon: Icon(Iconsax.setting),
-                    text: "Settings",
-                  ),
-                  Divider(
-                    thickness: 2,
-                  ),
-                  CustomRow(
-                    onTap: () {},
-
-                    icon: Icon(Iconsax.message),
-                    text: "Help",
-                  ),
-                  CustomRow(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
-                    },
-
-                    icon: Icon(Iconsax.logout),
-                    text: "Logout",
-                  ),
-                  //   Padding(
-                  //       padding: const EdgeInsets.all(8.0),
-                  //       child: ElevatedButton(onPressed: () {},
-                  //         style: ElevatedButton.styleFrom(
-                  //             backgroundColor: Color(ColorT.themeColor),
-                  //         shadowColor: Colors.teal[300],
-                  //       ),
-                  //       child:
-                  //       Row(
-                  //         children: [
-                  //           Icon(Iconsax.logout),
-                  //           SizedBox(width: 10,),
-                  //           Text("Logout")
-                  //         ],
-                  //       )),
-                  // )
-                ],
-              ),
-            )
-          ],
-        ),
+          ),
+          // Padding(
+          //   padding: const EdgeInsets.only(left: 25, top: 10),
+          //   child: Text(
+          //     "Accounts",
+          //     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+          //   ),
+          // ),
+          // Divider(
+          //   thickness: 2,
+          // ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AccountCustomTile(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => EditProfile()));
+                      },
+                      icon: Ionicons.create_outline,
+                      title: "My Profile",
+                    ),
+                    AccountCustomTile(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => MyOrders()));
+                      },
+                      icon: Ionicons.newspaper_outline,
+                      title: "My Orders",
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Container(
+                      height: 23,
+                      width: 1,
+                      color: Colors.grey.shade500,
+                    ),
+                    SizedBox(
+                      height: 40,
+                    ),
+                    Container(
+                      height: 23,
+                      width: 1,
+                      color: Colors.grey.shade500,
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    AccountCustomTile(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => WishlistPage()));
+                      },
+                      icon: Ionicons.bookmark_outline,
+                      title: "My Wishlist",
+                    ),
+                    AccountCustomTile(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => RewardPage()));
+                      },
+                      icon: Ionicons.diamond_outline,
+                      title: "My Rewards",
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 50, right: 50),
+            child: Divider(
+              thickness: 2,
+            ),
+          ),
+          CustomRow(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AddressPage()));
+            },
+            icon: Icon(
+              Ionicons.location_outline,
+              color: Colors.grey,
+            ),
+            text: "Manage Address",
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          CustomRow(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingPage()));
+            },
+            icon: Icon(
+              Ionicons.settings_outline,
+              color: Colors.grey,
+            ),
+            text: "Settings",
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          CustomRow(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingPage()));
+            },
+            icon: Icon(
+              Ionicons.alert_circle_outline,
+              color: Colors.grey,
+            ),
+            text: "Privacy Info",
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          CustomRow(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => SettingPage()));
+            },
+            icon: Icon(
+              Ionicons.shield_checkmark_outline,
+              color: Colors.grey,
+            ),
+            text: "Terms & Conditions",
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          CustomRow(
+            onTap: () {},
+            icon: Icon(
+              Ionicons.chatbox_ellipses_outline,
+              color: Colors.grey,
+            ),
+            text: "Help & Support",
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          CustomRow(
+            onTap: () {},
+            icon: Icon(
+              Ionicons.compass_outline,
+              color: Colors.grey,
+            ),
+            text: "About Us",
+          ),
+          Divider(
+            thickness: 2,
+          ),
+          CustomRow(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginPage()));
+            },
+            icon: Icon(
+              Ionicons.log_out_outline,
+              color: Colors.grey,
+            ),
+            text: "Logout",
+          ),
+          Divider(
+            thickness: 2,
+          ),
+        ],
       ),
     );
   }

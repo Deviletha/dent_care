@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class Articles extends StatefulWidget {
   const Articles({super.key});
@@ -64,7 +63,7 @@ class _ArticlesState extends State<Articles> {
 
                   },
                   icon: Icon(
-                    Iconsax.heart,
+                    Icons.favorite_border,
                   )),
             ),
             Text("Best Selling")

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
-
+import 'package:ionicons/ionicons.dart';
 import '../../../theme/colors.dart';
 
 class AllProductCard extends StatelessWidget {
@@ -118,7 +117,7 @@ class AllProductCard extends StatelessWidget {
                       IconButton(
                         onPressed: onPressed,
                         icon: Icon(
-                          Iconsax.heart,
+                          Ionicons.heart_outline,
                           color: Colors.black,
                         ),
                       )

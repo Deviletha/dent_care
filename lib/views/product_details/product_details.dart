@@ -1,6 +1,5 @@
 import 'package:danthal/views/product_details/widgets/product_detail_card.dart';
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
 class ProductDetailsPage extends StatefulWidget {
   const ProductDetailsPage({super.key});
@@ -14,7 +13,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Vendor Details"),
+        title: Text("Product Details"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
