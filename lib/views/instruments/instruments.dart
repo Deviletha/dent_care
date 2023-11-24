@@ -11,11 +11,11 @@ class AllInstruments extends StatefulWidget {
 class _AllInstrumentsState extends State<AllInstruments> {
 
   List<String> images = [
-    "assets/7-Common-Plastic-Dental-Equipment-1200x900.jpg",
+    "assets/instrument.jpg",
     "assets/dental-tools-1.jpg",
     "assets/dentist-equipment.jpg",
     "assets/treatment-units.jpg",
-    "assets/7-Common-Plastic-Dental-Equipment-1200x900.jpg",
+    "assets/instrument.jpg",
     "assets/dental-tools-1.jpg",
     "assets/dentist-equipment.jpg",
     "assets/treatment-units.jpg",

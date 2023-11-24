@@ -27,12 +27,13 @@ class _CategoryPageState extends State<CategoryPage> {
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/images.png",
-    "assets/7-Common-Plastic-Dental-Equipment-1200x900.jpg",
+    "assets/instrument.jpg",
     "assets/dental-tools-1.jpg",
     "assets/dentist-equipment.jpg",
     "assets/treatment-units.jpg",
-    "assets/mouthwash.jpg",
+    "assets/topseell.jpg",
     "assets/images.png",
+    "assets/dent prroductt.jpg"
   ];
 
   List<String> categoryNames = [
@@ -50,7 +51,8 @@ class _CategoryPageState extends State<CategoryPage> {
     "Restorative",
     "Operatory Products",
     "Infection Control",
-    "Preventive"
+    "Preventive",
+    "Digital Equipment",
   ];
 
   @override
@@ -170,7 +172,7 @@ class _CategoryPageState extends State<CategoryPage> {
           crossAxisCount: 2,
           childAspectRatio: 2.5,
         ),
-        itemCount: 15,
+        itemCount: images.length,
         itemBuilder: (context, index) => getCategory(index),
       ),
     );

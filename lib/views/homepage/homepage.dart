@@ -32,7 +32,7 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   List<String> images = [
-    "assets/7-Common-Plastic-Dental-Equipment-1200x900.jpg",
+    "assets/instrument.jpg",
     "assets/dental-tools-1.jpg",
     "assets/dentist-equipment.jpg",
     "assets/treatment-units.jpg"
@@ -56,6 +56,7 @@ class _HomepageState extends State<Homepage> {
   ];
 
   List<String> images1 = [
+    "assets/topseell.jpg",
     "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
@@ -74,14 +75,14 @@ class _HomepageState extends State<Homepage> {
     "assets/colgate.png"
   ];
   List<String> categoryIcons = [
-    "assets/31699.png",
-    "assets/1092435-200.png",
-    "assets/2905774.png",
-    "assets/5893759.png",
-    "assets/31699.png",
-    "assets/1092435-200.png",
-    "assets/2905774.png",
-    "assets/5893759.png"
+    "assets/catlogo.png",
+    "assets/catlogo1.png",
+    "assets/catlogo2.png",
+    "assets/catlogo3.png",
+    "assets/catlogo.png",
+    "assets/catlogo1.png",
+    "assets/catlogo2.png",
+    "assets/catlogo3.png"
   ];
   List<String> topNames = [
     "Kerr",
@@ -105,7 +106,7 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+        backgroundColor: Colors.white,
         endDrawer: Drawer(
           child: Column(
             children: [
@@ -392,7 +393,10 @@ class _HomepageState extends State<Homepage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: const [
-                        Icon(Ionicons.bag_outline, size: 20,),
+                        Icon(
+                          Ionicons.bag_outline,
+                          size: 20,
+                        ),
                         SizedBox(
                           width: 10,
                         ),
@@ -439,7 +443,6 @@ class _HomepageState extends State<Homepage> {
                     //   padding: EdgeInsets.zero,
                     //   itemBuilder: (context, index) => getTopBrand(index),
                     // ),
-
                     CarouselSlider.builder(
                       itemCount: topImages.length,
                       itemBuilder: (context, index, realIndex) {
@@ -460,6 +463,9 @@ class _HomepageState extends State<Homepage> {
                         onPageChanged: (index, reason) {},
                         scrollDirection: Axis.horizontal,
                       ),
+                    ),
+                    SizedBox(
+                      height: 10,
                     ),
                     CarouselSlider.builder(
                       itemCount: 3,
@@ -499,7 +505,7 @@ class _HomepageState extends State<Homepage> {
                       },
                       options: CarouselOptions(
                         height: 420,
-                        aspectRatio: 15/9,
+                        aspectRatio: 15 / 9,
                         viewportFraction: .7,
                         initialPage: 0,
                         reverse: false,

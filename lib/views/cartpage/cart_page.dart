@@ -1,5 +1,6 @@
 import 'package:danthal/views/cartpage/widgets/cartcard.dart';
 import 'package:danthal/views/myorders/orders.dart';
+import 'package:danthal/views/placeorder/place_order_page.dart';
 import 'package:danthal/views/profile_page/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
@@ -258,7 +259,10 @@ class _CartPageState extends State<CartPage> {
                   padding: const EdgeInsets.only(top: 8.0, bottom: 8, left: 15, right: 15),
                   child: Text("Place Order"),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => PlaceOrder()));
+                },
               ),
             ],
           ),

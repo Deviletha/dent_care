@@ -2,6 +2,7 @@ import 'package:danthal/theme/colors.dart';
 import 'package:danthal/views/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -25,10 +26,11 @@ ThemeData _buildTheme(brightness) {
   var baseTheme = ThemeData(brightness: brightness);
 
   return baseTheme.copyWith(
-      // textTheme: GoogleFonts.robotoCondensedTextTheme(baseTheme.textTheme),
+      textTheme: GoogleFonts.petronaTextTheme(baseTheme.textTheme),
       appBarTheme: AppBarTheme(
         backgroundColor: Color(ColorT.themeColor),
         elevation: 0,
+        centerTitle: false,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Color(ColorT.themeColor),
           statusBarIconBrightness: Brightness.light,

@@ -29,30 +29,39 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 discount: "20",
                onPressed: (){},
               onPressedCart: (){},
+              onPressedBuyNow: (){},
 
             ),
             Divider(
               thickness: 2,
             ),
-            Text(
-              "Manufacturer's Details",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text("1. ABC Medicals"),
-            SizedBox(
-              height: 10,
-            ),
-            Text(
-              "Packer's Details",
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Text("1. ABC Medicals")
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start ,
+                children: const [
+                  Text(
+                    "Manufacturer's Details",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text("1. ABC Medicals"),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Packer's Details",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Text("1. ABC Medicals")
+                ],
+              ),
+            )
           ],
         ),
       ),

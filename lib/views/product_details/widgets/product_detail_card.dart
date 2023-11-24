@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
+import '../../../theme/colors.dart';
+
 class ProductDetailCard extends StatelessWidget {
   final String imagePath;
   final String itemName;
@@ -9,8 +11,20 @@ class ProductDetailCard extends StatelessWidget {
   final String offerPrice;
   final String discount;
   final void Function()? onPressed;
+  final void Function()? onPressedBuyNow;
   final void Function()? onPressedCart;
-  const ProductDetailCard({super.key, required this.imagePath, required this.itemName, required this.description, required this.actualPrice, required this.offerPrice, required this.discount, this.onPressed, this.onPressedCart});
+
+  const ProductDetailCard(
+      {super.key,
+      required this.imagePath,
+      required this.itemName,
+      required this.description,
+      required this.actualPrice,
+      required this.offerPrice,
+      required this.discount,
+      this.onPressed,
+      this.onPressedCart,
+      this.onPressedBuyNow});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +38,7 @@ class ProductDetailCard extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(10))),
             clipBehavior: Clip.antiAlias,
             width: double.infinity,
-            height: 150,
+            height: 250,
             child: Image.asset(
               imagePath,
               height: 60,
@@ -42,15 +56,13 @@ class ProductDetailCard extends StatelessWidget {
                 children: [
                   Text(
                     itemName,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
                   ),
                   SizedBox(
                     height: 5,
                   ),
                   Text(description,
-                      style: TextStyle(
-                          fontSize: 11,
-                          color: Colors.grey)),
+                      style: TextStyle(fontSize: 14, color: Colors.grey.shade700)),
                   SizedBox(
                     height: 5,
                   ),
@@ -59,7 +71,7 @@ class ProductDetailCard extends StatelessWidget {
                       Text("₹ $offerPrice",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 15,
+                              fontSize: 16,
                               color: Colors.red)),
                       SizedBox(
                         width: 10,
@@ -67,7 +79,7 @@ class ProductDetailCard extends StatelessWidget {
                       Text(actualPrice,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 15,
+                            fontSize: 16,
                             color: Colors.grey,
                             decoration: TextDecoration.lineThrough,
                             decorationStyle: TextDecorationStyle.solid,
@@ -84,14 +96,42 @@ class ProductDetailCard extends StatelessWidget {
                   )
                 ],
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  IconButton(onPressed: onPressed, icon: Icon(Ionicons.heart_outline,)),
-                  IconButton(onPressed: onPressedCart, icon: Icon(Ionicons.bag_add_outline))
-                ],
-              )
-
+              IconButton(
+                  onPressed: onPressed,
+                  icon: Icon(
+                    Ionicons.heart_outline,
+                    size: 30,
+                  )),
+            ],
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                  color: Color(ColorT.redColor),
+                  height: 50,
+                  width: MediaQuery.of(context).size.width/2.5,
+                  child: TextButton(
+                      onPressed: onPressedCart,
+                      child: Text(
+                        "ADD TO CART",
+                        style: TextStyle( fontSize: 16,color: Colors.white, fontWeight: FontWeight.bold ),
+                      ))),
+              Container(
+                  color: Color(ColorT.themeColor),
+                  height: 50,
+                  width: MediaQuery.of(context).size.width/2.5,
+                  child: TextButton(
+                      onPressed: onPressedBuyNow,
+                      child: Text(
+                        "BUY NOW",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,fontWeight: FontWeight.bold),
+                      ))),
             ],
           )
         ],
