@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-
-import '../homepage/widgets/banner.dart';
 import 'change_address.dart';
 
 class PlaceOrder extends StatefulWidget {

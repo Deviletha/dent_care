@@ -31,7 +31,7 @@ class _CategoryPageState extends State<CategoryPage> {
     "assets/dental-tools-1.jpg",
     "assets/dentist-equipment.jpg",
     "assets/treatment-units.jpg",
-    "assets/topseell.jpg",
+    "assets/topsell.jpg",
     "assets/images.png",
     "assets/dent prroductt.jpg"
   ];

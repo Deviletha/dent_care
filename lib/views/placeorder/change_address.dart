@@ -11,9 +11,8 @@ class DeliveryAddressPage extends StatefulWidget {
 }
 
 class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
-  List<String> addressType = [
-    "Home","Work"
-  ];
+  List<String> addressType = ["Home", "Work"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +30,7 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: 2,
-                  itemBuilder: (context, index) =>
-                      getAddressRow(index),
+                  itemBuilder: (context, index) => getAddressRow(index),
                 ),
               ),
             ],
@@ -60,6 +58,7 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
       ),
     );
   }
+
   Widget getAddressRow(int index) {
     return Card(
       child: Padding(
@@ -71,20 +70,12 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: const [
-                // addressList == null
-                //     ? Shimmer.fromColors(
-                //   baseColor: Colors.grey[300]!,
-                //   highlightColor: Colors.grey[100]!,
-                //   child: Container(
-                //     width: double.infinity,
-                //     height: 20,
-                //     color: Colors.white,
-                //   ),
-                // )
-                //     :
                 Text(
                   "Test Address",
-                  style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold,),
+                  style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 SizedBox(
                   height: 5,
@@ -99,23 +90,23 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
                   height: 5,
                 ),
                 Text(
-                  "City",
-                  // style: TextStyle(fontWeight: FontWeight.bold),
+                  "Landmark",
+                  // style: TextStyle(
+                  //   fontWeight: FontWeight.bold,
+                  // ),
                 ),
                 SizedBox(
                   height: 5,
                 ),
-                Text(
-                  "Pin code: 657489",
-                  // style: TextStyle(fontWeight: FontWeight.bold),
-                ),
+                Text("City"),
                 SizedBox(
                   height: 5,
                 ),
-                Text(
-                  "State",
-                  // style: TextStyle(fontWeight: FontWeight.bold),
+                Text("Pin code: 657489"),
+                SizedBox(
+                  height: 5,
                 ),
+                Text("State"),
               ],
             ),
             Column(
@@ -127,15 +118,78 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
                     child: Text(addressType[index]),
                   ),
                 ),
-                IconButton(onPressed: (){}, icon: Icon(
-                  Ionicons.pencil,
-                  color: Colors.red,
-                )),
+                IconButton(
+                  onPressed: () {
+                    showEditBottomSheet(context);
+                  },
+                  icon: Icon(
+                    Ionicons.pencil,
+                    color: Colors.red,
+                  ),
+                ),
               ],
             )
           ],
         ),
       ),
+    );
+  }
+
+  void showEditBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Edit Address",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16),
+              // Add form fields for editing the address here
+              // For example:
+              TextFormField(
+                decoration: InputDecoration(labelText: 'New Address'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Phone'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Landmark'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'City'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Pin code'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'State'),
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  // Implement the logic to update the address
+                  Navigator.pop(context); // Close the bottom sheet
+                },
+                child: Text("Save Changes"),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

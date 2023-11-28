@@ -40,12 +40,7 @@ class _AddressPageState extends State<AddressPage> {
         padding: const EdgeInsets.all(8.0),
         child: ElevatedButton(
           onPressed: () {
-            // Navigator.push(
-            //   context,
-            //   MaterialPageRoute(builder: (context) {
-            //     return AddAddress();
-            //   }),
-            // );
+            showEditBottomSheet(context);
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(ColorT.themeColor),
@@ -103,6 +98,13 @@ class _AddressPageState extends State<AddressPage> {
                   height: 5,
                 ),
                 Text(
+                  "Landmark",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 5,
+                ),
+                Text(
                   "Pin code: 657489",
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
@@ -115,13 +117,72 @@ class _AddressPageState extends State<AddressPage> {
                 ),
               ],
             ),
-            IconButton(onPressed: (){}, icon: Icon(
+            IconButton(onPressed: (){
+
+            }, icon: Icon(
               Ionicons.location_outline,
               color: Colors.red,
             ))
           ],
         ),
       ),
+    );
+  }
+  void showEditBottomSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return SingleChildScrollView(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Text(
+                "Add New Address",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 16),
+              // Add form fields for editing the address here
+              // For example:
+              TextFormField(
+                decoration: InputDecoration(labelText: 'New Address'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Phone'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Landmark'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'City'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'Pin code'),
+              ),
+              SizedBox(height: 16),
+              TextFormField(
+                decoration: InputDecoration(labelText: 'State'),
+              ),
+              SizedBox(height: 16),
+              ElevatedButton(
+                onPressed: () {
+                  // Implement the logic to update the address
+                  Navigator.pop(context); // Close the bottom sheet
+                },
+                child: Text("Save Changes"),
+              ),
+            ],
+          ),
+        );
+      },
     );
   }
 }

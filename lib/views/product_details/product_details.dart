@@ -1,6 +1,8 @@
 import 'package:danthal/views/product_details/widgets/product_detail_card.dart';
 import 'package:flutter/material.dart';
 
+import '../../theme/colors.dart';
+
 class ProductDetailsPage extends StatefulWidget {
   const ProductDetailsPage({super.key});
 
@@ -28,9 +30,6 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 offerPrice: "160",
                 discount: "20",
                onPressed: (){},
-              onPressedCart: (){},
-              onPressedBuyNow: (){},
-
             ),
             Divider(
               thickness: 2,
@@ -62,6 +61,36 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ],
               ),
             )
+          ],
+        ),
+      ),
+      bottomNavigationBar:  Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+                color: Color(ColorT.redColor),
+                height: 60,
+                width: MediaQuery.of(context).size.width/2.5,
+                child: TextButton(
+                    onPressed: (){},
+                    child: Text(
+                      "ADD TO CART",
+                      style: TextStyle( fontSize: 16,color: Colors.white, fontWeight: FontWeight.bold ),
+                    ))),
+            Container(
+                color: Color(ColorT.themeColor),
+                height: 60,
+                width: MediaQuery.of(context).size.width/2.5,
+                child: TextButton(
+                    onPressed: (){},
+                    child: Text(
+                      "BUY NOW",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,fontWeight: FontWeight.bold),
+                    ))),
           ],
         ),
       ),

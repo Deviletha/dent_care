@@ -64,44 +64,38 @@ class ProductTile extends StatelessWidget {
                         SizedBox(
                           height: 5,
                         ),
-                        Text(
-                          description,
-                          maxLines: 2,
-                          style: TextStyle(
-                              fontSize: 12,),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
+                        // Text(
+                        //   description,
+                        //   maxLines: 2,
+                        //   style: TextStyle(
+                        //       fontSize: 12,),
+                        // ),
+                        // SizedBox(
+                        //   height: 5,
+                        // ),
                       ],
                     ),
                     Text(
                       discount,
                       style: TextStyle(fontSize: 13, color: Colors.green),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          totalPrice,
-                          style: TextStyle(
-                            decoration: TextDecoration.lineThrough,
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          actualPrice,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(ColorT.textColor),
-                          ),
-                        ),
-                      ],
+                    SizedBox(height: 8,),
+                Text(
+                      totalPrice,
+                      style: TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    SizedBox(height: 8,),
+                    Text(
+                      actualPrice,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Color(ColorT.textColor),
+                      ),
                     ),
                   ],
                 ),
