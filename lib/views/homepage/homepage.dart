@@ -116,7 +116,7 @@ class _HomepageState extends State<Homepage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           toolbarHeight: 70,
-          backgroundColor: Colors.transparent,
+          // backgroundColor: Colors.transparent,
           leading: Padding(
             padding: const EdgeInsets.all(8.0),
             child: InkWell(
@@ -135,22 +135,25 @@ class _HomepageState extends State<Homepage> {
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => LoginPage()));
                 },
-                icon: Icon(Ionicons.search_outline,
-                    color: Color(ColorT.themeColor))),
+                icon: Icon(Ionicons.search_outline, color: Colors.white
+                    // Color(ColorT.themeColor)
+                    )),
             IconButton(
                 onPressed: () {
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (context) => LoginPage()));
                 },
-                icon: Icon(Ionicons.notifications_outline,
-                    color: Color(ColorT.themeColor))),
+                icon: Icon(Ionicons.notifications_outline, color: Colors.white
+                    // Color(ColorT.themeColor)
+                    )),
             IconButton(
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => CartPage()));
                 },
-                icon: Icon(Ionicons.bag_outline,
-                    color: Color(ColorT.themeColor))),
+                icon: Icon(Ionicons.bag_outline, color: Colors.white
+                    // Color(ColorT.themeColor)
+                    )),
           ],
         ),
         endDrawer: Drawer(
@@ -256,23 +259,37 @@ class _HomepageState extends State<Homepage> {
         bottomSheet: CustomScrollView(
           slivers: [
             SliverAppBar(
-              pinned: true,
+              pinned: false,
               floating: true,
               toolbarHeight: 200,
               leadingWidth: 500,
               leading: Container(
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(
-                          "assets/banner3.jpg",
-                        ),
-                        fit: BoxFit.cover)),
-                child: Center(
-                    child: Text(
-                  "Flat 12% discount onn your first purchase",
-                  style: TextStyle(
+                    // image: DecorationImage(
+                    //     image: AssetImage(
+                    //       "assets/banner3.jpg",
+                    //     ),
+                    //     fit: BoxFit.cover)
+                    color: Color(ColorT.themeColor)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: const [
+                    Text(
+                      "Flat 12% discount on your first purchase",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, letterSpacing: 1.5),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "And Free shipping",
+                      style: TextStyle(
                       fontWeight: FontWeight.bold, letterSpacing: 1.5),
-                )),
+                    ),
+                  ],
+                ),
               ),
               bottom: AppBar(
                 toolbarHeight: 0,
@@ -313,6 +330,17 @@ class _HomepageState extends State<Homepage> {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(children: [
+                      Center(
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Colors.grey,
+                            borderRadius: BorderRadius.all(Radius.circular(15))
+                          ),
+
+                          height: 5,
+                          width: 30,
+                        ),
+                      ),
                       SizedBox(
                         height: 10,
                       ),
@@ -385,7 +413,7 @@ class _HomepageState extends State<Homepage> {
                           ),
                           Text(
                             "Recommended For You",
-                            style: TextStyle(color: Colors.grey, fontSize: 17),
+                            style: TextStyle(color: Colors.black, fontSize: 17),
                           )
                         ],
                       ),
@@ -398,7 +426,7 @@ class _HomepageState extends State<Homepage> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: .55,
+                          childAspectRatio: .65,
                         ),
                         itemCount: 4,
                         padding: EdgeInsets.zero,
@@ -425,7 +453,7 @@ class _HomepageState extends State<Homepage> {
                           enlargeCenterPage: false,
                           autoPlayInterval: Duration(seconds: 3),
                           autoPlayAnimationDuration:
-                          Duration(milliseconds: 800),
+                              Duration(milliseconds: 800),
                           autoPlayCurve: Curves.fastOutSlowIn,
                           onPageChanged: (index, reason) {},
                           scrollDirection: Axis.horizontal,
@@ -590,7 +618,7 @@ class _HomepageState extends State<Homepage> {
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: .55,
+                          childAspectRatio: .65,
                         ),
                         itemCount: 4,
                         itemBuilder: (context, index) => getProducts(index),
@@ -606,7 +634,7 @@ class _HomepageState extends State<Homepage> {
 
   Widget getInstrumentsCopy(int index1) {
     return ProductTileCopy(
-      itemName: "PRODUCT ITEM NAME",
+      itemName: "PRODUCT NAME",
       imagePath: images1[index1],
       description: "Dummy Description for product card",
       actualPrice: "₹ 20000",
@@ -622,11 +650,11 @@ class _HomepageState extends State<Homepage> {
 
   Widget getInstruments(int index1) {
     return ProductTile(
-      itemName: "PRODUCT ITEM NAME",
+      itemName: "PRODUCT NAME",
       imagePath: images1[index1],
       description: "Dummy Description for product card",
       actualPrice: "₹ 20000",
-      discount: "20% Discount",
+      discount: "20% Off",
       totalPrice: "₹ 25000",
       onTap: () {
         Navigator.push(context,
@@ -638,7 +666,7 @@ class _HomepageState extends State<Homepage> {
 
   Widget getProducts(int index1) {
     return ProductTile(
-      itemName: "PRODUCT ITEM NAME",
+      itemName: "PRODUCT NAME",
       imagePath: images[index1],
       description: "Dummy Description for product card",
       actualPrice: "₹ 20000 ",
@@ -687,7 +715,7 @@ class _HomepageState extends State<Homepage> {
 
   Widget getTrending(int index) {
     return TrendingTile(
-      itemName: "PRODUCT ITEM NAME",
+      itemName: "PRODUCT NAME",
       discount: "15% Off",
       description: "Dummy Description for product card",
       mrp: "₹ 25000",
@@ -702,7 +730,7 @@ class _HomepageState extends State<Homepage> {
 
   Widget getFeatured(int index) {
     return FeaturedTile(
-      itemName: "PRODUCT ITEM NAME",
+      itemName: "PRODUCT NAME",
       price: "₹ 20000",
       imagePath: featuredItems[index],
       onPressed: () {

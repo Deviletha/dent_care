@@ -33,7 +33,7 @@ class _CategoryPageState extends State<CategoryPage> {
     "assets/treatment-units.jpg",
     "assets/topsell.jpg",
     "assets/images.png",
-    "assets/dent prroductt.jpg"
+    "assets/dent product.jpg"
   ];
 
   List<String> categoryNames = [

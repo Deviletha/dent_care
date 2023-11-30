@@ -23,8 +23,8 @@ class TitleText extends StatelessWidget {
             onPressed: onPressed,
             child: Text(
              buttonText,
-              style: TextStyle(
-                  color: Color(ColorT.greyColor), fontSize: 15),
+              style: TextStyle( color: Colors.black,
+                   fontSize: 15),
             ))
       ],
     );

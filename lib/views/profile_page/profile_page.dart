@@ -1,7 +1,9 @@
 import 'package:danthal/views/profile_page/address_page.dart';
 import 'package:danthal/views/profile_page/edit_profile.dart';
+import 'package:danthal/views/profile_page/privacy_info.dart';
 import 'package:danthal/views/profile_page/rewards_page.dart';
 import 'package:danthal/views/profile_page/setting.dart';
+import 'package:danthal/views/profile_page/terms&conditions.dart';
 import 'package:danthal/views/profile_page/widgets/accounts_custom_card.dart';
 import 'package:danthal/views/profile_page/wishlist_page.dart';
 import 'package:flutter/material.dart';
@@ -12,6 +14,8 @@ import '../faq_page.dart';
 import '../myorders/orders.dart';
 import '../privacy&terms.dart';
 import '../registration/login_page.dart';
+import 'about_us.dart';
+import 'help&support.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -253,7 +257,7 @@ class _ProfilePageState extends State<ProfilePage> {
           CustomRow(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SettingPage()));
+                  MaterialPageRoute(builder: (context) => PrivacyInfoPage()));
             },
             icon: Icon(
               Ionicons.alert_circle_outline,
@@ -267,7 +271,7 @@ class _ProfilePageState extends State<ProfilePage> {
           CustomRow(
             onTap: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SettingPage()));
+                  MaterialPageRoute(builder: (context) => TermsAndConditions()));
             },
             icon: Icon(
               Ionicons.shield_checkmark_outline,
@@ -279,7 +283,10 @@ class _ProfilePageState extends State<ProfilePage> {
             thickness: 2,
           ),
           CustomRow(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => HelpAndSupport()));
+            },
             icon: Icon(
               Ionicons.chatbox_ellipses_outline,
               color: Colors.grey,
@@ -290,7 +297,10 @@ class _ProfilePageState extends State<ProfilePage> {
             thickness: 2,
           ),
           CustomRow(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => AboutUs()));
+            },
             icon: Icon(
               Ionicons.compass_outline,
               color: Colors.grey,

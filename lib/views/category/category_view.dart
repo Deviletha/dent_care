@@ -13,7 +13,7 @@ class _CategoryViewState extends State<CategoryView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Category View"),
+        title: Text("Category Heading"),
       ),
       body: Center(
         child:  Lottie.asset("assets/lottie2.json",

@@ -20,7 +20,7 @@ class Heading extends StatelessWidget {
           Text(
             text,
             style: TextStyle(fontSize: 17,
-              color: Color(ColorT.greyColor)),
+              color: Colors.black),
           ),
         ],
       ),

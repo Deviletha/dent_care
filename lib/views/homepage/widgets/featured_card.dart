@@ -27,6 +27,7 @@ class FeaturedTile extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(imagePath), fit: BoxFit.cover),
+                borderRadius: BorderRadius.all(Radius.circular(8)),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.grey.shade500,
@@ -41,7 +42,7 @@ class FeaturedTile extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -54,20 +55,33 @@ class FeaturedTile extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Card(
-                      color: Colors.blue,
-                      child: Padding(
-                        padding: const EdgeInsets.only(left: 20, right: 20),
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Buy Now",
-                            style: TextStyle(
-                              letterSpacing: 2,
-                                color: Colors.white, fontWeight: FontWeight.bold),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          price,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Color(ColorT.textColor),
                           ),
                         ),
-                      ),
+                        Card(
+                          color: Colors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 20, right: 20),
+                            child: TextButton(
+                              onPressed: onPressed,
+                              child: Text(
+                                "Buy Now",
+                                style: TextStyle(
+                                  letterSpacing: 2,
+                                    color: Color(ColorT.themeColor), fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

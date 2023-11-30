@@ -35,17 +35,27 @@ class ProductTile extends StatelessWidget {
         child: InkWell(
           onTap: onTap,
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 clipBehavior: Clip.antiAlias,
                 width: double.infinity,
-                height:200,
+                height: 200,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
                         imagePath,
                       ),
                       fit: BoxFit.cover),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    discount,
+                    textAlign: TextAlign.left,
+                    style: TextStyle(fontSize: 13, color: Colors.black),
+                  ),
                 ),
               ),
               Expanded(
@@ -54,47 +64,33 @@ class ProductTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(itemName, style: TextStyle(color: Colors.grey.shade600),),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        // Text(
-                        //   description,
-                        //   maxLines: 2,
-                        //   style: TextStyle(
-                        //       fontSize: 12,),
-                        // ),
-                        // SizedBox(
-                        //   height: 5,
-                        // ),
-                      ],
+                    SizedBox(
+                      height: 5,
                     ),
                     Text(
-                      discount,
-                      style: TextStyle(fontSize: 13, color: Colors.green),
+                      itemName,
+                      style: TextStyle(color: Colors.black),
                     ),
-                    SizedBox(height: 8,),
-                Text(
-                      totalPrice,
-                      style: TextStyle(
-                        decoration: TextDecoration.lineThrough,
-                        fontSize: 14,
-                        color: Colors.grey,
-                      ),
+                    SizedBox(
+                      height: 8,
                     ),
-                    SizedBox(height: 8,),
                     Text(
                       actualPrice,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
                         color: Color(ColorT.textColor),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Text(
+                      totalPrice,
+                      style: TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        fontSize: 14,
+                        color: Colors.grey,
                       ),
                     ),
                   ],

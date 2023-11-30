@@ -82,17 +82,7 @@ class ProductTileCopy extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Text(
-                          totalPrice,
-                          style: TextStyle(
-                            decoration: TextDecoration.lineThrough,
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
+
                         Text(
                           actualPrice,
                           style: TextStyle(
@@ -104,6 +94,18 @@ class ProductTileCopy extends StatelessWidget {
                         SizedBox(
                           width: 5,
                         ),
+                        Text(
+                          totalPrice,
+                          style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+
                         Text(
                           discount,
                           style: TextStyle(
@@ -117,10 +119,10 @@ class ProductTileCopy extends StatelessWidget {
                       height: 8,
                     ),
                     Container(
-                      color: Colors.red,
+                      color: Colors.black,
                       child: Padding(
-                        padding: const EdgeInsets.all(3),
-                        child: Text("Trending",
+                        padding: const EdgeInsets.all(5),
+                        child: Text("Top Selling",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                           fontSize: 12,

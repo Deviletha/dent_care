@@ -12,7 +12,7 @@ class _BrandViewState extends State<BrandView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Brand View"),
+        title: Text("Brand Name"),
       ),
       body: Center(
         child: Text("Products by brand"),
