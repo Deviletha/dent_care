@@ -69,27 +69,31 @@ class AllProductCard extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children:  [
-                          Text(itemName),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Text(
-                            description,
-                            style: TextStyle(fontSize: 12),
-                          ),
-                          Text(
-                           price,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                              color: Color(ColorT.themeColor),
+                      Expanded(
+                        flex: 2,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children:  [
+                            Text(itemName),
+                            SizedBox(
+                              height: 5,
                             ),
-                          ),
-                        ],
+                            Text(
+                              description,
+                              maxLines: 2,
+                              style: TextStyle(fontSize: 12),
+                            ),
+                            Text(
+                             price,
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Color(ColorT.themeColor),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.end,

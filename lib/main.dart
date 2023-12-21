@@ -37,7 +37,7 @@ ThemeData _buildTheme(brightness) {
           statusBarBrightness: Brightness.light,
         ),
       ),
-      drawerTheme: DrawerThemeData( ),
+      drawerTheme: DrawerThemeData(),
       focusColor: Color(ColorT.themeColor),
       primaryColor: Color(ColorT.themeColor));
 }

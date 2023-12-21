@@ -286,7 +286,7 @@ class _HomepageState extends State<Homepage> {
                     Text(
                       "And Free shipping",
                       style: TextStyle(
-                      fontWeight: FontWeight.bold, letterSpacing: 1.5),
+                          fontWeight: FontWeight.bold, letterSpacing: 1.5),
                     ),
                   ],
                 ),
@@ -334,9 +334,8 @@ class _HomepageState extends State<Homepage> {
                         child: Container(
                           decoration: BoxDecoration(
                               color: Colors.grey,
-                            borderRadius: BorderRadius.all(Radius.circular(15))
-                          ),
-
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15))),
                           height: 5,
                           width: 30,
                         ),

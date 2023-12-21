@@ -34,10 +34,26 @@ class _AllBrandsState extends State<AllBrands> {
     "assets/colgate.png"
   ];
   List<String> topNames = [
-    "Kerr", "NSK", "SybroEndo", "Tokuyama", "Colgate",
-    "Kerr", "NSK", "SybroEndo", "Tokuyama", "Colgate",
-    "Kerr", "NSK", "SybroEndo", "Tokuyama", "Colgate",
-    "Kerr", "NSK", "SybroEndo", "Tokuyama", "Colgate"
+    "Kerr",
+    "NSK",
+    "SybroEndo",
+    "Tokuyama",
+    "Colgate",
+    "Kerr",
+    "NSK",
+    "SybroEndo",
+    "Tokuyama",
+    "Colgate",
+    "Kerr",
+    "NSK",
+    "SybroEndo",
+    "Tokuyama",
+    "Colgate",
+    "Kerr",
+    "NSK",
+    "SybroEndo",
+    "Tokuyama",
+    "Colgate"
   ];
 
   @override
@@ -60,14 +76,13 @@ class _AllBrandsState extends State<AllBrands> {
   }
 
   Widget getTopBrand(int index) {
-    return
-      BrandCard(
-        imagePath: topImages[index],
-        brandName: topNames[index],
-        onTap:  () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => BrandView()));
-        },
-      );
+    return BrandCard(
+      imagePath: topImages[index],
+      brandName: topNames[index],
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => BrandView()));
+      },
+    );
   }
 }

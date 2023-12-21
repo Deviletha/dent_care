@@ -15,14 +15,11 @@ class _ArticlesState extends State<Articles> {
         title: Text("Articles"),
       ),
       body: Container(
-        decoration: BoxDecoration(
-            color: Colors.grey.shade100
-        ),
+        decoration: BoxDecoration(color: Colors.grey.shade100),
         child: GridView.builder(
           physics: ScrollPhysics(),
           shrinkWrap: true,
-          gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             childAspectRatio: .9,
           ),
@@ -32,8 +29,8 @@ class _ArticlesState extends State<Articles> {
       ),
     );
   }
-  Widget getBestSelling(int index) {
 
+  Widget getBestSelling(int index) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
@@ -53,15 +50,13 @@ class _ArticlesState extends State<Articles> {
                 image: DecorationImage(
                   image: AssetImage("assets/bestselling.jpeg"),
                 ),
-                borderRadius: BorderRadius.all(Radius.circular(10),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(10),
                 ),
               ),
               child: IconButton(
                   alignment: Alignment.topRight,
-                  onPressed:
-                      (){
-
-                  },
+                  onPressed: () {},
                   icon: Icon(
                     Icons.favorite_border,
                   )),

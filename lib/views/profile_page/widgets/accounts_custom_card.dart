@@ -30,10 +30,13 @@ class AccountCustomTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(title),
-SizedBox(
-  width: 25,
-),
-                Icon(icon,color: Colors.grey..shade300,),
+                SizedBox(
+                  width: 25,
+                ),
+                Icon(
+                  icon,
+                  color: Colors.grey..shade300,
+                ),
               ],
             ),
           ),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-
 import '../../theme/colors.dart';
 
 class AddressPage extends StatefulWidget {
@@ -28,8 +27,7 @@ class _AddressPageState extends State<AddressPage> {
                   physics: ScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: 2,
-                  itemBuilder: (context, index) =>
-                      getAddressRow(index),
+                  itemBuilder: (context, index) => getAddressRow(index),
                 ),
               ),
             ],
@@ -52,6 +50,7 @@ class _AddressPageState extends State<AddressPage> {
       ),
     );
   }
+
   Widget getAddressRow(int index) {
     return Card(
       child: Padding(
@@ -75,7 +74,7 @@ class _AddressPageState extends State<AddressPage> {
                 // )
                 //     :
                 Text(
-                 "Test Address",
+                  "Test Address",
                   style: TextStyle(color: Colors.red),
                 ),
                 SizedBox(
@@ -117,17 +116,18 @@ class _AddressPageState extends State<AddressPage> {
                 ),
               ],
             ),
-            IconButton(onPressed: (){
-
-            }, icon: Icon(
-              Ionicons.location_outline,
-              color: Colors.red,
-            ))
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Ionicons.location_outline,
+                  color: Colors.red,
+                ))
           ],
         ),
       ),
     );
   }
+
   void showEditBottomSheet(BuildContext context) {
     showModalBottomSheet(
       context: context,

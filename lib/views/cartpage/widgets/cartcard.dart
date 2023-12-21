@@ -136,11 +136,11 @@ class _CartTileState extends State<CartTile> {
                       alignment: Alignment.center,
                       onPressed: widget.onPressed,
                       icon: Icon(
-                        Ionicons.trash_outline,
-                        size: 18,
-                        color: Colors.red,
-                      ),
-                    )
+                            Ionicons.trash_outline,
+                            size: 18,
+                            color: Colors.red,
+                          ),
+                        )
                 ],
               )
   ]

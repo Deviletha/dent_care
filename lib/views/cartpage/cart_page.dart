@@ -251,12 +251,12 @@ class _CartPageState extends State<CartPage> {
                 style: TextStyle(
                     fontSize: 20,
                     color: Color(ColorT.textColor),
-                  fontWeight: FontWeight.bold
-                    ),
+                    fontWeight: FontWeight.bold),
               ),
               ElevatedButton(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 8.0, bottom: 8, left: 15, right: 15),
+                  padding: const EdgeInsets.only(
+                      top: 8.0, bottom: 8, left: 15, right: 15),
                   child: Text("Place Order"),
                 ),
                 onPressed: () {

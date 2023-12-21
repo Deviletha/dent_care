@@ -11,7 +11,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-
   bool showPass = true;
 
   final usernameController = TextEditingController();
@@ -29,12 +28,12 @@ class _LoginPageState extends State<LoginPage> {
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
                 colors: [
-                  Colors.grey.shade400,
-                  Colors.grey.shade200,
-                  Colors.grey.shade50,
-                  Colors.grey.shade200,
-                  Colors.grey.shade400,
-                ])),
+              Colors.grey.shade400,
+              Colors.grey.shade200,
+              Colors.grey.shade50,
+              Colors.grey.shade200,
+              Colors.grey.shade400,
+            ])),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

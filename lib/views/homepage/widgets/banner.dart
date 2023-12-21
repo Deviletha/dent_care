@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class BannerTile extends StatelessWidget {
   final String imagePath;
+
   const BannerTile({super.key, required this.imagePath});
 
   @override
