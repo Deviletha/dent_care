@@ -141,9 +141,9 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
       builder: (context) {
         return Container(
           padding: EdgeInsets.all(16),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
+          child: ListView(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+            // mainAxisSize: MainAxisSize.max,
             children: [
               Text(
                 "Edit Address",

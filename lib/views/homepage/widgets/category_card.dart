@@ -4,7 +4,9 @@ class CategoryTile extends StatelessWidget {
   final String itemName;
   final String imagePath;
   final void Function()? onTap;
-  const CategoryTile({super.key, required this.itemName, required this.imagePath, this.onTap});
+
+  const CategoryTile(
+      {super.key, required this.itemName, required this.imagePath, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -16,9 +18,8 @@ class CategoryTile extends StatelessWidget {
           height: 100,
           width: 100,
           decoration: BoxDecoration(
-            color: Colors.blue.shade50,
-            borderRadius: BorderRadius.all(Radius.circular(20))
-          ),
+              color: Colors.blue.shade50,
+              borderRadius: BorderRadius.all(Radius.circular(20))),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -28,8 +29,8 @@ class CategoryTile extends StatelessWidget {
                 child: Container(
                     clipBehavior: Clip.antiAlias,
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     width: 35,
                     height: 35,
                     child: Image.asset(

@@ -16,8 +16,8 @@ class _HelpAndSupportState extends State<HelpAndSupport> {
         title: Text("Help and Support"),
       ),
       body: Center(
-        child:  Lottie.asset("assets/help_lottie.json",
-            height: 300, repeat: true),
+        child:
+            Lottie.asset("assets/help_lottie.json", height: 300, repeat: true),
       ),
     );
   }

@@ -1,4 +1,4 @@
-import 'dart:convert';
+  import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -14,14 +14,12 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
-
-
   List<String> base64Images = [];
   File? _pickedImage;
 
   void selectImage() async {
     final pickedImage =
-    await ImagePicker().pickImage(source: ImageSource.gallery);
+        await ImagePicker().pickImage(source: ImageSource.gallery);
     if (pickedImage != null) {
       if (kDebugMode) {
         print('Image picked: ${pickedImage.path}');
@@ -74,18 +72,20 @@ class _EditProfileState extends State<EditProfile> {
                 children: [
                   _pickedImage != null
                       ? CircleAvatar(
-                    radius: 50,
-                    backgroundImage: FileImage(_pickedImage!),
-                  )
+                          radius: 50,
+                          backgroundImage: FileImage(_pickedImage!),
+                        )
                       : CircleAvatar(
-                    radius: 50,
-                    backgroundImage: AssetImage("assets/profile_avatar.png"),
-                  ),
+                          radius: 50,
+                          backgroundImage:
+                              AssetImage("assets/profile_avatar.png"),
+                        ),
                   IconButton(
                     onPressed: () {
                       selectImage();
                     },
-                    icon: Icon(Icons.add_a_photo, color: Color(ColorT.themeColor)),
+                    icon: Icon(Icons.add_a_photo,
+                        color: Color(ColorT.themeColor)),
                   ),
                 ],
               ),
@@ -150,9 +150,7 @@ class _EditProfileState extends State<EditProfile> {
                 width: double.infinity,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {
-
-                  },
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(ColorT.themeColor),
                     shadowColor: Colors.teal[300],

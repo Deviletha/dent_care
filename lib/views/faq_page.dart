@@ -14,6 +14,9 @@ class _FAQPageState extends State<FAQPage> {
       appBar: AppBar(
         title: Text("FAQ"),
       ),
+      body: Center(
+        child: Text("FAQ page"),
+      ),
     );
   }
 }

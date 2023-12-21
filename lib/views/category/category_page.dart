@@ -90,10 +90,8 @@ class _CategoryPageState extends State<CategoryPage> {
             ),
             ListTile(
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => MyOrders()));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => MyOrders()));
               },
               leading: Icon(
                 Ionicons.bag_outline,
@@ -179,14 +177,13 @@ class _CategoryPageState extends State<CategoryPage> {
   }
 
   Widget getCategory(int index) {
-    return
-      AllCategoryTile(
-        imagePath: images[index],
-        categoryName: categoryNames[index],
-        onTap: (){
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CategoryView()));
-        },
-      );
+    return AllCategoryTile(
+      imagePath: images[index],
+      categoryName: categoryNames[index],
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CategoryView()));
+      },
+    );
   }
 }

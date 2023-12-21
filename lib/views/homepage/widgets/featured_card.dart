@@ -75,8 +75,9 @@ class FeaturedTile extends StatelessWidget {
                               child: Text(
                                 "Buy Now",
                                 style: TextStyle(
-                                  letterSpacing: 2,
-                                    color: Color(ColorT.themeColor), fontWeight: FontWeight.bold),
+                                    letterSpacing: 2,
+                                    color: Color(ColorT.themeColor),
+                                    fontWeight: FontWeight.bold),
                               ),
                             ),
                           ),

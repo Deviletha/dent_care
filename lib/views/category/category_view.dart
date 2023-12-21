@@ -16,8 +16,7 @@ class _CategoryViewState extends State<CategoryView> {
         title: Text("Category Heading"),
       ),
       body: Center(
-        child:  Lottie.asset("assets/lottie2.json",
-            height: 300, repeat: true),
+        child: Lottie.asset("assets/lottie2.json", height: 300, repeat: true),
       ),
     );
   }

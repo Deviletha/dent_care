@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../../Components/title_widget.dart';
@@ -9,11 +8,15 @@ class TitleText extends StatelessWidget {
   final String buttonText;
   final void Function() onPressed;
 
-  const TitleText({super.key, required this.heading, required this.buttonText, required this.onPressed});
+  const TitleText(
+      {super.key,
+      required this.heading,
+      required this.buttonText,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Heading(
@@ -22,9 +25,8 @@ class TitleText extends StatelessWidget {
         TextButton(
             onPressed: onPressed,
             child: Text(
-             buttonText,
-              style: TextStyle( color: Colors.black,
-                   fontSize: 15),
+              buttonText,
+              style: TextStyle(color: Colors.black, fontSize: 15),
             ))
       ],
     );
