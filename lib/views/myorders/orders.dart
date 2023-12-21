@@ -34,13 +34,13 @@ class _MyOrdersState extends State<MyOrders> {
             indicatorColor: Colors.red,
             tabs: [
               SizedBox(
-                width: MediaQuery.of(context).size.width/2,
+                width: MediaQuery.of(context).size.width / 2,
                 child: Tab(
                   text: "UPCOMING",
                 ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width/2,
+                width: MediaQuery.of(context).size.width / 2,
                 child: Tab(
                   text: "PAST ORDERS",
                 ),
@@ -60,8 +60,8 @@ class _MyOrdersState extends State<MyOrders> {
                   child: ListTile(
                       title: Text("User Name",
                           style: TextStyle(color: Colors.white)),
-                      subtitle:
-                      Text("Location", style: TextStyle(color: Colors.white)),
+                      subtitle: Text("Location",
+                          style: TextStyle(color: Colors.white)),
                       leading: CircleAvatar(
                         child: Image.asset("assets/profile_avatar.png"),
                       )),
@@ -138,10 +138,7 @@ class _MyOrdersState extends State<MyOrders> {
           ),
         ),
         body: TabBarView(
-          children: const [
-            Upcoming(),
-            PsstOrders()
-          ],
+          children: const [Upcoming(), PsstOrders()],
         ),
       ),
     );

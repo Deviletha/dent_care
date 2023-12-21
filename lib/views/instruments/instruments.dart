@@ -38,7 +38,7 @@ class _AllInstrumentsState extends State<AllInstruments> {
 
   Widget getTopSelling(int index1) {
     return   AllProductCard(itemName: "Item Name",
-      description: "Description", price: "₹ 200",
+      description: "Description, Description,  Description", price: "₹ 200",
       mrp: "MRP: 250", discount: "20% Discount", imagePath: images[index1],
       onTap: (){},
       onPressed: (){},);

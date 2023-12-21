@@ -9,7 +9,7 @@ class OrderCard extends StatelessWidget {
   final String deliveryStatus;
   final String buttonText;
   final String date;
-  final  Color? color;
+  final Color? color;
   final void Function()? onPressed;
 
   const OrderCard(
@@ -60,7 +60,8 @@ class OrderCard extends StatelessWidget {
                       "OrderId: $orderId",
                       style: TextStyle(
                           decoration: TextDecoration.underline,
-                          fontSize: 12, color: Colors.red),
+                          fontSize: 12,
+                          color: Colors.red),
                     ),
                     SizedBox(
                       height: 5,

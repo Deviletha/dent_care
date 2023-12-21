@@ -16,8 +16,7 @@ class _RewardPageState extends State<RewardPage> {
         title: Text("My Rewards"),
       ),
       body: Center(
-        child:  Lottie.asset("assets/lottie4.json",
-            height: 200, repeat: true),
+        child: Lottie.asset("assets/lottie4.json", height: 200, repeat: true),
       ),
     );
   }

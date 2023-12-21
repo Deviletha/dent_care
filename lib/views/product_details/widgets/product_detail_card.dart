@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 
-
 class ProductDetailCard extends StatelessWidget {
   final String imagePath;
   final String itemName;
@@ -10,21 +9,17 @@ class ProductDetailCard extends StatelessWidget {
   final String offerPrice;
   final String discount;
   final void Function()? onPressed;
-  // final void Function()? onPressedBuyNow;
-  // final void Function()? onPressedCart;
 
-  const ProductDetailCard(
-      {super.key,
-      required this.imagePath,
-      required this.itemName,
-      required this.description,
-      required this.actualPrice,
-      required this.offerPrice,
-      required this.discount,
-      this.onPressed,
-      // this.onPressedCart,
-      // this.onPressedBuyNow
-      });
+  const ProductDetailCard({
+    super.key,
+    required this.imagePath,
+    required this.itemName,
+    required this.description,
+    required this.actualPrice,
+    required this.offerPrice,
+    required this.discount,
+    this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +57,8 @@ class ProductDetailCard extends StatelessWidget {
                     height: 5,
                   ),
                   Text(description,
-                      style: TextStyle(fontSize: 14, color: Colors.grey.shade700)),
+                      style:
+                          TextStyle(fontSize: 14, color: Colors.grey.shade700)),
                   SizedBox(
                     height: 5,
                   ),

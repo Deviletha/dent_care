@@ -29,9 +29,8 @@ class ProductTileCopy extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 5),
       child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.shade100)
-        ),
+        decoration:
+            BoxDecoration(border: Border.all(color: Colors.grey.shade100)),
         child: InkWell(
           onTap: onTap,
           child: Column(
@@ -82,7 +81,6 @@ class ProductTileCopy extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-
                         Text(
                           actualPrice,
                           style: TextStyle(
@@ -105,7 +103,6 @@ class ProductTileCopy extends StatelessWidget {
                         SizedBox(
                           width: 5,
                         ),
-
                         Text(
                           discount,
                           style: TextStyle(
@@ -122,12 +119,14 @@ class ProductTileCopy extends StatelessWidget {
                       color: Colors.black,
                       child: Padding(
                         padding: const EdgeInsets.all(5),
-                        child: Text("Top Selling",
+                        child: Text(
+                          "Top Selling",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.white,
-                        ),),
+                            fontSize: 12,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
                     ),
                     // SizedBox(

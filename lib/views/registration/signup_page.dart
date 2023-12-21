@@ -10,7 +10,6 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-
   bool showPass = true;
 
   final TextEditingController _nameController = TextEditingController();
@@ -36,12 +35,12 @@ class _SignUpPageState extends State<SignUpPage> {
                 begin: Alignment.bottomLeft,
                 end: Alignment.topRight,
                 colors: [
-                  Colors.grey.shade400,
-                  Colors.grey.shade200,
-                  Colors.grey.shade50,
-                  Colors.grey.shade200,
-                  Colors.grey.shade400,
-                ])),
+              Colors.grey.shade400,
+              Colors.grey.shade200,
+              Colors.grey.shade50,
+              Colors.grey.shade200,
+              Colors.grey.shade400,
+            ])),
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(15),
@@ -49,8 +48,7 @@ class _SignUpPageState extends State<SignUpPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding:
-                  const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
                   child: TextFormField(
                     controller: _nameController,
                     decoration: InputDecoration(
@@ -132,7 +130,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 20, right: 20, bottom: 15),
+                      const EdgeInsets.only(left: 20, right: 20, bottom: 15),
                   child: TextFormField(
                     controller: _stateController,
                     decoration: InputDecoration(
@@ -151,7 +149,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 20, right: 20, bottom: 15),
+                      const EdgeInsets.only(left: 20, right: 20, bottom: 15),
                   child: TextFormField(
                     controller: _locationController,
                     decoration: InputDecoration(
@@ -170,7 +168,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 20, right: 20, bottom: 15),
+                      const EdgeInsets.only(left: 20, right: 20, bottom: 15),
                   child: TextFormField(
                     controller: _postalController,
                     decoration: InputDecoration(
@@ -189,7 +187,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 Padding(
                   padding:
-                  const EdgeInsets.only(left: 20, right: 20, bottom: 30),
+                      const EdgeInsets.only(left: 20, right: 20, bottom: 30),
                   child: TextFormField(
                     controller: _passwordController,
                     obscureText: showPass,

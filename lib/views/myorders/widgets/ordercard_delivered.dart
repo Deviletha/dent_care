@@ -35,70 +35,71 @@ class PastOrderCard extends StatelessWidget {
           child: Column(
             children: [
               Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  clipBehavior: Clip.antiAlias,
-                  width: 120,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                    image: DecorationImage(
-                        image: AssetImage(
-                          imagePath,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      clipBehavior: Clip.antiAlias,
+                      width: 120,
+                      height: 80,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
                         ),
-                        fit: BoxFit.cover),
-                  ),
-                  // Image border// Image radius
-                ),
-              ),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "OrderId: $orderId",
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                          fontSize: 12, color: Colors.red),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      itemName,
-                      style: TextStyle(fontSize: 15),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    RatingBar.builder(
-                      initialRating: 3.5, // Replace with the actual rating
-                      minRating: 1,
-                      unratedColor: Colors.grey.shade400,
-                      updateOnDrag: true,
-                      direction: Axis.horizontal,
-                      allowHalfRating: true,
-                      itemCount: 5,
-                      itemSize: 23,
-                      itemBuilder: (context, _) => Icon(
-                        Icons.star,
-                        color: Colors.green,
-                        size: 20,
+                        image: DecorationImage(
+                            image: AssetImage(
+                              imagePath,
+                            ),
+                            fit: BoxFit.cover),
                       ),
-                      onRatingUpdate: (rating) {
-
-                        // Handle rating updates if needed
-                      },
+                      // Image border// Image radius
                     ),
-                  ],
-                ),
-              )
-            ],
-          ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "OrderId: $orderId",
+                          style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontSize: 12,
+                              color: Colors.red),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          itemName,
+                          style: TextStyle(fontSize: 15),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        RatingBar.builder(
+                          initialRating: 3.5,
+                          // Replace with the actual rating
+                          minRating: 1,
+                          unratedColor: Colors.grey.shade400,
+                          updateOnDrag: true,
+                          direction: Axis.horizontal,
+                          allowHalfRating: true,
+                          itemCount: 5,
+                          itemSize: 23,
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Colors.green,
+                            size: 20,
+                          ),
+                          onRatingUpdate: (rating) {
+                            // Handle rating updates if needed
+                          },
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
               Padding(
                 padding: const EdgeInsets.only(left: 30, right: 30),
                 child: Divider(

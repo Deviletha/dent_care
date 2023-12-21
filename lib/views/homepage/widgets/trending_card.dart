@@ -56,7 +56,7 @@ class TrendingTile extends StatelessWidget {
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
-                    children:  [
+                    children: [
                       Text(
                         discount,
                         style: TextStyle(fontSize: 13, color: Colors.green),
@@ -68,7 +68,8 @@ class TrendingTile extends StatelessWidget {
                         mrp,
                         style: TextStyle(
                             decoration: TextDecoration.lineThrough,
-                            fontSize: 13, color: Colors.grey),
+                            fontSize: 13,
+                            color: Colors.grey),
                       ),
                       SizedBox(
                         height: 5,
@@ -77,7 +78,6 @@ class TrendingTile extends StatelessWidget {
                         price,
                         style: TextStyle(fontSize: 15, color: Colors.black),
                       ),
-
                     ],
                   )
                 ],
@@ -90,11 +90,10 @@ class TrendingTile extends StatelessWidget {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children:  [
+                    children: [
                       Text(
                         itemName,
                         style: TextStyle(
-
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                           color: Color(ColorT.textColor),
@@ -113,7 +112,8 @@ class TrendingTile extends StatelessWidget {
                       onPressed: onPressed,
                       child: Text(
                         "Details",
-                        style: TextStyle(fontSize: 10,color: Color(ColorT.textColor)),
+                        style: TextStyle(
+                            fontSize: 10, color: Color(ColorT.textColor)),
                       ))
                 ],
               ),

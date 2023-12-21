@@ -23,13 +23,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ProductDetailCard(imagePath: "assets/dentall product.jpeg",
-                itemName: "PRODUCT ITEM NAME",
-                description: "Dummy Description for product card",
-                actualPrice: "22000",
-                offerPrice: "20000",
-                discount: "20",
-               onPressed: (){},
+            ProductDetailCard(
+              imagePath: "assets/dentall product.jpeg",
+              itemName: "PRODUCT ITEM NAME",
+              description: "Dummy Description for product card",
+              actualPrice: "22000",
+              offerPrice: "20000",
+              discount: "20",
+              onPressed: () {},
             ),
             Divider(
               thickness: 2,
@@ -37,7 +38,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start ,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
                     "Manufacturer's Details",
@@ -64,7 +65,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
           ],
         ),
       ),
-      bottomNavigationBar:  Padding(
+      bottomNavigationBar: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -72,24 +73,28 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
             Container(
                 color: Color(ColorT.redColor),
                 height: 60,
-                width: MediaQuery.of(context).size.width/2.5,
+                width: MediaQuery.of(context).size.width / 2.5,
                 child: TextButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     child: Text(
                       "ADD TO CART",
-                      style: TextStyle( fontSize: 16,color: Colors.white, fontWeight: FontWeight.bold ),
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
                     ))),
             Container(
                 color: Color(ColorT.themeColor),
                 height: 60,
-                width: MediaQuery.of(context).size.width/2.5,
+                width: MediaQuery.of(context).size.width / 2.5,
                 child: TextButton(
-                    onPressed: (){},
+                    onPressed: () {},
                     child: Text(
                       "BUY NOW",
                       style: TextStyle(
                           fontSize: 16,
-                          color: Colors.white,fontWeight: FontWeight.bold),
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
                     ))),
           ],
         ),

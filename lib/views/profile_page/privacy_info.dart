@@ -16,7 +16,7 @@ class _PrivacyInfoPageState extends State<PrivacyInfoPage> {
         title: Text("Privacy Info Page"),
       ),
       body: Center(
-        child:  Lottie.asset("assets/privacy_lottie.json",
+        child: Lottie.asset("assets/privacy_lottie.json",
             height: 300, repeat: true),
       ),
     );

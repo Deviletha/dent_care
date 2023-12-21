@@ -16,8 +16,7 @@ class _WishlistPageState extends State<WishlistPage> {
         title: Text("Wishlist"),
       ),
       body: Center(
-        child:  Lottie.asset("assets/lottie.json",
-            height: 300, repeat: true),
+        child: Lottie.asset("assets/lottie.json", height: 300, repeat: true),
       ),
     );
   }

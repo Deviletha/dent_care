@@ -16,8 +16,8 @@ class _TermsAndConditionsState extends State<TermsAndConditions> {
         title: Text("Terms and Conditions"),
       ),
       body: Center(
-        child:  Lottie.asset("assets/terms_lottie.json",
-            height: 300, repeat: true),
+        child:
+            Lottie.asset("assets/terms_lottie.json", height: 300, repeat: true),
       ),
     );
   }

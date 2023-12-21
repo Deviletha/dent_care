@@ -16,8 +16,7 @@ class _SettingPageState extends State<SettingPage> {
         title: Text("Settings"),
       ),
       body: Center(
-        child:  Lottie.asset("assets/lottie3.json",
-            height: 300, repeat: true),
+        child: Lottie.asset("assets/lottie3.json", height: 300, repeat: true),
       ),
     );
   }

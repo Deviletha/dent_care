@@ -157,16 +157,20 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     AccountCustomTile(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => EditProfile()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditProfile()));
                       },
                       icon: Ionicons.create_outline,
                       title: "My Profile",
                     ),
                     AccountCustomTile(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => MyOrders()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyOrders()));
                       },
                       icon: Ionicons.newspaper_outline,
                       title: "My Orders",
@@ -201,16 +205,20 @@ class _ProfilePageState extends State<ProfilePage> {
                   children: [
                     AccountCustomTile(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => WishlistPage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WishlistPage()));
                       },
                       icon: Ionicons.bookmark_outline,
                       title: "My Wishlist",
                     ),
                     AccountCustomTile(
                       onTap: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => RewardPage()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => RewardPage()));
                       },
                       icon: Ionicons.diamond_outline,
                       title: "My Rewards",
@@ -270,8 +278,10 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           CustomRow(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => TermsAndConditions()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => TermsAndConditions()));
             },
             icon: Icon(
               Ionicons.shield_checkmark_outline,
@@ -298,14 +308,14 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           CustomRow(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => AboutUs()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => AboutUs()));
             },
             icon: Icon(
               Ionicons.compass_outline,
               color: Colors.grey,
             ),
-            text: "About Us",
+            text: "Who We Are",
           ),
           Divider(
             thickness: 2,

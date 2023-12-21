@@ -10,7 +10,6 @@ class PlaceOrder extends StatefulWidget {
 }
 
 class _PlaceOrderState extends State<PlaceOrder> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +25,11 @@ class _PlaceOrderState extends State<PlaceOrder> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Address", style: TextStyle(
-                    fontSize: 18,
-                      decoration: TextDecoration.underline),),
+                  Text(
+                    "Address",
+                    style: TextStyle(
+                        fontSize: 18, decoration: TextDecoration.underline),
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -71,8 +72,13 @@ class _PlaceOrderState extends State<PlaceOrder> {
               ),
               Positioned(
                   right: 10,
-                  child: IconButton(onPressed: () {},
-                      icon: Icon(Icons.close, color: Colors.white, size: 30,)))
+                  child: IconButton(
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 30,
+                      )))
             ],
           ),
           SizedBox(
