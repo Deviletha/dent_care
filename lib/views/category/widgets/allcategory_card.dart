@@ -29,46 +29,14 @@ class AllCategoryTile extends StatelessWidget {
 
           ),
           child:
-          Column(
-            children: [
-              Container(
-                clipBehavior: Clip.antiAlias,
-                width: double.infinity,
-                height: 70,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.zero,
-                  image: DecorationImage(
-                      image: AssetImage(
-                        imagePath,
-                      ),
-                      fit: BoxFit.cover),
-                ),
-                // Image border// Image radius
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Text(
-                categoryName,
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 15),
-              ),
-            ],
-          ),
-
-
-
-          // ListTile(
-          //   leading: Padding(
-          //     padding: const EdgeInsets.only(top: 10),
-          //     child: Container(
+          // Column(
+          //   children: [
+          //     Container(
           //       clipBehavior: Clip.antiAlias,
-          //       width: 70,
-          //       height: 50,
+          //       width: double.infinity,
+          //       height: 70,
           //       decoration: BoxDecoration(
-          //         borderRadius: BorderRadius.all(
-          //           Radius.circular(10),
-          //         ),
+          //         borderRadius: BorderRadius.zero,
           //         image: DecorationImage(
           //             image: AssetImage(
           //               imagePath,
@@ -77,13 +45,45 @@ class AllCategoryTile extends StatelessWidget {
           //       ),
           //       // Image border// Image radius
           //     ),
-          //   ),
-          //   title: Text(
-          //     categoryName,
-          //     textAlign: TextAlign.left,
-          //     style: TextStyle(fontSize: 15),
-          //   ),
+          //     SizedBox(
+          //       height: 10,
+          //     ),
+          //     Text(
+          //       categoryName,
+          //       textAlign: TextAlign.center,
+          //       style: TextStyle(fontSize: 15),
+          //     ),
+          //   ],
           // ),
+          //
+
+
+          ListTile(
+            leading: Padding(
+              padding: const EdgeInsets.only(top: 10),
+              child: Container(
+                clipBehavior: Clip.antiAlias,
+                width: 70,
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10),
+                  ),
+                  image: DecorationImage(
+                      image: AssetImage(
+                        imagePath,
+                      ),
+                      fit: BoxFit.cover),
+                ),
+                // Image border// Image radius
+              ),
+            ),
+            title: Text(
+              categoryName,
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 15),
+            ),
+          ),
         ),
       ),
     );

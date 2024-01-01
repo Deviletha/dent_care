@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../theme/colors.dart';
 
@@ -120,19 +121,31 @@ class ProductTileCopy extends StatelessWidget {
                       SizedBox(
                         height: 8,
                       ),
-                      Container(
-                        color: Color(ColorT.redColor),
-                        child: Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Text(
-                            "Top Selling",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.white,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Container(
+                            color: Color(ColorT.redColor),
+                            child: Padding(
+                              padding: const EdgeInsets.all(5),
+                              child: Text(
+                                "Top Selling",
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
                           ),
-                        ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: InkWell(
+                                highlightColor: Colors.red,
+                                onTap:(){},
+                                child: Icon(CupertinoIcons.cart_badge_plus)),
+                          ),
+                        ],
                       ),
                       // SizedBox(
                       //   height: 20,

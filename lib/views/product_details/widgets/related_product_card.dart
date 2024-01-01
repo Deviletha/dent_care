@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../theme/colors.dart';
 
-class ProductTile extends StatelessWidget {
+class RelatedProductTile extends StatelessWidget {
   final String itemName;
-  final String description;
+  final String companyName;
   final String totalPrice;
   final String imagePath;
   final String actualPrice;
@@ -13,41 +13,35 @@ class ProductTile extends StatelessWidget {
   final void Function()? onTap;
   final void Function()? addCart;
 
-  const ProductTile(
+  const RelatedProductTile(
       {super.key,
-      required this.itemName,
-      required this.description,
-      required this.totalPrice,
-      required this.imagePath,
-      required this.actualPrice,
-      this.onPressed,
-      this.onTap,
-      required this.discount,
-      this.addCart});
+        required this.itemName,
+        required this.companyName,
+        required this.totalPrice,
+        required this.imagePath,
+        required this.actualPrice,
+        this.onPressed,
+        this.onTap,
+        required this.discount,
+        this.addCart});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 5, right: 5, bottom: 10, top: 5),
+      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 5),
       child: Container(
-        decoration: BoxDecoration(
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.red.shade400,
-          //     blurRadius: .13,
-          //   ),
-          // ],
+        decoration:
+        BoxDecoration(
+
         ),
         child: InkWell(
           onTap: onTap,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 clipBehavior: Clip.antiAlias,
                 width: double.infinity,
-                height: 120,
+                height: 200,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
@@ -55,57 +49,76 @@ class ProductTile extends StatelessWidget {
                       ),
                       fit: BoxFit.cover),
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    discount,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 12, color: Colors.black),
-                  ),
-                ),
               ),
               Expanded(
-                flex: 2,
+                flex: 3,
                 child: Container(
                   color: Colors.white,
-                  width: double.infinity,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: 5,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            companyName,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.grey.shade600,
+                              fontSize: 11,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            itemName,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                                fontSize: 13, ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                        ],
                       ),
-                      Text(
-                        itemName,
-                        style: TextStyle(fontSize: 13, color: Colors.black),
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Text(
                                 actualPrice,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 13,
+                                  fontSize: 12,
                                   color: Color(ColorT.textColor),
                                 ),
                               ),
                               SizedBox(
-                                width: 10,
+                                width: 5,
                               ),
                               Text(
                                 totalPrice,
                                 style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
-                                  fontSize: 12,
+                                  fontSize: 10,
                                   color: Colors.grey,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                discount,
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.green,
                                 ),
                               ),
                             ],
@@ -115,10 +128,14 @@ class ProductTile extends StatelessWidget {
                             child: InkWell(
                                 highlightColor: Colors.red,
                                 onTap:(){},
-                                child: Icon(CupertinoIcons.cart_badge_plus)),
+                                child: Icon(CupertinoIcons.cart_badge_plus, size: 20,)),
                           ),
                         ],
                       ),
+                      SizedBox(
+                        height: 8,
+                      ),
+
                     ],
                   ),
                 ),

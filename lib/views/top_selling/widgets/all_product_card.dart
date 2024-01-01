@@ -80,10 +80,12 @@ class AllProductCard extends StatelessWidget {
                             Text(
                               description,
                               maxLines: 2,
-                              style: TextStyle(fontSize: 12),
+                              style: TextStyle(
+                                  color: Colors.grey.shade600,
+                                  fontSize: 12),
                             ),
                             Text(
-                             price,
+                             "₹ $price",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
@@ -98,9 +100,10 @@ class AllProductCard extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children:  [
                           Text(
-                            mrp,
+                            "₹ "+mrp,
                             style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 12,
+                              decoration: TextDecoration.lineThrough,
                               color: Color(ColorT.themeColor),
                             ),
                           ),
@@ -110,7 +113,7 @@ class AllProductCard extends StatelessWidget {
                           Text(
                             discount,
                             style: TextStyle(
-                              fontSize: 13,
+                              fontSize: 11,
                               color: Color(ColorT.themeColor),
                             ),
                           ),

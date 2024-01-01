@@ -50,21 +50,6 @@ class FeaturedTile extends StatelessWidget {
                     ),
                     height: 280,
                     width: double.infinity,
-                    child:  Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                          "FEATURED", style: TextStyle(
-                          letterSpacing: 2,
-                          color: Colors.black, fontWeight: FontWeight.bold,
-                        ),
-                        ),
-                      ],
-                    ),
                   ),
                   Expanded(
                     flex: 2,

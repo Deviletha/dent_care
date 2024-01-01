@@ -1,14 +1,15 @@
 import 'package:danthal/views/top_selling/widgets/all_product_card.dart';
 import 'package:flutter/material.dart';
 
-class TopSelling extends StatefulWidget {
-  const TopSelling({super.key});
+class FeaturedProducts extends StatefulWidget {
+  const FeaturedProducts({super.key});
 
   @override
-  State<TopSelling> createState() => _TopSellingState();
+  State<FeaturedProducts> createState() => _FeaturedProductsState();
 }
 
-class _TopSellingState extends State<TopSelling> {
+class _FeaturedProductsState extends State<FeaturedProducts> {
+
   List<String> images1 = [
     "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
@@ -24,7 +25,7 @@ class _TopSellingState extends State<TopSelling> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Top Selling Products"),
+          title: Text("Featured Products"),
         ),
         body: ListView.builder(
           itemCount: images1.length,

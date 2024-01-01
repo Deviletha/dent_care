@@ -17,6 +17,9 @@ class Heading extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          SizedBox(
+            width: 5,
+          ),
           Text(
             text,
             style: TextStyle(fontSize: 17,
