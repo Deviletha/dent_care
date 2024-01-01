@@ -20,15 +20,15 @@ class _CartPageState extends State<CartPage> {
   List<String> images = [
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
-    "assets/images.png",
+    "assets/products.jpeg",
     "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
-    "assets/images.png",
+    "assets/products.jpeg",
     "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
-    "assets/images.png"
+    "assets/products.jpeg"
   ];
 
   final int _selectedQuantity = 1; // Initial value for the dropdown

@@ -44,7 +44,7 @@ class PastOrderCard extends StatelessWidget {
                       height: 80,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(
-                          Radius.circular(10),
+                          Radius.circular(2),
                         ),
                         image: DecorationImage(
                             image: AssetImage(
@@ -124,7 +124,7 @@ class PastOrderCard extends StatelessWidget {
                           backgroundColor: color,
                           shadowColor: Colors.teal[300],
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(2),
                           ),
                         ),
                         child: Text(buttonText)),

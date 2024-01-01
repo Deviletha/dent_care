@@ -26,13 +26,19 @@ ThemeData _buildTheme(brightness) {
   var baseTheme = ThemeData(brightness: brightness);
 
   return baseTheme.copyWith(
-      textTheme: GoogleFonts.petronaTextTheme(baseTheme.textTheme),
+      textTheme: GoogleFonts.robotoTextTheme(baseTheme.textTheme),
       appBarTheme: AppBarTheme(
-        backgroundColor: Color(ColorT.themeColor),
+        iconTheme: IconThemeData(color: Colors.white),
+        titleTextStyle: TextStyle(color: Colors.white),
+        backgroundColor:
+        // Colors.transparent,
+        Color(ColorT.themeColor),
         elevation: 0,
         centerTitle: false,
         systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: Color(ColorT.themeColor),
+          statusBarColor:
+          // Colors.transparent,
+          Color(ColorT.themeColor),
           statusBarIconBrightness: Brightness.light,
           statusBarBrightness: Brightness.light,
         ),

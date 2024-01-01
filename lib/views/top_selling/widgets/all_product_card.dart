@@ -28,12 +28,12 @@ class AllProductCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.zero,
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.shade500,
-              blurRadius: 3,
+              color: Colors.blueGrey,
+              blurRadius: 1,
             ),
           ],
           // border: Border.all(color: Colors.grey.shade800, width: 1),
@@ -51,9 +51,7 @@ class AllProductCard extends StatelessWidget {
                   width: 90,
                   height: 70,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
+                    borderRadius: BorderRadius.zero,
                     image: DecorationImage(
                         image: AssetImage(
                           imagePath,
@@ -89,7 +87,7 @@ class AllProductCard extends StatelessWidget {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
-                                color: Color(ColorT.themeColor),
+                                color: Color(ColorT.redColor),
                               ),
                             ),
                           ],

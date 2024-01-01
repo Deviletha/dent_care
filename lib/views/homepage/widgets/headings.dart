@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../../Components/title_widget.dart';
-import '../../../theme/colors.dart';
 
 class TitleText extends StatelessWidget {
   final String heading;
@@ -26,7 +25,7 @@ class TitleText extends StatelessWidget {
             onPressed: onPressed,
             child: Text(
               buttonText,
-              style: TextStyle(color: Colors.black, fontSize: 15),
+              style: TextStyle(color: Colors.black, fontSize: 15, decoration: TextDecoration.underline),
             ))
       ],
     );

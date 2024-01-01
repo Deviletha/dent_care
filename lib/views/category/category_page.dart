@@ -10,6 +10,7 @@ import '../registration/login_page.dart';
 import 'category_view.dart';
 
 class CategoryPage extends StatefulWidget {
+
   const CategoryPage({super.key});
 
   @override
@@ -21,18 +22,15 @@ class _CategoryPageState extends State<CategoryPage> {
     "assets/kerr.jpeg",
     "assets/nsk.png",
     "assets/sybronEndo.jpeg",
-    "assets/Tokuyama.jpeg",
     "assets/colgate.png",
     "assets/mouthwash.jpg",
-    "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
-    "assets/images.png",
+    "assets/products.jpeg",
     "assets/instrument.jpg",
     "assets/dental-tools-1.jpg",
     "assets/dentist-equipment.jpg",
-    "assets/treatment-units.jpg",
     "assets/topsell.jpg",
-    "assets/images.png",
+    "assets/products.jpeg",
     "assets/dent product.jpg"
   ];
 
@@ -40,16 +38,13 @@ class _CategoryPageState extends State<CategoryPage> {
     "Ayurveda",
     "Anesthetics",
     "Endodontics",
-    "CAD/CAM and 3D Printers",
     "Digital Equipment",
     "Hygiene",
-    "Lab Products",
     "Orthodontics",
     "Small Equipment",
     "Surgical and Perio",
     "Xray",
     "Restorative",
-    "Operatory Products",
     "Infection Control",
     "Preventive",
     "Digital Equipment",
@@ -58,7 +53,6 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white10,
       appBar: AppBar(
         title: Text("Categories"),
       ),
@@ -168,7 +162,7 @@ class _CategoryPageState extends State<CategoryPage> {
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: 2.5,
+          childAspectRatio: 1.6,
         ),
         itemCount: images.length,
         itemBuilder: (context, index) => getCategory(index),
@@ -182,7 +176,9 @@ class _CategoryPageState extends State<CategoryPage> {
       categoryName: categoryNames[index],
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => CategoryView()));
+            context, MaterialPageRoute(builder: (context) => CategoryView(
+          category: categoryNames[index],
+        )));
       },
     );
   }

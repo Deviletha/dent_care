@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../Components/title_widget.dart';
 import '../../../theme/colors.dart';
 
 class FeaturedTile extends StatelessWidget {
@@ -20,94 +21,105 @@ class FeaturedTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
-        height: 250,
+        height: 350,
         child: Column(
           children: [
             Container(
               decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(imagePath), fit: BoxFit.cover),
-                borderRadius: BorderRadius.all(Radius.circular(8)),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.grey.shade500,
+                    color: Colors.blueGrey,
                     blurRadius: 1,
+                    blurStyle: BlurStyle.outer
                   ),
                 ],
+                borderRadius: BorderRadius.zero,
                 color: Colors.white,
               ),
-              height: 220,
+              height: 380,
               width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        itemName,
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                          color: Color(ColorT.textColor),
-                        ),
-                      ),
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(bottomLeft: Radius.elliptical(190, 40),
+                      bottomRight: Radius.elliptical(190, 40)),
+                      image: DecorationImage(
+                          image: AssetImage(imagePath), fit: BoxFit.cover),
+                      color: Colors.white,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    height: 280,
+                    width: double.infinity,
+                    child:  Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Text(
-                          price,
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Color(ColorT.textColor),
-                          ),
+                        SizedBox(
+                          height: 20,
                         ),
-                        Card(
-                          color: Colors.white,
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 20, right: 20),
-                            child: TextButton(
-                              onPressed: onPressed,
-                              child: Text(
-                                "Buy Now",
-                                style: TextStyle(
-                                    letterSpacing: 2,
-                                    color: Color(ColorT.themeColor),
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ),
+                        Text(
+                          "FEATURED", style: TextStyle(
+                          letterSpacing: 2,
+                          color: Colors.black, fontWeight: FontWeight.bold,
+                        ),
                         ),
                       ],
                     ),
-                  ],
-                ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Text(
+                            price,
+                            style: TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                              fontWeight: FontWeight.bold
+                              // Color(ColorT.textColor),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            itemName,
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey.shade600
+                              // Color(ColorT.textColor),
+                            ),
+                          ),
+                          // ElevatedButton(
+                          //   onPressed: onPressed,
+                          //   style: ElevatedButton.styleFrom(
+                          //     backgroundColor: Color(ColorT.themeColor),
+                          //     shadowColor: Colors.teal[300],
+                          //     shape: RoundedRectangleBorder(
+                          //       borderRadius: BorderRadius.circular(2),
+                          //     ),
+                          //   ),
+                          //   child: Text(
+                          //     "Buy Now",
+                          //     style: TextStyle(
+                          //       letterSpacing: 2,
+                          //       fontSize: 12,
+                          //       color: Colors.white,),
+                          //   ),
+                          // ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     Text(
-            //       itemName,
-            //       style: TextStyle(
-            //         fontSize: 14,
-            //         fontWeight: FontWeight.bold,
-            //         color: Color(ColorT.textColor),
-            //       ),
-            //     ),
-            //     TextButton(
-            //         onPressed: onPressed,
-            //         child: Text(
-            //           "Details",
-            //           style: TextStyle(
-            //               fontSize: 10, color: Color(ColorT.textColor)),
-            //         ))
-            //   ],
-            // ),
           ],
         ),
       ),

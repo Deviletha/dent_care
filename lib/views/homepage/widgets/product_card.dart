@@ -30,7 +30,12 @@ class ProductTile extends StatelessWidget {
       padding: const EdgeInsets.only(left: 5, right: 5, bottom: 10, top: 5),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey.shade50, width: 1),
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: Colors.red.shade400,
+          //     blurRadius: .13,
+          //   ),
+          // ],
         ),
         child: InkWell(
           onTap: onTap,
@@ -41,7 +46,7 @@ class ProductTile extends StatelessWidget {
               Container(
                 clipBehavior: Clip.antiAlias,
                 width: double.infinity,
-                height: 200,
+                height: 120,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
@@ -54,46 +59,55 @@ class ProductTile extends StatelessWidget {
                   child: Text(
                     discount,
                     textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 13, color: Colors.black),
+                    style: TextStyle(fontSize: 12, color: Colors.black),
                   ),
                 ),
               ),
               Expanded(
                 flex: 2,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Text(
-                      itemName,
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      actualPrice,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Color(ColorT.textColor),
+                child: Container(
+                  color: Colors.white,
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 5,
                       ),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Text(
-                      totalPrice,
-                      style: TextStyle(
-                        decoration: TextDecoration.lineThrough,
-                        fontSize: 14,
-                        color: Colors.grey,
+                      Text(
+                        itemName,
+                        style: TextStyle(fontSize: 13, color: Colors.black),
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        height: 8,
+                      ),
+
+                      Row(
+                        children: [
+                          Text(
+                            actualPrice,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                              color: Color(ColorT.textColor),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            totalPrice,
+                            style: TextStyle(
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 12,
+                              color: Colors.grey,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

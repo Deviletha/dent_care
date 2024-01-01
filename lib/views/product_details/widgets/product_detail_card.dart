@@ -30,7 +30,7 @@ class ProductDetailCard extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10))),
+                borderRadius: BorderRadius.zero),
             clipBehavior: Clip.antiAlias,
             width: double.infinity,
             height: 250,
@@ -100,8 +100,8 @@ class ProductDetailCard extends StatelessWidget {
                   )),
             ],
           ),
-          SizedBox(
-            height: 20,
+          Divider(
+            thickness: 2,
           ),
         ],
       ),

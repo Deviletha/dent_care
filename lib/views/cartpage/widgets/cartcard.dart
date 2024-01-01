@@ -45,11 +45,11 @@ class _CartTileState extends State<CartTile> {
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.red.shade100,
+                  color: Colors.grey,
                   blurRadius: 1,
                 ),
               ],
-              borderRadius: BorderRadius.all(Radius.circular(12))),
+              borderRadius: BorderRadius.zero),
           child: Row(
             children: [
               Padding(
@@ -59,9 +59,13 @@ class _CartTileState extends State<CartTile> {
                   width: 150,
                   height: 110,
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.shade300,
+                        blurRadius: 1,
+                      ),
+                    ],
+                    borderRadius: BorderRadius.zero,
                     image: DecorationImage(
                         image: AssetImage(
                           widget.imagePath,

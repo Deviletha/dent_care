@@ -13,17 +13,18 @@ class TopBrandTile extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Container(
-          height: 50,
-          width: 50,
+          height: 70,
+          width: 70,
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
                 blurStyle: BlurStyle.outer,
-                spreadRadius: 2,
-                color: Colors.grey.shade300,
-                blurRadius: 10,
+                spreadRadius: 1,
+                color: Colors.blueGrey,
+                blurRadius: 1,
               ),
             ],
+
             borderRadius: BorderRadius.all(Radius.circular(360)),
           ),
           clipBehavior: Clip.antiAlias,

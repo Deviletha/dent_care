@@ -22,8 +22,8 @@ class _BottomNavState extends State<BottomNav> {
     Homepage(),
     CategoryPage(),
     MyOrders(),
-    ProfilePage(),
-    CartPage()
+    CartPage(),
+    ProfilePage()
   ];
 
   Future<bool> _onWillPop() async {
@@ -51,11 +51,11 @@ class _BottomNavState extends State<BottomNav> {
     Ionicons.home_outline,
     Ionicons.grid_outline,
     Ionicons.newspaper_outline,
-    Ionicons.person_outline,
     Ionicons.bag_handle_outline,
+    Ionicons.person_outline,
   ];
 
-  List bottomLabels = ["Home", "Category", "My Orders", "Profile", "My Cart"];
+  List bottomLabels = ["Home", "Category", "My Orders","My Cart","Profile"];
 
   @override
   Widget build(BuildContext context) {
@@ -68,9 +68,9 @@ class _BottomNavState extends State<BottomNav> {
           itemCount: iconList.length,
           tabBuilder: (int index, bool isActive) {
             final color =
-                isActive ? Color(ColorT.textColor) : Colors.grey.shade500;
+                isActive ? Color(ColorT.themeColor) : Colors.grey.shade500;
             final color1 =
-                isActive ? Color(ColorT.textColor) : Colors.grey.shade500;
+                isActive ? Color(ColorT.themeColor) : Colors.grey.shade500;
 
             // final color = isActive ? colors.activeNavigationBarColor : colors.notActiveNavigationBarColor;
             return Column(

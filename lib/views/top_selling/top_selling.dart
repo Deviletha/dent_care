@@ -13,11 +13,11 @@ class _TopSellingState extends State<TopSelling> {
     "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
-    "assets/images.png",
+    "assets/products.jpeg",
     "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
-    "assets/images.png"
+    "assets/products.jpeg"
   ];
 
   @override

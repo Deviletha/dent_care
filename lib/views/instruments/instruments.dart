@@ -11,14 +11,14 @@ class AllInstruments extends StatefulWidget {
 class _AllInstrumentsState extends State<AllInstruments> {
 
   List<String> images = [
-    "assets/instrument.jpg",
-    "assets/dental-tools-1.jpg",
-    "assets/dentist-equipment.jpg",
-    "assets/treatment-units.jpg",
-    "assets/instrument.jpg",
-    "assets/dental-tools-1.jpg",
-    "assets/dentist-equipment.jpg",
-    "assets/treatment-units.jpg",
+    "assets/dentInstrument1.png",
+    "assets/dentInstrument2.png",
+    "assets/dentInstrument3.png",
+    "assets/dentInstrument4.png",
+    "assets/dentInstrument1.png",
+    "assets/dentInstrument2.png",
+    "assets/dentInstrument3.png",
+    "assets/dentInstrument4.png"
   ];
 
   @override

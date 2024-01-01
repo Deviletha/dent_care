@@ -30,7 +30,9 @@ class ProductTileCopy extends StatelessWidget {
       padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 5),
       child: Container(
         decoration:
-            BoxDecoration(border: Border.all(color: Colors.grey.shade100)),
+            BoxDecoration(
+
+            ),
         child: InkWell(
           onTap: onTap,
           child: Column(
@@ -38,7 +40,7 @@ class ProductTileCopy extends StatelessWidget {
               Container(
                 clipBehavior: Clip.antiAlias,
                 width: double.infinity,
-                height: 300,
+                height: 200,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage(
@@ -49,90 +51,94 @@ class ProductTileCopy extends StatelessWidget {
               ),
               Expanded(
                 flex: 3,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          itemName,
-                          style: TextStyle(color: Colors.grey.shade600),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          description,
-                          maxLines: 2,
-                          style: TextStyle(
-                            fontSize: 12,
+                child: Container(
+                  color: Colors.white,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 5,
                           ),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          actualPrice,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: Color(ColorT.textColor),
+                          Text(
+                            itemName,
+                            style: TextStyle(
+                                fontSize: 14, color: Colors.grey.shade600),
                           ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          totalPrice,
-                          style: TextStyle(
-                            decoration: TextDecoration.lineThrough,
-                            fontSize: 14,
-                            color: Colors.grey,
+                          SizedBox(
+                            height: 5,
                           ),
-                        ),
-                        SizedBox(
-                          width: 5,
-                        ),
-                        Text(
-                          discount,
-                          style: TextStyle(
-                            fontSize: 13,
-                            color: Colors.green,
+                          Text(
+                            description,
+                            maxLines: 2,
+                            style: TextStyle(
+                              fontSize: 11,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Container(
-                      color: Colors.black,
-                      child: Padding(
-                        padding: const EdgeInsets.all(5),
-                        child: Text(
-                          "Top Selling",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.white,
+                          SizedBox(
+                            height: 5,
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            actualPrice,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                              color: Color(ColorT.textColor),
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            totalPrice,
+                            style: TextStyle(
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 13,
+                              color: Colors.grey,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            discount,
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.green,
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 8,
+                      ),
+                      Container(
+                        color: Color(ColorT.redColor),
+                        child: Padding(
+                          padding: const EdgeInsets.all(5),
+                          child: Text(
+                            "Top Selling",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    // SizedBox(
-                    //   height: 20,
-                    // ),
-                  ],
+                      // SizedBox(
+                      //   height: 20,
+                      // ),
+                    ],
+                  ),
                 ),
               ),
             ],
