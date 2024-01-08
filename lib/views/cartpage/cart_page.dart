@@ -259,6 +259,12 @@ class _CartPageState extends State<CartPage> {
                       top: 8.0, bottom: 8, left: 15, right: 15),
                   child: Text("Place Order"),
                 ),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(ColorT.themeColor),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => PlaceOrder()));

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import '../../../theme/colors.dart';
 
-class AllProductCard extends StatelessWidget {
+class FeaturedProductCard extends StatelessWidget {
   final String itemName;
   final String description;
   final String price;
@@ -12,15 +12,15 @@ class AllProductCard extends StatelessWidget {
   final void Function()? onTap;
   final void Function()? onPressed;
 
-  const AllProductCard(
+  const FeaturedProductCard(
       {super.key,
-      required this.itemName,
-      required this.description,
-      required this.price,
-      required this.mrp,
-      required this.discount,
-      this.onTap,
-      this.onPressed, required this.imagePath});
+        required this.itemName,
+        required this.description,
+        required this.price,
+        required this.mrp,
+        required this.discount,
+        this.onTap,
+        this.onPressed, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {

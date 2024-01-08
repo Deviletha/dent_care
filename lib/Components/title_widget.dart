@@ -23,7 +23,8 @@ class Heading extends StatelessWidget {
           Text(
             text,
             style: TextStyle(fontSize: 17,
-              color: Colors.black),
+                fontWeight: FontWeight.bold,
+              color: Color(ColorT.themeColor)),
           ),
         ],
       ),

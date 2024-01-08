@@ -1,31 +1,33 @@
-import 'package:danthal/views/featured_products/widgets/featured_card.dart';
+import 'package:danthal/views/top_selling/widgets/all_product_card.dart';
 import 'package:flutter/material.dart';
 
-class FeaturedProducts extends StatefulWidget {
-  const FeaturedProducts({super.key});
+import '../featured_products/widgets/featured_card.dart';
+
+class TrendingProducts extends StatefulWidget {
+  const TrendingProducts({super.key});
 
   @override
-  State<FeaturedProducts> createState() => _FeaturedProductsState();
+  State<TrendingProducts> createState() => _TrendingProductsState();
 }
 
-class _FeaturedProductsState extends State<FeaturedProducts> {
+class _TrendingProductsState extends State<TrendingProducts> {
 
   List<String> images1 = [
+    "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
-    "assets/pr1.png",
-    "assets/pr2.png",
-    "assets/pr3.png",
-    "assets/pr4.png",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
+    "assets/mouthwash.jpg",
     "assets/dentall product.jpeg",
+    "assets/bond_370x287_bf4.jpg",
+    "assets/products.jpeg"
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Featured Products"),
+          title: Text("Trending Products"),
         ),
         body: ListView.builder(
           itemCount: images1.length,

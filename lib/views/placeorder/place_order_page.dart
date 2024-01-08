@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import '../../theme/colors.dart';
 import 'change_address.dart';
 
 class PlaceOrder extends StatefulWidget {
@@ -291,7 +292,12 @@ class _PlaceOrderState extends State<PlaceOrder> {
         child: SizedBox(
           height: 60,
           child: ElevatedButton(
-            onPressed: () {},
+            onPressed: () {},  style: ElevatedButton.styleFrom(
+            backgroundColor: Color(ColorT.themeColor),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(0),
+            ),
+          ),
             child: Text("Confirm Order"),
           ),
         ),

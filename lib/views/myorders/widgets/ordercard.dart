@@ -94,7 +94,6 @@ class OrderCard extends StatelessWidget {
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: color,
-                                shadowColor: Colors.teal[300],
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(2),
                                 ),

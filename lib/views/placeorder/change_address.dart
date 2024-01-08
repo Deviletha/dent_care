@@ -184,6 +184,12 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
                   // Implement the logic to update the address
                   Navigator.pop(context); // Close the bottom sheet
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(ColorT.themeColor),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
                 child: Text("Save Changes"),
               ),
             ],

@@ -134,7 +134,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 "User Name",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-              subtitle: Text("e mail id"),
+              subtitle: Text("Email id"),
             ),
           ),
           // Padding(

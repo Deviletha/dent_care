@@ -13,7 +13,6 @@ class ProductDetailsPage extends StatefulWidget {
 }
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
-
   List<String> images1 = [
     "assets/pr1.png",
     "assets/pr2.png",
@@ -102,8 +101,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                                   fontSize: 14,
                                   color: Colors.grey,
                                   decoration: TextDecoration.lineThrough,
-                                  decorationStyle:
-                                      TextDecorationStyle.solid,
+                                  decorationStyle: TextDecorationStyle.solid,
                                 )),
                             SizedBox(
                               width: 5,
@@ -134,10 +132,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ),
                 Text(
                   "Quantity",
-                  style:
-                      TextStyle(
-                          color: Colors.grey.shade600,
-                          fontSize: 16, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Colors.grey.shade600,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 10,
@@ -173,19 +171,22 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 ),
                 Text(
                   "product description",
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
                 ),
                 SizedBox(
                   height: 10,
                 ),
                 Text(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-                    " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-                    " when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-                    style: TextStyle(
-                        fontSize: 12, color: Colors.grey.shade600)),
-
+                    "Lorem Ipsum is simply dummy text of the printing "
+                    "and typesetting industry. Lorem Ipsum has been "
+                    "the industry's standard dummy text ever since the "
+                    "1500s, when an unknown printer took a galley of "
+                    "type and scrambled it to make a type specimen book.",
+                    style:
+                        TextStyle(
+                          wordSpacing: 2,
+                            letterSpacing: .50,
+                            fontSize: 12, color: Colors.grey.shade600)),
                 SizedBox(
                   height: 20,
                 ),
@@ -193,11 +194,14 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                   color: Colors.grey.shade200,
                   thickness: 2,
                 ),
-                Text("Related products", style: TextStyle(
-                    letterSpacing: 1,
-                    fontSize: 12,
-                    color: Colors.black, fontWeight: FontWeight.bold
-                ),),
+                Text(
+                  "Related products",
+                  style: TextStyle(
+                      letterSpacing: 1,
+                      fontSize: 12,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold),
+                ),
                 SizedBox(
                   height: 20,
                 ),
@@ -211,6 +215,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     aspectRatio: 15 / 9,
                     viewportFraction: .60,
                     initialPage: 0,
+                    padEnds: false,
                     reverse: false,
                     enlargeCenterPage: false,
                     onPageChanged: (index, reason) {},
@@ -236,6 +241,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     blurRadius: 1,
                   ),
                 ],
+
                 borderRadius: BorderRadius.zero,
                 color: Color(ColorT.themeColor),
               ),
@@ -296,6 +302,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
       // },
     );
   }
+
   Widget getRelatedProducts(int index1) {
     return RelatedProductTile(
       itemName: "PRODUCT NAME",

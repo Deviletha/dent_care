@@ -17,6 +17,7 @@ import 'package:danthal/views/instruments/instruments.dart';
 import 'package:danthal/views/profile_page/profile_page.dart';
 import 'package:danthal/views/top_selling/top_selling.dart';
 import 'package:danthal/views/product_details/product_details.dart';
+import 'package:danthal/views/trending_products/trending_products_page.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import '../../theme/colors.dart';
@@ -69,6 +70,12 @@ class _HomepageState extends State<Homepage> {
     "assets/pr2.png",
     "assets/pr3.png",
     "assets/pr4.png",
+  ];
+  List<String> featureCategory = [
+    "assets/cat_pic1.jpg",
+    "assets/cat_pic2.png",
+    "assets/cat_pic3.png",
+    "assets/cat_pic4.png",
   ];
   List<String> topImages = [
     "assets/kerr.jpeg",
@@ -288,11 +295,12 @@ class _HomepageState extends State<Homepage> {
                             icon: Icon(
                               Icons.search,
                               color: Colors.black,
+                              size: 15,
                             )),
                         Text(
                           "Search Products here ",
                           style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 12,
                               color: Colors.black,
                               letterSpacing: 1.5),
                         ),
@@ -310,7 +318,7 @@ class _HomepageState extends State<Homepage> {
               [
                 Column(children: [
                   TitleText(
-                    heading: "Categories",
+                    heading: "CATEGORIES",
                     buttonText: "See all",
                     onPressed: () {
                       Navigator.push(
@@ -329,6 +337,9 @@ class _HomepageState extends State<Homepage> {
                       aspectRatio: 15 / 6,
                       viewportFraction: .25,
                       initialPage: 0,
+                      clipBehavior: Clip.hardEdge,
+                      padEnds: false,
+                      animateToClosest: true,
                       enableInfiniteScroll: true,
                       reverse: false,
                       autoPlay: false,
@@ -353,7 +364,7 @@ class _HomepageState extends State<Homepage> {
                     child: Column(
                       children: [
                         TitleText(
-                          heading: "Top Selling",
+                          heading: "TOP SELLING",
                           buttonText: "See all",
                           onPressed: () {
                             Navigator.push(
@@ -372,6 +383,7 @@ class _HomepageState extends State<Homepage> {
                             aspectRatio: 15 / 9,
                             viewportFraction: .60,
                             initialPage: 0,
+                            padEnds: false,
                             reverse: false,
                             enlargeCenterPage: false,
                             onPageChanged: (index, reason) {},
@@ -396,6 +408,7 @@ class _HomepageState extends State<Homepage> {
                       initialPage: 0,
                       enableInfiniteScroll: true,
                       reverse: false,
+                      padEnds: false,
                       // autoPlay: true,
                       enlargeCenterPage: false,
                       autoPlayInterval: Duration(seconds: 3),
@@ -406,7 +419,7 @@ class _HomepageState extends State<Homepage> {
                     ),
                   ),
                   SizedBox(
-                    height: 10 ,
+                    height: 10,
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -421,7 +434,7 @@ class _HomepageState extends State<Homepage> {
                     child: Column(
                       children: [
                         TitleText(
-                          heading: "Featured Products",
+                          heading: "FEATURED PRODUCTS",
                           buttonText: "See all",
                           onPressed: () {
                             Navigator.push(
@@ -475,9 +488,14 @@ class _HomepageState extends State<Homepage> {
                     child: Column(
                       children: [
                         TitleText(
-                          heading: "Trending Products",
+                          heading: "TRENDING PRODUCTS",
                           buttonText: "See all",
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => TrendingProducts()));
+                          },
                         ),
                         CarouselSlider.builder(
                           itemCount: 3,
@@ -491,6 +509,7 @@ class _HomepageState extends State<Homepage> {
                             initialPage: 0,
                             // enableInfiniteScroll: true,
                             reverse: false,
+                            padEnds: false,
                             // autoPlay: true,
                             enlargeCenterPage: false,
                             autoPlayInterval: Duration(seconds: 3),
@@ -507,37 +526,55 @@ class _HomepageState extends State<Homepage> {
                   SizedBox(
                     height: 10,
                   ),
-                  TitleText(
-                    heading: "Top Brands",
-                    buttonText: "See all",
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => AllBrands()));
-                    },
-                  ),
-                  CarouselSlider.builder(
-                    itemCount: topImages.length,
-                    itemBuilder: (context, index, realIndex) {
-                      return getTopBrand(index);
-                    },
-                    options: CarouselOptions(
-                      height: 85,
-                      aspectRatio: 15 / 6,
-                      viewportFraction: .25,
-                      initialPage: 0,
-                      enableInfiniteScroll: true,
-                      reverse: false,
-                      autoPlay: false,
-                      enlargeCenterPage: false,
-                      autoPlayInterval: Duration(seconds: 3),
-                      autoPlayAnimationDuration: Duration(milliseconds: 800),
-                      autoPlayCurve: Curves.fastOutSlowIn,
-                      onPageChanged: (index, reason) {},
-                      scrollDirection: Axis.horizontal,
+                  Container(
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage(
+                              "assets/brand_bg.png",
+                            ),
+                            fit: BoxFit.cover,
+                            colorFilter: ColorFilter.mode(
+                                Colors.white54, BlendMode.lighten))),
+                    child: Column(
+                      children: [
+                        TitleText(
+                          heading: "TOP BRANDS",
+                          buttonText: "See all",
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AllBrands()));
+                          },
+                        ),
+                        CarouselSlider.builder(
+                          itemCount: topImages.length,
+                          itemBuilder: (context, index, realIndex) {
+                            return getTopBrand(index);
+                          },
+                          options: CarouselOptions(
+                            height: 95,
+                            aspectRatio: 15 / 6,
+                            viewportFraction: .25,
+                            initialPage: 0,
+                            enableInfiniteScroll: true,
+                            reverse: false,
+                            autoPlay: false,
+                            padEnds: false,
+                            enlargeCenterPage: false,
+                            autoPlayInterval: Duration(seconds: 3),
+                            autoPlayAnimationDuration:
+                                Duration(milliseconds: 800),
+                            autoPlayCurve: Curves.fastOutSlowIn,
+                            onPageChanged: (index, reason) {},
+                            scrollDirection: Axis.horizontal,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 15,
+                        ),
+                      ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 15,
                   ),
                   Container(
                     decoration: BoxDecoration(
@@ -552,22 +589,22 @@ class _HomepageState extends State<Homepage> {
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 5,
+                          height: 10,
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: const [
-                            Icon(
-                              Ionicons.bag_outline,
-                              size: 20,
-                            ),
+                            Icon(Ionicons.bag_outline,
+                                size: 20, color: Color(ColorT.themeColor)),
                             SizedBox(
                               width: 10,
                             ),
                             Text(
-                              "Recommended For You",
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 17),
+                              "RECOMMENDED FOR YOU",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Color(ColorT.themeColor),
+                                  fontSize: 17),
                             )
                           ],
                         ),
@@ -605,7 +642,7 @@ class _HomepageState extends State<Homepage> {
                       initialPage: 0,
                       enableInfiniteScroll: true,
                       reverse: false,
-                      autoPlay: false,
+                      autoPlay: true,
                       enlargeCenterPage: false,
                       autoPlayInterval: Duration(seconds: 3),
                       autoPlayAnimationDuration: Duration(milliseconds: 800),
@@ -613,6 +650,40 @@ class _HomepageState extends State<Homepage> {
                       onPageChanged: (index, reason) {},
                       scrollDirection: Axis.horizontal,
                     ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    children: [
+                      TitleText(
+                        heading: "FEATURE CATEGORY",
+                        buttonText: "See all",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => CategoryPage()));
+                        },
+                      ),
+                      CarouselSlider.builder(
+                        itemCount: 4,
+                        itemBuilder: (context, index, realIndex) {
+                          return getFeatureCategory(index);
+                        },
+                        options: CarouselOptions(
+                          height: 350,
+                          aspectRatio: 15 / 9,
+                          viewportFraction: .60,
+                          initialPage: 0,
+                          padEnds: false,
+                          reverse: false,
+                          enlargeCenterPage: false,
+                          onPageChanged: (index, reason) {},
+                          scrollDirection: Axis.horizontal,
+                        ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 10,
@@ -630,7 +701,7 @@ class _HomepageState extends State<Homepage> {
                     child: Column(
                       children: [
                         TitleText(
-                          heading: "Instruments",
+                          heading: "INSTRUMENTS",
                           buttonText: "See All",
                           onPressed: () {
                             Navigator.push(
@@ -675,6 +746,70 @@ class _HomepageState extends State<Homepage> {
       },
       onPressed: () {},
     );
+  }
+
+  Widget getFeatureCategory(int index1) {
+    return Padding(
+      padding: const EdgeInsets.all(8),
+      child: Container(
+        decoration: BoxDecoration(
+          boxShadow: const [
+            BoxShadow(
+              blurStyle: BlurStyle.outer,
+              spreadRadius: 1,
+              color: Colors.blueGrey,
+              blurRadius: 1,
+            ),
+          ],
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(0)),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            height: 350,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                image: DecorationImage(
+                    image: AssetImage(featureCategory[index1]), fit: BoxFit.fitHeight)),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Color(ColorT.redColor),
+                        borderRadius: BorderRadius.all(Radius.circular(40))),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15),
+                      child: Text(
+                        "Categories Name",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+    //   ProductTileCopy(
+    //   itemName: "PRODUCT NAME",
+    //   imagePath: images1[index1],
+    //   description: "Dummy Description for product card",
+    //   actualPrice: "₹ 20000",
+    //   discount: "20% Off",
+    //   totalPrice: "₹ 25000",
+    //   onTap: () {
+    //     Navigator.push(context,
+    //         MaterialPageRoute(builder: (context) => ProductDetailsPage()));
+    //   },
+    //   onPressed: () {},
+    // );
   }
 
   Widget getInstruments(int index1) {
