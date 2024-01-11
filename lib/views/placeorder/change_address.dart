@@ -53,7 +53,7 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
             shadowColor: Colors.teal[300],
             minimumSize: Size.fromHeight(50),
           ),
-          child: Text("Add New Address"),
+          child: Text("Add New Address", style: TextStyle(color: Colors.white)),
         ),
       ),
     );
@@ -187,10 +187,10 @@ class _DeliveryAddressPageState extends State<DeliveryAddressPage> {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(ColorT.themeColor),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
-                child: Text("Save Changes"),
+                child: Text("Save Changes", style: TextStyle(color: Colors.white),),
               ),
             ],
           ),

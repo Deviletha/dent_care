@@ -28,7 +28,6 @@ class CartTile extends StatefulWidget {
 }
 
 class _CartTileState extends State<CartTile> {
-
   late int _selectedQuantity;
 
   @override
@@ -36,6 +35,7 @@ class _CartTileState extends State<CartTile> {
     super.initState();
     _selectedQuantity = int.parse(widget.quantity);
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -49,7 +49,7 @@ class _CartTileState extends State<CartTile> {
                   blurRadius: 1,
                 ),
               ],
-              borderRadius: BorderRadius.zero),
+              borderRadius: BorderRadius.all(Radius.circular(15))),
           child: Row(
             children: [
               Padding(
@@ -59,13 +59,9 @@ class _CartTileState extends State<CartTile> {
                   width: 150,
                   height: 110,
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade300,
-                        blurRadius: 1,
-                      ),
-                    ],
-                    borderRadius: BorderRadius.zero,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        bottomLeft: Radius.circular(15)),
                     image: DecorationImage(
                         image: AssetImage(
                           widget.imagePath,
@@ -80,76 +76,77 @@ class _CartTileState extends State<CartTile> {
               ),
               Expanded(
                   child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(widget.itemName),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Text(
-                    widget.description,
-                    style: TextStyle(fontSize: 12, color: Colors.grey),
-                  ),
-                  Text(
-                    widget.price,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: Color(ColorT.textColor),
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                    Text(widget.itemName),
+                    Text(
+                      widget.description,
+                      style: TextStyle(fontSize: 12, color: Colors.grey),
                     ),
-                  ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Container(
-                      height: 30,
-                      decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
-                      child: Row(
-                        children: [
-                          Text(" Qty "),
-                          SizedBox(
-                            width: 50,
-                            child: Center(
-                              child: DropdownButton<int>(
-                                value: _selectedQuantity,
-                                items: List.generate(10, (index) => index + 1)
-                                    .map<DropdownMenuItem<int>>(
-                                      (value) => DropdownMenuItem<int>(
-                                    value: value,
-                                    child: Text(
-                                      value.toString(),
-                                      style: TextStyle(fontSize: 13),
-                                    ),
-                                  ),
-                                )
-                                    .toList(),
-                                onChanged: (value) {
-                                  setState(() {
-                                    _selectedQuantity = value!;
-                                  });
-                                },
-                              ),
-                            ),
-                          ),
-                        ],
+                    Text(
+                      widget.price,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: Color(ColorT.textColor),
                       ),
                     ),
-                    IconButton(
-                      alignment: Alignment.center,
-                      onPressed: widget.onPressed,
-                      icon: Icon(
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 30,
+                          decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(12)),
+                              border: Border.all(color: Colors.grey)),
+                          child: Row(
+                            children: [
+                              Text(" Qty "),
+                              SizedBox(
+                                width: 50,
+                                child: Center(
+                                  child: DropdownButton<int>(
+                                    value: _selectedQuantity,
+                                    items:
+                                        List.generate(10, (index) => index + 1)
+                                            .map<DropdownMenuItem<int>>(
+                                              (value) => DropdownMenuItem<int>(
+                                                value: value,
+                                                child: Text(
+                                                  value.toString(),
+                                                  style:
+                                                      TextStyle(fontSize: 13),
+                                                ),
+                                              ),
+                                            )
+                                            .toList(),
+                                    onChanged: (value) {
+                                      setState(() {
+                                        _selectedQuantity = value!;
+                                      });
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        IconButton(
+                          alignment: Alignment.center,
+                          onPressed: widget.onPressed,
+                          icon: Icon(
                             Ionicons.trash_outline,
                             size: 18,
                             color: Colors.red,
                           ),
                         )
-                ],
-              )
-  ]
-              )
-              ) ],
+                      ],
+                    )
+                  ]))
+            ],
           )),
     );
   }

@@ -108,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                   backgroundColor: Color(ColorT.themeColor),
                   shadowColor: Colors.teal[300],
                 ),
-                child: Text("Login"),
+                child: Text("Login", style: TextStyle(color: Colors.white),),
               ),
             ),
             TextButton(

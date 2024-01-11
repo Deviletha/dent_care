@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import '../../../theme/colors.dart';
 
 class ProductTileCopy extends StatelessWidget {
@@ -9,7 +10,7 @@ class ProductTileCopy extends StatelessWidget {
   final String imagePath;
   final String actualPrice;
   final String discount;
-  final void Function()? onPressed;
+  final void Function()? wishlist;
   final void Function()? onTap;
   final void Function()? addCart;
 
@@ -20,7 +21,7 @@ class ProductTileCopy extends StatelessWidget {
       required this.totalPrice,
       required this.imagePath,
       required this.actualPrice,
-      this.onPressed,
+      this.wishlist,
       this.onTap,
       required this.discount,
       this.addCart});
@@ -28,11 +29,18 @@ class ProductTileCopy extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 5),
+      padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8, top: 5),
       child: Container(
         decoration:
             BoxDecoration(
-
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade500,
+                  blurRadius: 3,
+                ),
+              ],
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(15)),
             ),
         child: InkWell(
           onTap: onTap,
@@ -41,19 +49,33 @@ class ProductTileCopy extends StatelessWidget {
               Container(
                 clipBehavior: Clip.antiAlias,
                 width: double.infinity,
-                height: 200,
+                height: 160,
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
                   image: DecorationImage(
                       image: AssetImage(
                         imagePath,
                       ),
                       fit: BoxFit.cover),
                 ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    IconButton(
+                        onPressed: wishlist,
+                        icon: Icon(
+                          Ionicons.heart_outline,
+                          color: Color(ColorT.themeColor),
+                          size: 25,
+                        )),
+                  ],
+                ),
               ),
               Expanded(
                 flex: 3,
-                child: Container(
-                  color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
@@ -92,7 +114,7 @@ class ProductTileCopy extends StatelessWidget {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
-                              color: Color(ColorT.textColor),
+                              color: Color(ColorT.themeColor),
                             ),
                           ),
                           SizedBox(

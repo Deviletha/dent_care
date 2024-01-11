@@ -14,11 +14,9 @@ class _TrendingProductsState extends State<TrendingProducts> {
 
   List<String> images1 = [
     "assets/mouthwash.jpg",
-    "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
     "assets/mouthwash.jpg",
-    "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg"
   ];

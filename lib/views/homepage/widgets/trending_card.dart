@@ -25,12 +25,13 @@ class TrendingTile extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          boxShadow: const [
+          boxShadow:  [
             BoxShadow(
-              color: Colors.blueGrey,
-              blurRadius: 1,
+              color: Colors.grey.shade500,
+              blurRadius: 2,
             ),
           ],
+          borderRadius: BorderRadius.all(Radius.circular(15)),
           color: Colors.white,
         ),
         height: 300,
@@ -54,7 +55,7 @@ class TrendingTile extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.bold,
-                            color: Color(ColorT.textColor),
+                            color: Color(ColorT.themeColor),
                           ),
                         ),
                         SizedBox(
@@ -107,14 +108,14 @@ class TrendingTile extends StatelessWidget {
                         onTap: onPressed,
                         child: Container(
                             decoration: BoxDecoration(
-                                border: Border.all(color: Colors.black)
-                            ),
+                                border: Border.all(color: Colors.black)),
                             child: Padding(
                               padding: const EdgeInsets.all(3),
                               child: Text(
                                 "Details",
                                 style: TextStyle(
-                                    fontSize: 10, color: Color(ColorT.textColor)),
+                                    fontSize: 10,
+                                    color: Color(ColorT.textColor)),
                               ),
                             )),
                       ),
@@ -123,7 +124,8 @@ class TrendingTile extends StatelessWidget {
                 ],
               ),
               Divider(
-                thickness: 2,color: Colors.grey.shade100,
+                thickness: 2,
+                color: Colors.grey.shade100,
               ),
               Expanded(
                 child: Container(

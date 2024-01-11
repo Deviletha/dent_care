@@ -9,7 +9,7 @@ class ProductImageTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.zero,
+          borderRadius: BorderRadius.all(Radius.circular(15)),
           image: DecorationImage(
               image: AssetImage(imagePath), fit: BoxFit.cover)),
     );

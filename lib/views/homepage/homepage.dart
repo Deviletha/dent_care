@@ -66,10 +66,11 @@ class _HomepageState extends State<Homepage> {
     "assets/dentall_product-removebg-preview.png",
   ];
   List<String> images1 = [
-    "assets/pr1.png",
-    "assets/pr2.png",
-    "assets/pr3.png",
-    "assets/pr4.png",
+    "assets/pr11.png",
+    "assets/pr22.png",
+    "assets/mouthwash.jpg",
+    "assets/pr33.png",
+    "assets/pr44.png",
   ];
   List<String> featureCategory = [
     "assets/cat_pic1.jpg",
@@ -351,47 +352,36 @@ class _HomepageState extends State<Homepage> {
                       scrollDirection: Axis.horizontal,
                     ),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2,
-                            blurStyle: BlurStyle.outer),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        TitleText(
-                          heading: "TOP SELLING",
-                          buttonText: "See all",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TopSelling()));
-                          },
+                  Column(
+                    children: [
+                      TitleText(
+                        heading: "TOP SELLING",
+                        buttonText: "See all",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TopSelling()));
+                        },
+                      ),
+                      CarouselSlider.builder(
+                        itemCount: 4,
+                        itemBuilder: (context, index, realIndex) {
+                          return getInstrumentsCopy(index);
+                        },
+                        options: CarouselOptions(
+                          height: 290,
+                          aspectRatio: 15 / 9,
+                          viewportFraction: .60,
+                          initialPage: 0,
+                          padEnds: false,
+                          reverse: false,
+                          enlargeCenterPage: false,
+                          onPageChanged: (index, reason) {},
+                          scrollDirection: Axis.horizontal,
                         ),
-                        CarouselSlider.builder(
-                          itemCount: 4,
-                          itemBuilder: (context, index, realIndex) {
-                            return getInstrumentsCopy(index);
-                          },
-                          options: CarouselOptions(
-                            height: 320,
-                            aspectRatio: 15 / 9,
-                            viewportFraction: .60,
-                            initialPage: 0,
-                            padEnds: false,
-                            reverse: false,
-                            enlargeCenterPage: false,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 10,
@@ -421,52 +411,41 @@ class _HomepageState extends State<Homepage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2,
-                            blurStyle: BlurStyle.outer),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        TitleText(
-                          heading: "FEATURED PRODUCTS",
-                          buttonText: "See all",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => FeaturedProducts()));
-                          },
+                  Column(
+                    children: [
+                      TitleText(
+                        heading: "FEATURED PRODUCTS",
+                        buttonText: "See all",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FeaturedProducts()));
+                        },
+                      ),
+                      CarouselSlider.builder(
+                        itemCount: featuredItems.length,
+                        itemBuilder: (context, index, realIndex) {
+                          return getFeatured(index);
+                        },
+                        options: CarouselOptions(
+                          height: 400,
+                          aspectRatio: 9,
+                          viewportFraction: .85,
+                          initialPage: 0,
+                          // enableInfiniteScroll: true,
+                          reverse: false,
+                          // autoPlay: true,
+                          enlargeCenterPage: false,
+                          autoPlayInterval: Duration(seconds: 3),
+                          autoPlayAnimationDuration:
+                              Duration(milliseconds: 800),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          onPageChanged: (index, reason) {},
+                          scrollDirection: Axis.horizontal,
                         ),
-                        CarouselSlider.builder(
-                          itemCount: featuredItems.length,
-                          itemBuilder: (context, index, realIndex) {
-                            return getFeatured(index);
-                          },
-                          options: CarouselOptions(
-                            height: 400,
-                            aspectRatio: 9,
-                            viewportFraction: .85,
-                            initialPage: 0,
-                            // enableInfiniteScroll: true,
-                            reverse: false,
-                            // autoPlay: true,
-                            enlargeCenterPage: false,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 10,
@@ -475,53 +454,42 @@ class _HomepageState extends State<Homepage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2,
-                            blurStyle: BlurStyle.outer),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        TitleText(
-                          heading: "TRENDING PRODUCTS",
-                          buttonText: "See all",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => TrendingProducts()));
-                          },
+                  Column(
+                    children: [
+                      TitleText(
+                        heading: "TRENDING PRODUCTS",
+                        buttonText: "See all",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TrendingProducts()));
+                        },
+                      ),
+                      CarouselSlider.builder(
+                        itemCount: 3,
+                        itemBuilder: (context, index, realIndex) {
+                          return getTrending(index);
+                        },
+                        options: CarouselOptions(
+                          height: 300,
+                          aspectRatio: 9,
+                          viewportFraction: .80,
+                          initialPage: 0,
+                          // enableInfiniteScroll: true,
+                          reverse: false,
+                          padEnds: false,
+                          // autoPlay: true,
+                          enlargeCenterPage: false,
+                          autoPlayInterval: Duration(seconds: 3),
+                          autoPlayAnimationDuration:
+                              Duration(milliseconds: 800),
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          onPageChanged: (index, reason) {},
+                          scrollDirection: Axis.horizontal,
                         ),
-                        CarouselSlider.builder(
-                          itemCount: 3,
-                          itemBuilder: (context, index, realIndex) {
-                            return getTrending(index);
-                          },
-                          options: CarouselOptions(
-                            height: 300,
-                            aspectRatio: 9,
-                            viewportFraction: .80,
-                            initialPage: 0,
-                            // enableInfiniteScroll: true,
-                            reverse: false,
-                            padEnds: false,
-                            // autoPlay: true,
-                            enlargeCenterPage: false,
-                            autoPlayInterval: Duration(seconds: 3),
-                            autoPlayAnimationDuration:
-                                Duration(milliseconds: 800),
-                            autoPlayCurve: Curves.fastOutSlowIn,
-                            onPageChanged: (index, reason) {},
-                            scrollDirection: Axis.horizontal,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   SizedBox(
                     height: 10,
@@ -617,7 +585,7 @@ class _HomepageState extends State<Homepage> {
                           gridDelegate:
                               const SliverGridDelegateWithFixedCrossAxisCount(
                             crossAxisCount: 2,
-                            childAspectRatio: .85,
+                            childAspectRatio: .70,
                           ),
                           itemCount: 4,
                           padding: EdgeInsets.zero,
@@ -688,42 +656,31 @@ class _HomepageState extends State<Homepage> {
                   SizedBox(
                     height: 10,
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade100,
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Colors.grey,
-                            blurRadius: 2,
-                            blurStyle: BlurStyle.outer),
-                      ],
-                    ),
-                    child: Column(
-                      children: [
-                        TitleText(
-                          heading: "INSTRUMENTS",
-                          buttonText: "See All",
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AllInstruments()));
-                          },
+                  Column(
+                    children: [
+                      TitleText(
+                        heading: "INSTRUMENTS",
+                        buttonText: "See All",
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AllInstruments()));
+                        },
+                      ),
+                      GridView.builder(
+                        physics: ScrollPhysics(),
+                        shrinkWrap: true,
+                        padding: EdgeInsets.zero,
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: .70,
                         ),
-                        GridView.builder(
-                          physics: ScrollPhysics(),
-                          shrinkWrap: true,
-                          padding: EdgeInsets.zero,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: .85,
-                          ),
-                          itemCount: 4,
-                          itemBuilder: (context, index) => getProducts(index),
-                        ),
-                      ],
-                    ),
+                        itemCount: 4,
+                        itemBuilder: (context, index) => getProducts(index),
+                      ),
+                    ],
                   )
                 ]),
               ],
@@ -744,7 +701,7 @@ class _HomepageState extends State<Homepage> {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ProductDetailsPage()));
       },
-      onPressed: () {},
+      wishlist: () {},
     );
   }
 
@@ -753,23 +710,23 @@ class _HomepageState extends State<Homepage> {
       padding: const EdgeInsets.all(8),
       child: Container(
         decoration: BoxDecoration(
-          boxShadow: const [
+          boxShadow:  [
             BoxShadow(
               blurStyle: BlurStyle.outer,
               spreadRadius: 1,
-              color: Colors.blueGrey,
-              blurRadius: 1,
+              color: Colors.grey.shade500,
+              blurRadius: 4,
             ),
           ],
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(0)),
+          borderRadius: BorderRadius.all(Radius.circular(15)),
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
             height: 350,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderRadius: BorderRadius.all(Radius.circular(15)),
                 image: DecorationImage(
                     image: AssetImage(featureCategory[index1]), fit: BoxFit.fitHeight)),
             child: Row(
@@ -819,12 +776,12 @@ class _HomepageState extends State<Homepage> {
       description: "Dummy Description for product card",
       actualPrice: "₹ 20000",
       discount: "20% Off",
-      totalPrice: "₹ 25000",
+      totalPrice: "25000",
       onTap: () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ProductDetailsPage()));
       },
-      onPressed: () {},
+      wishlist: () {},
     );
   }
 
@@ -835,12 +792,12 @@ class _HomepageState extends State<Homepage> {
       description: "Dummy Description for product card",
       actualPrice: "₹ 20000 ",
       discount: "20% Off",
-      totalPrice: "₹ 25000",
+      totalPrice: "25000",
       onTap: () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ProductDetailsPage()));
       },
-      onPressed: () {},
+      wishlist: () {},
     );
   }
 

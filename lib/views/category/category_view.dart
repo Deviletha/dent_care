@@ -12,10 +12,10 @@ class CategoryView extends StatefulWidget {
 class _CategoryViewState extends State<CategoryView> {
 
   List<String> images = [
-    "assets/pr1.png",
-    "assets/pr2.png",
-    "assets/pr3.png",
-    "assets/pr4.png",
+    "assets/pr11.png",
+    "assets/pr22.png",
+    "assets/pr33.png",
+    "assets/pr44.png",
     "assets/dentInstrument1.png",
     "assets/dentInstrument2.png",
     "assets/dentInstrument3.png",
@@ -35,7 +35,7 @@ class _CategoryViewState extends State<CategoryView> {
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: .90,
+          childAspectRatio: .85,
         ),
         itemCount: images.length,
         itemBuilder: (context, index) => getCategory(index),

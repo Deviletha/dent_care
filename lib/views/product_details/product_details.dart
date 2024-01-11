@@ -14,10 +14,10 @@ class ProductDetailsPage extends StatefulWidget {
 
 class _ProductDetailsPageState extends State<ProductDetailsPage> {
   List<String> images1 = [
-    "assets/pr1.png",
-    "assets/pr2.png",
-    "assets/pr3.png",
-    "assets/pr4.png",
+    "assets/pr11.png",
+    "assets/pr22.png",
+    "assets/pr33.png",
+    "assets/pr44.png",
   ];
 
   List<String> featuredItems = [

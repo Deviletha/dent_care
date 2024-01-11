@@ -257,12 +257,12 @@ class _CartPageState extends State<CartPage> {
                 child: Padding(
                   padding: const EdgeInsets.only(
                       top: 8.0, bottom: 8, left: 15, right: 15),
-                  child: Text("Place Order"),
+                  child: Text("Place Order", style: TextStyle(color: Colors.white),),
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(ColorT.themeColor),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(2),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
                 onPressed: () {

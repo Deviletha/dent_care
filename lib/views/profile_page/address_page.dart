@@ -42,10 +42,9 @@ class _AddressPageState extends State<AddressPage> {
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Color(ColorT.themeColor),
-            shadowColor: Colors.teal[300],
             minimumSize: Size.fromHeight(50),
           ),
-          child: Text("Add New Address"),
+          child: Text("Add New Address", style: TextStyle(color: Colors.white),),
         ),
       ),
     );
@@ -177,7 +176,11 @@ class _AddressPageState extends State<AddressPage> {
                   // Implement the logic to update the address
                   Navigator.pop(context); // Close the bottom sheet
                 },
-                child: Text("Save Changes"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(ColorT.themeColor),
+                  minimumSize: Size.fromHeight(50),
+                ),
+                child: Text("Save Changes", style: TextStyle(color: Colors.white),),
               ),
             ],
           ),

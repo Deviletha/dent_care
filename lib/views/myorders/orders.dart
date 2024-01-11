@@ -28,7 +28,8 @@ class _MyOrdersState extends State<MyOrders> {
           bottom: TabBar(
             labelPadding: EdgeInsets.zero,
             isScrollable: true,
-            unselectedLabelColor: Colors.white,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.grey,
             indicatorSize: TabBarIndicatorSize.tab,
             // indicator: BoxDecoration(shape: BoxShape.circle),
             indicatorColor: Colors.red,

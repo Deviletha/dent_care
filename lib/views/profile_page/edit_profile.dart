@@ -153,9 +153,9 @@ class _EditProfileState extends State<EditProfile> {
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(ColorT.themeColor),
-                    shadowColor: Colors.teal[300],
+                    minimumSize: Size.fromHeight(50),
                   ),
-                  child: Text("Submit"),
+                  child: Text("Submit", style: TextStyle(color: Colors.white),),
                 ),
               ),
             ),

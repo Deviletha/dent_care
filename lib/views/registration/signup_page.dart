@@ -233,7 +233,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       backgroundColor: Color(ColorT.themeColor),
                       shadowColor: Colors.teal[300],
                     ),
-                    child: Text("Sign Up"),
+                    child: Text("Sign Up", style: TextStyle(color: Colors.white),),
                   ),
                 ),
                 TextButton(

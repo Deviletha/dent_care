@@ -9,7 +9,6 @@ class AllInstruments extends StatefulWidget {
 }
 
 class _AllInstrumentsState extends State<AllInstruments> {
-
   List<String> images = [
     "assets/dentInstrument1.png",
     "assets/dentInstrument2.png",
@@ -29,19 +28,22 @@ class _AllInstrumentsState extends State<AllInstruments> {
       ),
       body: ListView.builder(
         physics: ScrollPhysics(),
-
-        itemCount:images.length,
+        itemCount: images.length,
         itemBuilder: (context, index) => getTopSelling(index),
       ),
     );
   }
 
   Widget getTopSelling(int index1) {
-    return   AllProductCard(itemName: "Item Name",
-      description: "Demo description for instruments", price: "200",
-      mrp: "250", discount: "20% Discount", imagePath: images[index1],
-      onTap: (){},
-      onPressed: (){},);
+    return AllProductCard(
+      itemName: "Item Name",
+      description: "Demo description for instruments",
+      price: "200",
+      mrp: "250",
+      discount: "20% Discount",
+      imagePath: images[index1],
+      onTap: () {},
+      onPressed: () {},
+    );
   }
-
 }

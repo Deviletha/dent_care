@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:ionicons/ionicons.dart';
 import '../../../theme/colors.dart';
 
 class ProductTile extends StatelessWidget {
@@ -9,7 +10,7 @@ class ProductTile extends StatelessWidget {
   final String imagePath;
   final String actualPrice;
   final String discount;
-  final void Function()? onPressed;
+  final void Function()? wishlist;
   final void Function()? onTap;
   final void Function()? addCart;
 
@@ -20,7 +21,7 @@ class ProductTile extends StatelessWidget {
       required this.totalPrice,
       required this.imagePath,
       required this.actualPrice,
-      this.onPressed,
+      this.wishlist,
       this.onTap,
       required this.discount,
       this.addCart});
@@ -30,13 +31,15 @@ class ProductTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 5, right: 5, bottom: 10, top: 5),
       child: Container(
+        height: 400,
         decoration: BoxDecoration(
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.red.shade400,
-          //     blurRadius: .13,
-          //   ),
-          // ],
+          boxShadow:  [
+            BoxShadow(
+              color: Colors.grey.shade500,
+              blurRadius: 2,
+            ),
+          ],
+          borderRadius: BorderRadius.all(Radius.circular(15))
         ),
         child: InkWell(
           onTap: onTap,
@@ -44,64 +47,84 @@ class ProductTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                clipBehavior: Clip.antiAlias,
-                width: double.infinity,
-                height: 120,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage(
-                        imagePath,
-                      ),
-                      fit: BoxFit.cover),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    discount,
-                    textAlign: TextAlign.left,
-                    style: TextStyle(fontSize: 12, color: Colors.black),
+              Expanded(
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  width: double.infinity,
+                  height: 130,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage(
+                          imagePath,
+                        ),
+                        fit: BoxFit.cover),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(15), topLeft: Radius.circular(15)
+                    )
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconButton(
+                          onPressed: wishlist,
+                          icon: Icon(
+                            Ionicons.heart_outline,
+                            color: Color(ColorT.themeColor),
+                            size: 25,
+                          )),
+                    ],
                   ),
                 ),
               ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  color: Colors.white,
-                  width: double.infinity,
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(15), bottomLeft: Radius.circular(15)
+                    )
+                ),
+
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(
-                        height: 5,
-                      ),
                       Text(
                         itemName,
                         style: TextStyle(fontSize: 13, color: Colors.black),
                       ),
                       SizedBox(
-                        height: 8,
+                        height: 10,
                       ),
-
+                      Text(
+                        description,
+                        style: TextStyle(fontSize: 11, color: Colors.black),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 actualPrice,
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 13,
-                                  color: Color(ColorT.textColor),
+                                  color: Color(ColorT.themeColor),
                                 ),
                               ),
                               SizedBox(
-                                width: 10,
+                                height: 8,
                               ),
                               Text(
-                                totalPrice,
+                                "MRP: $totalPrice",
                                 style: TextStyle(
                                   decoration: TextDecoration.lineThrough,
                                   fontSize: 12,
@@ -119,6 +142,7 @@ class ProductTile extends StatelessWidget {
                           ),
                         ],
                       ),
+
                     ],
                   ),
                 ),

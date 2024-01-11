@@ -11,11 +11,9 @@ class TopSelling extends StatefulWidget {
 class _TopSellingState extends State<TopSelling> {
   List<String> images1 = [
     "assets/mouthwash.jpg",
-    "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
     "assets/mouthwash.jpg",
-    "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg"
   ];

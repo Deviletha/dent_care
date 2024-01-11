@@ -41,7 +41,7 @@ class OrderCard extends StatelessWidget {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(
-                      Radius.circular(2),
+                      Radius.circular(15),
                     ),
                     image: DecorationImage(
                         image: AssetImage(
@@ -95,10 +95,10 @@ class OrderCard extends StatelessWidget {
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: color,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(2),
+                                  borderRadius: BorderRadius.circular(15),
                                 ),
                               ),
-                              child: Text(buttonText)),
+                              child: Text(buttonText, style: TextStyle(color: Colors.white))),
                         )
                       ],
                     )

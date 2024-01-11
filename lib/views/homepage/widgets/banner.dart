@@ -17,7 +17,7 @@ class BannerTile extends StatelessWidget {
                 blurRadius: 3,
               ),
             ],
-            borderRadius: BorderRadius.zero,
+            borderRadius: BorderRadius.circular(12),
             image: DecorationImage(
                 image: AssetImage(imagePath), fit: BoxFit.cover)),
       ),

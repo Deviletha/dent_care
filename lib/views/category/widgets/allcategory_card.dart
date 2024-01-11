@@ -21,54 +21,23 @@ class AllCategoryTile extends StatelessWidget {
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
-                color: Colors.blueGrey,
+                color: Colors.grey.shade500,
                 blurRadius: 1,
               ),
             ],
             color: Colors.white,
-
+            borderRadius: BorderRadius.all(Radius.circular(12))
           ),
           child:
-          // Column(
-          //   children: [
-          //     Container(
-          //       clipBehavior: Clip.antiAlias,
-          //       width: double.infinity,
-          //       height: 70,
-          //       decoration: BoxDecoration(
-          //         borderRadius: BorderRadius.zero,
-          //         image: DecorationImage(
-          //             image: AssetImage(
-          //               imagePath,
-          //             ),
-          //             fit: BoxFit.cover),
-          //       ),
-          //       // Image border// Image radius
-          //     ),
-          //     SizedBox(
-          //       height: 10,
-          //     ),
-          //     Text(
-          //       categoryName,
-          //       textAlign: TextAlign.center,
-          //       style: TextStyle(fontSize: 15),
-          //     ),
-          //   ],
-          // ),
-          //
-
-
-          ListTile(
-            leading: Padding(
-              padding: const EdgeInsets.only(top: 10),
-              child: Container(
+          Row(
+            children: [
+              Container(
                 clipBehavior: Clip.antiAlias,
-                width: 70,
-                height: 50,
+                width: 90,
+                height: 70,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(10),
-                  ),
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(12),
+                  bottomLeft: Radius.circular(12)),
                   image: DecorationImage(
                       image: AssetImage(
                         imagePath,
@@ -77,13 +46,47 @@ class AllCategoryTile extends StatelessWidget {
                 ),
                 // Image border// Image radius
               ),
-            ),
-            title: Text(
-              categoryName,
-              textAlign: TextAlign.left,
-              style: TextStyle(fontSize: 15),
-            ),
+              SizedBox(
+                width: 5,
+              ),
+              Expanded(
+                child: Text(
+                  categoryName,
+                  textAlign: TextAlign.start,
+                  style: TextStyle(fontSize: 15),
+                ),
+              ),
+            ],
           ),
+
+
+
+          // ListTile(
+          //   leading: Padding(
+          //     padding: const EdgeInsets.only(top: 10),
+          //     child: Container(
+          //       clipBehavior: Clip.antiAlias,
+          //       width: 70,
+          //       height: 50,
+          //       decoration: BoxDecoration(
+          //         borderRadius: BorderRadius.all(
+          //           Radius.circular(10),
+          //         ),
+          //         image: DecorationImage(
+          //             image: AssetImage(
+          //               imagePath,
+          //             ),
+          //             fit: BoxFit.cover),
+          //       ),
+          //       // Image border// Image radius
+          //     ),
+          //   ),
+          //   title: Text(
+          //     categoryName,
+          //     textAlign: TextAlign.left,
+          //     style: TextStyle(fontSize: 15),
+          //   ),
+          // ),
         ),
       ),
     );

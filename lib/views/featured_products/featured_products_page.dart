@@ -11,14 +11,15 @@ class FeaturedProducts extends StatefulWidget {
 class _FeaturedProductsState extends State<FeaturedProducts> {
 
   List<String> images1 = [
-    "assets/dentall product.jpeg",
-    "assets/pr1.png",
-    "assets/pr2.png",
-    "assets/pr3.png",
-    "assets/pr4.png",
-    "assets/bond_370x287_bf4.jpg",
+    "assets/pr11.png",
+    "assets/pr22.png",
+    "assets/pr33.png",
+    "assets/pr44.png",
     "assets/products.jpeg",
-    "assets/dentall product.jpeg",
+    "assets/pr11.png",
+    "assets/pr22.png",
+    "assets/pr33.png",
+    "assets/pr44.png",
   ];
 
   @override

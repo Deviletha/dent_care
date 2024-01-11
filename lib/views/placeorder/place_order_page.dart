@@ -280,6 +280,7 @@ class _PlaceOrderState extends State<PlaceOrder> {
                       child: Text(
                         "Read policy",
                         textAlign: TextAlign.start,
+                          style: TextStyle(color: Colors.blue)
                       ))
                 ],
               ),
@@ -298,7 +299,7 @@ class _PlaceOrderState extends State<PlaceOrder> {
               borderRadius: BorderRadius.circular(0),
             ),
           ),
-            child: Text("Confirm Order"),
+            child: Text("Confirm Order", style: TextStyle(color: Colors.white)),
           ),
         ),
       ),

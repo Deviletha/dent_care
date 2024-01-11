@@ -28,7 +28,7 @@ class AllProductCard extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.zero,
+          borderRadius: BorderRadius.all(Radius.circular(15)),
           color: Colors.white,
           boxShadow: [
             BoxShadow(
@@ -74,20 +74,20 @@ class AllProductCard extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                  "₹ $mrp",
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    decoration: TextDecoration.lineThrough,
-                                    color: Color(ColorT.themeColor),
-                                  ),
-                                ),
-                                SizedBox(width: 10,),
-                                Text(
                                   "₹ $price",
                                   style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
                                     color: Color(ColorT.redColor),
+                                  ),
+                                ),
+                                SizedBox(width: 10,),
+                                Text(
+                                  "₹ $mrp",
+                                  style: TextStyle(
+                                    fontSize: 15,
+                                    decoration: TextDecoration.lineThrough,
+                                    color: Color(ColorT.themeColor),
                                   ),
                                 ),
                               ],
