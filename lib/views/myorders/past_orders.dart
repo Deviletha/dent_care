@@ -10,15 +10,15 @@ class PsstOrders extends StatefulWidget {
 
 class _PsstOrdersState extends State<PsstOrders> {
   List<String> images = [
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg"

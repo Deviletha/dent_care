@@ -28,18 +28,18 @@ ThemeData _buildTheme(brightness) {
   return baseTheme.copyWith(
       textTheme: GoogleFonts.robotoTextTheme(baseTheme.textTheme),
       appBarTheme: AppBarTheme(
-        iconTheme: IconThemeData(color: Colors.white),
-        titleTextStyle: TextStyle(color: Colors.white),
+        iconTheme: IconThemeData(color: Color(ColorT.themeColor)),
+        titleTextStyle: TextStyle(color: Color(ColorT.themeColor)),
         backgroundColor:
-        // Colors.transparent,
-        Color(ColorT.themeColor),
+        Colors.white,
+        // Color(ColorT.themeColor),
         elevation: 0,
         centerTitle: false,
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor:
-          // Colors.transparent,
-          Color(ColorT.themeColor),
-          statusBarIconBrightness: Brightness.light,
+          Colors.transparent,
+          // Color(ColorT.themeColor),
+          statusBarIconBrightness: Brightness.dark,
           statusBarBrightness: Brightness.light,
         ),
       ),

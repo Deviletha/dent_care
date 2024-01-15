@@ -13,10 +13,10 @@ class TrendingProducts extends StatefulWidget {
 class _TrendingProductsState extends State<TrendingProducts> {
 
   List<String> images1 = [
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg"
   ];

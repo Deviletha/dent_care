@@ -21,10 +21,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   ];
 
   List<String> featuredItems = [
-    "assets/denta-strength-removebg-preview.png",
-    "assets/dentall_product-removebg-preview.png",
-    "assets/denta-strength-removebg-preview.png",
-    "assets/dentall_product-removebg-preview.png",
+    "assets/denta-strength.png",
+    "assets/dental_product.png",
+    "assets/denta-strength.png",
+    "assets/dental_product.png",
   ];
 
   @override
@@ -211,7 +211,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                     return getRelatedProducts(index);
                   },
                   options: CarouselOptions(
-                    height: 320,
+                    height: 280,
                     aspectRatio: 15 / 9,
                     viewportFraction: .60,
                     initialPage: 0,
@@ -309,7 +309,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
       imagePath: images1[index1],
       companyName: "Abc Company",
       actualPrice: "₹ 20000",
-      discount: "20% Off",
+      description: "dummy description",
       totalPrice: "₹ 25000",
       onTap: () {
         // Navigator.push(context,

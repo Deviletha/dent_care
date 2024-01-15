@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
@@ -46,134 +47,131 @@ class ProductTileCopy extends StatelessWidget {
           onTap: onTap,
           child: Column(
             children: [
-              Container(
-                clipBehavior: Clip.antiAlias,
-                width: double.infinity,
-                height: 160,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
-                  image: DecorationImage(
-                      image: AssetImage(
-                        imagePath,
-                      ),
-                      fit: BoxFit.cover),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    IconButton(
-                        onPressed: wishlist,
-                        icon: Icon(
-                          Ionicons.heart_outline,
-                          color: Color(ColorT.themeColor),
-                          size: 25,
-                        )),
-                  ],
+              Expanded(
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  width: double.infinity,
+                  height: 160,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(topLeft: Radius.circular(15), topRight: Radius.circular(15)),
+                    image: DecorationImage(
+                        image: AssetImage(
+                          imagePath,
+                        ),
+                        fit: BoxFit.cover),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      IconButton(
+                          onPressed: wishlist,
+                          icon: Icon(
+                            Ionicons.heart_outline,
+                            color: Color(ColorT.themeColor),
+                            size: 20,
+                          )),
+                    ],
+                  ),
                 ),
               ),
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SizedBox(
-                            height: 5,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          itemName,
+                          style: TextStyle(
+                              fontSize: 14, color: Colors.grey.shade600),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          description,
+                          maxLines: 2,
+                          style: TextStyle(
+                            fontSize: 11,
                           ),
-                          Text(
-                            itemName,
-                            style: TextStyle(
-                                fontSize: 14, color: Colors.grey.shade600),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          actualPrice,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                            color: Color(ColorT.themeColor),
                           ),
-                          SizedBox(
-                            height: 5,
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          totalPrice,
+                          style: TextStyle(
+                            decoration: TextDecoration.lineThrough,
+                            fontSize: 13,
+                            color: Colors.grey,
                           ),
-                          Text(
-                            description,
-                            maxLines: 2,
-                            style: TextStyle(
-                              fontSize: 11,
-                            ),
+                        ),
+                        SizedBox(
+                          width: 5,
+                        ),
+                        Text(
+                          discount,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Colors.green,
                           ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            actualPrice,
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                              color: Color(ColorT.themeColor),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            totalPrice,
-                            style: TextStyle(
-                              decoration: TextDecoration.lineThrough,
-                              fontSize: 13,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            discount,
-                            style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.green,
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 8,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            color: Color(ColorT.redColor),
-                            child: Padding(
-                              padding: const EdgeInsets.all(5),
-                              child: Text(
-                                "Top Selling",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                          color: Color(ColorT.redColor),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5),
+                            child: Text(
+                              "Top Selling",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.white,
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 10),
-                            child: InkWell(
-                                highlightColor: Colors.red,
-                                onTap:(){},
-                                child: Icon(CupertinoIcons.cart_badge_plus)),
-                          ),
-                        ],
-                      ),
-                      // SizedBox(
-                      //   height: 20,
-                      // ),
-                    ],
-                  ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 10),
+                          child: InkWell(
+                              highlightColor: Colors.red,
+                              onTap:(){},
+                              child: Icon(FluentIcons.cart_16_regular,color: Color(ColorT.themeColor)),
+                        ),
+                        )
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],

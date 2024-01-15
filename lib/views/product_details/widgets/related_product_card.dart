@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../../../theme/colors.dart';
@@ -8,7 +9,7 @@ class RelatedProductTile extends StatelessWidget {
   final String totalPrice;
   final String imagePath;
   final String actualPrice;
-  final String discount;
+  final String description;
   final void Function()? onPressed;
   final void Function()? onTap;
   final void Function()? addCart;
@@ -22,7 +23,7 @@ class RelatedProductTile extends StatelessWidget {
       required this.actualPrice,
       this.onPressed,
       this.onTap,
-      required this.discount,
+      required this.description,
       this.addCart});
 
   @override
@@ -43,108 +44,101 @@ class RelatedProductTile extends StatelessWidget {
           onTap: onTap,
           child: Column(
             children: [
-              Container(
-                clipBehavior: Clip.antiAlias,
-                width: double.infinity,
-                height: 200,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15)),
-                  image: DecorationImage(
-                      image: AssetImage(
-                        imagePath,
-                      ),
-                      fit: BoxFit.cover),
+              Expanded(
+                child: Container(
+                  clipBehavior: Clip.antiAlias,
+                  width: double.infinity,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15)),
+                    image: DecorationImage(
+                        image: AssetImage(
+                          imagePath,
+                        ),
+                        fit: BoxFit.cover),
+                  ),
                 ),
               ),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(15),
-                        bottomRight: Radius.circular(15)),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                            Text(
-                              companyName,
-                              maxLines: 2,
-                              style: TextStyle(
-                                color: Colors.grey.shade600,
-                                fontSize: 11,
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(15),
+                      bottomRight: Radius.circular(15)),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                          Text(
+                            companyName,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.grey.shade600,
+                              fontSize: 11,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            itemName,
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 13,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 8,
+                          ),
+                      Text(
+                        description,
+                        style: TextStyle(fontSize: 11, color: Colors.black),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                actualPrice,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 13,
+                                  color: Color(ColorT.themeColor),
+                                ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              itemName,
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 13,
+                              SizedBox(
+                                height: 8,
                               ),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Text(
-                                  actualPrice,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 12,
-                                    color: Color(ColorT.textColor),
-                                  ),
+                              Text(
+                                "MRP: $totalPrice",
+                                style: TextStyle(
+                                  decoration: TextDecoration.lineThrough,
+                                  fontSize: 12,
+                                  color: Colors.grey,
                                 ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  totalPrice,
-                                  style: TextStyle(
-                                    decoration: TextDecoration.lineThrough,
-                                    fontSize: 10,
-                                    color: Colors.grey,
-                                  ),
-                                ),
-                                SizedBox(
-                                  width: 5,
-                                ),
-                                Text(
-                                  discount,
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    color: Colors.green,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            InkWell(
+                              ),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 10),
+                            child: InkWell(
                                 highlightColor: Colors.red,
-                                onTap: () {},
-                                child: Icon(
-                                  CupertinoIcons.cart_badge_plus,
-                                  size: 20,
-                                )),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 8,
-                        ),
-                      ],
-                    ),
+                                onTap:(){},
+                                child: Icon(FluentIcons.cart_16_regular,color: Color(ColorT.themeColor),)),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),

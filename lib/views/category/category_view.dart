@@ -1,6 +1,9 @@
 import 'package:danthal/views/category/widgets/cat_card.dart';
 import 'package:flutter/material.dart';
 
+import '../homepage/widgets/product_card.dart';
+import '../product_details/product_details.dart';
+
 class CategoryView extends StatefulWidget {
   final String category;
   const CategoryView({super.key, required this.category});
@@ -35,7 +38,7 @@ class _CategoryViewState extends State<CategoryView> {
         shrinkWrap: true,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          childAspectRatio: .85,
+          childAspectRatio: .70,
         ),
         itemCount: images.length,
         itemBuilder: (context, index) => getCategory(index),
@@ -47,12 +50,18 @@ class _CategoryViewState extends State<CategoryView> {
   }
 
   Widget getCategory(int index) {
-    return CategoryCardView(
+    return ProductTile(
+      itemName: "PRODUCT NAME",
       imagePath: images[index],
-      categoryName: "Product Name",
+      description: "Dummy Description for product card",
+      actualPrice: "₹ 20000 ",
+      discount: "20% Off",
+      totalPrice: "25000",
       onTap: () {
-
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ProductDetailsPage()));
       },
+      wishlist: () {},
     );
   }
 

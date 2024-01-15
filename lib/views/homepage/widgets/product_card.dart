@@ -1,3 +1,4 @@
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
@@ -63,7 +64,7 @@ class ProductTile extends StatelessWidget {
                     )
                   ),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       IconButton(
@@ -71,7 +72,7 @@ class ProductTile extends StatelessWidget {
                           icon: Icon(
                             Ionicons.heart_outline,
                             color: Color(ColorT.themeColor),
-                            size: 25,
+                            size: 20,
                           )),
                     ],
                   ),
@@ -138,7 +139,7 @@ class ProductTile extends StatelessWidget {
                             child: InkWell(
                                 highlightColor: Colors.red,
                                 onTap:(){},
-                                child: Icon(CupertinoIcons.cart_badge_plus)),
+                                child: Icon(FluentIcons.cart_16_regular,color: Color(ColorT.themeColor),)),
                           ),
                         ],
                       ),

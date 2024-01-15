@@ -18,6 +18,8 @@ import 'package:danthal/views/profile_page/profile_page.dart';
 import 'package:danthal/views/top_selling/top_selling.dart';
 import 'package:danthal/views/product_details/product_details.dart';
 import 'package:danthal/views/trending_products/trending_products_page.dart';
+import 'package:fluentui_system_icons/fluentui_system_icons.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import '../../theme/colors.dart';
@@ -60,15 +62,15 @@ class _HomepageState extends State<Homepage> {
   ];
 
   List<String> featuredItems = [
-    "assets/denta-strength-removebg-preview.png",
-    "assets/dentall_product-removebg-preview.png",
-    "assets/denta-strength-removebg-preview.png",
-    "assets/dentall_product-removebg-preview.png",
+    "assets/denta-strength.png",
+    "assets/dental_product.png",
+    "assets/denta-strength.png",
+    "assets/dental_product.png",
   ];
   List<String> images1 = [
     "assets/pr11.png",
     "assets/pr22.png",
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/pr33.png",
     "assets/pr44.png",
   ];
@@ -132,18 +134,19 @@ class _HomepageState extends State<Homepage> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           toolbarHeight: 40,
-          title: Row(
-            children: [
-              Icon(
-                Icons.location_on_outlined,
-                size: 20,
-              ),
-              Text(
-                "Kerala, India",
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
+          title: Image.asset("assets/logo5.png", height: 20,),
+          // Row(
+          //   children: [
+          //     Icon(
+          //       Icons.location_on_outlined,
+          //       size: 20,
+          //     ),
+          //     Text(
+          //       "Kerala, India",
+          //       style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+          //     ),
+          //   ],
+          // ),
           actions: [
             InkWell(
               onTap: () {
@@ -164,7 +167,7 @@ class _HomepageState extends State<Homepage> {
                     MaterialPageRoute(builder: (context) => CartPage()));
               },
               child: Icon(
-                Ionicons.bag_outline, size: 20,
+                  FluentIcons.cart_16_regular,
                 // Color(ColorT.themeColor)
               ),
             ),
@@ -284,7 +287,8 @@ class _HomepageState extends State<Homepage> {
                   Container(
                     height: 35,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                      color: Color(ColorT.themeColor),
+                        // color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: Row(
                       children: [
@@ -295,14 +299,14 @@ class _HomepageState extends State<Homepage> {
                             },
                             icon: Icon(
                               Icons.search,
-                              color: Colors.black,
+                              color: Colors.white,
                               size: 15,
                             )),
                         Text(
                           "Search Products here ",
                           style: TextStyle(
                               fontSize: 12,
-                              color: Colors.black,
+                              color: Colors.white,
                               letterSpacing: 1.5),
                         ),
                       ],
@@ -562,14 +566,18 @@ class _HomepageState extends State<Homepage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: const [
+                            SizedBox(
+                              width: 10,
+                            ),
                             Icon(Ionicons.bag_outline,
                                 size: 20, color: Color(ColorT.themeColor)),
                             SizedBox(
-                              width: 10,
+                              width: 5,
                             ),
                             Text(
                               "RECOMMENDED FOR YOU",
                               style: TextStyle(
+                                letterSpacing: .80,
                                   fontWeight: FontWeight.bold,
                                   color: Color(ColorT.themeColor),
                                   fontSize: 17),

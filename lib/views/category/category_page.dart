@@ -23,7 +23,7 @@ class _CategoryPageState extends State<CategoryPage> {
     "assets/nsk.png",
     "assets/sybronEndo.jpeg",
     "assets/colgate.png",
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
     "assets/instrument.jpg",

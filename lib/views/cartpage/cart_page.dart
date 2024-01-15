@@ -21,11 +21,11 @@ class _CartPageState extends State<CartPage> {
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg",
-    "assets/mouthwash.jpg",
+    "assets/mouthwash.png",
     "assets/dentall product.jpeg",
     "assets/bond_370x287_bf4.jpg",
     "assets/products.jpeg"
