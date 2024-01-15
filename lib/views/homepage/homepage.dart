@@ -854,7 +854,7 @@ class _HomepageState extends State<Homepage> {
       // description: "Dummy Description for product card",
       mrp: "₹ 25000",
       price: "₹ 20000",
-      imagePath: "assets/mouthwash.jpg",
+      imagePath: "assets/mouthwash.png",
       onPressed: () {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ProductDetailsPage()));
